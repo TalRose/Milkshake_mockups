@@ -109,60 +109,59 @@ div.components-wrapper div:first-child div:first-child.live-video-wrap {
 
 @font-face {
   font-family: OpenSansHebrew-Regular;
-  src: url("/fonts/opensanshebrew-regular-webfont.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/opensanshebrew-regular-webfont.ttf") format("truetype")
 }
 @font-face {
   font-family: OpenSansHebrew-Bold;
-  src: url("/fonts/OpenSansHebrew-Bold.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/OpenSansHebrew-Bold.ttf") format("truetype")
 }
 
 @font-face {
     font-family: Almoni Tzar AAA;
-    src: url("/fonts/AlmoniTzarAAA.ttf") format("truetype");
+    src: url("https://m.ynet.co.il/fonts/AlmoniTzarAAA.ttf") format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
   font-family: NarkissBlock-Regular;
-  src: url("/fonts/NarkissBlock-Regular.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Regular.ttf") format("truetype")
 }
 
 @font-face {
   font-family: NarkisBlock;
-  src: url("/fonts/NarkissBlock-Regular.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Regular.ttf") format("truetype")
 }
 
 @font-face {
   font-family: NarkissBlock-Bold;
-  src: url("/fonts/NarkissBlock-Bold.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Bold.ttf") format("truetype")
 }
 
 @font-face {
   font-family: NarkissBlock-Heavy;
-  src: url("/fonts/NarkissBlock-Heavy.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Heavy.ttf") format("truetype")
 }
 
 @font-face {
   font-family: NarkissBlock-Semibold;
-  src: url("/fonts/NarkissBlock-Semibold.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Semibold.ttf") format("truetype")
 }
 
 @font-face {
   font-family: NarkissBlock-Light;
-  src: url("/fonts/NarkissBlock-Light.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Light.ttf") format("truetype")
 }
 
 @font-face {
   font-family: NarkissBlock-Black;
-  src: url("/fonts/NarkissBlock-Black.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Black.ttf") format("truetype")
 }
 
 @font-face {
   font-family: NarkissBlock-Medium;
-  src: url("/fonts/NarkissBlock-Medium.ttf") format("truetype")
+  src: url("https://m.ynet.co.il/fonts/NarkissBlock-Medium.ttf") format("truetype")
 }
-
 html[isfirma="off"] body,
 html[isfirma="off"] body div:not(.ima-mute-div,.ima-fullscreen-div,.ima-play-pause-div)  {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif !important;
