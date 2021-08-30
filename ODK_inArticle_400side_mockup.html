@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="copyright" content="ODK Media, Inc"/>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"443b4f0665",applicationID:"281308144"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"443b4f0665","applicationID":"281308144","transactionName":"Y1ZVZENRDEoHVk0LXVoccUVfUxZQCVsWFAMBbEBHRh4VXARUSRIcQlpSR0IKB0kPRlYGV2tFXlVG","queueTime":0,"applicationTime":61,"agent":""}</script>
+    <title>Golden Time Signal : E21 - OnDemandKorea</title>
+    <link rel="alternate" hreflang="x-default" href="https://www.ondemandkorea.com/" />
+    <link rel="shortcut icon" href="https://production-static.ondemandkorea.com/img/favicon.ico" />
+    <link rel="icon" sizes="192x192" href="https://production-static.ondemandkorea.com/img/icon192x192.png" />
+    <link rel="icon" sizes="128x128" href="https://production-static.ondemandkorea.com/img/icon128x128.png" />
+    <link rel="apple-touch-icon" href="https://production-static.ondemandkorea.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://production-static.ondemandkorea.com/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://production-static.ondemandkorea.com/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://production-static.ondemandkorea.com/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://production-static.ondemandkorea.com/img/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="https://production-static.ondemandkorea.com/img/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://production-static.ondemandkorea.com/img/apple-touch-icon-180x180.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.includes%2CArray.prototype.includes%2CURLSearchParams%2CBlob%2CUint8Array%2CObject.assign%2CWeakMap%2CSet%2CObject.setPrototypeOf%2CFunction.prototype.bind"></script>
+    <meta name="description" content="Your illness is not a sudden threat: your body kept sending signals to warn you. Golden Time Signal, a new healthcare/information show, focuses on tho"/>
+
+<meta property="og:title" content="골든타임 시그널 : 21회, Golden Time Signal : E21"/>
+<meta property="og:description" content="Your illness is not a sudden threat: your body kept sending signals to warn you. Golden Time Signal, a new healthcare/information show, focuses on tho"/>
+<meta property="og:url" content="http://www.ondemandkorea.com/golden-time-signal-e21.html"/>
+<meta property="og:type" content="tv_episode"/>
+<meta property="og:image" content="https://sp.ondemandkorea.com/includes/timthumb.php?h=200&src=/wp-content/themes/ondemandkorea/uploads/thumbnail/1547198_20210714_1.jpg"/>
+<meta property="og:site_name" content="OnDemandKorea"/>
+<meta property="fb:app_id" content="309479342402963"/>
+
+    <!-- non-responsive Bootstrap -->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+    
+      
+      <!-- Latest compiled and minified Bootstrap 4 CSS (check out before deployment!) -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+      <!-- Your stuff: Third-party CSS libraries go here -->
+      <link href="https://production-static.ondemandkorea.com/vendor/css/jquery.fancybox.3.0.40.min.css" rel="stylesheet" type="text/css" media="screen" />
+      <link href="https://production-static.ondemandkorea.com/vendor/css/jquery.tzineClock.css" rel="stylesheet" type="text/css" />
+      <link href="https://production-static.ondemandkorea.com/vendor/scroller/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" media="all" />
+
+      <link rel="stylesheet" href="https://production-static.ondemandkorea.com/CACHE/css/output.ba98cb9fa18b.css" type="text/css"><link rel="stylesheet" href="https://production-static.ondemandkorea.com/CACHE/css/output.4a83f2f9d0d8.css" type="text/css" media="screen">
+
+      
+<link rel="stylesheet" type="text/css" href="https://production-static.ondemandkorea.com/vendor/css/slick/slick.css"/>
+<link rel="stylesheet" href="https://production-static.ondemandkorea.com/CACHE/css/output.e30c6b2c34b8.css" type="text/css">
+
+    
+
+    <!--[if lt IE 9]>
+      <script src="https://production-static.ondemandkorea.com/vendor/js/html5shiv.min.js%3Fv%3D3.7.3"></script>
+      <script src="https://production-static.ondemandkorea.com/vendor/js/respond.min.js%3Fv%3D1.4.2"></script>
+    <![endif]-->
+    <!-- Tracking thirdparty scripts -->
+    <!-- GTM static data layer -->
+    <script>
+    dataLayer = [{
+      'userLanguage': 'en'
+      , 'videoCategory': 'documentary'
+      
+      , 'isPlusMember': 'guest'
+      , 'equippedPass': ''
+      , 'version': '2021-05-31:34b6ac18868101540752bbeeef7f5db47d490569'
+      , 'isKooliUser': 0
+    }];
+    
+    </script>
+    <!-- End GTM static data layer -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-553KLMM');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Scripts for banner ads -->
+    <script async src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script async src="https://production-static.ondemandkorea.com/vendor/prebid/prebid4.35.0.js"></script>
+    <script type="text/javascript">
+      // Amazon(A9) PreBid Adopter
+      !function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+
+      var dfp_dict = {
+        'category': 'documentary',
+        'program': 'golden-time-signal',
+        'episode': 'golden-time-signal-e21',
+        'partner': 'mbn',
+        'platform': 'odk_web',
+        'lang': 'en',
+        'region': 'ON',
+        'domain': location.hostname,
+        'fullscreen': '0',
+        'membership': 'guest',
+        'plan': 'free'
+      };
+      
+    </script>
+    <script src="https://production-static.ondemandkorea.com/CACHE/js/output.23066b323f2a.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20026252-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'UA-20026252-1', {
+        'send_page_view': false
+      })
+    </script>
+    <!-- OneTrust Cookies Consent Notice start for ondemandkorea.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script='1739e3ba-3ed7-41ca-8620-174879c73a0a' ></script>
+    <script type="text/javascript">
+      var PERFORMANCE_COOKIE = 'C0002'
+      var TARGETING_COOKIE = 'C0004'
+
+      function hasCookiePermission(categoryCode) {
+        return OnetrustActiveGroups.indexOf(categoryCode) !== -1
+      }
+      function OptanonWrapper() {
+        if (!hasCookiePermission(PERFORMANCE_COOKIE)) {
+          gtag('consent', 'update', { analytics_storage: 'denied' })
+        }
+
+        if (!hasCookiePermission(TARGETING_COOKIE)) {
+          gtag('consent', 'update', { ad_storage: 'denied' })
+        }
+      }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for ondemandkorea.com -->
+  </head>
+  <body id="en" class="webapp-base">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-553KLMM"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- IE Notification popup -->
+    
+
+
+    <link rel="stylesheet" href="https://production-static.ondemandkorea.com/CACHE/css/output.e016efcf7875.css" type="text/css">
+
+
+<div id="IENotification" class="IENotification"></div>
+
+
+
+  <script src="https://production-static.ondemandkorea.com/vendor/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="https://production-static.ondemandkorea.com/vendor/js/js.cookie.js" type="text/javascript" ></script>
+  <script>
+    var IE_COOKIE = 'ie_noti_off'
+
+    function isBrowserIE() {
+      /* MSIE used to detect old browsers and Trident used to newer ones*/
+      var IEUa = navigator.userAgent.indexOf('MSIE ') > -1 || navigator.userAgent.indexOf('Trident/') > -1
+      return IEUa
+    };
+
+    $(document).ready(function() {
+      if (isBrowserIE()) {
+        if (Cookies.get(IE_COOKIE)) {
+          return;
+        } else {
+          var ieElements = [
+            "<div class='IENotification__wrapper'>",
+              "<h2 class='IENotification__title'>Unsupported Browser</h2>",
+              "<p class='IENotification__body'>The browser you are using is not supported. For the best OnDemandKorea experience, please use the latest version of the browsers listed below.</p>",
+              "<div>",
+                "<a class='IENotification__link' href='https://www.google.com/intl/en_us/chrome/'target='_blank' rel='noopener'>",
+                  "<img src='https://production-static.ondemandkorea.com/img/browser/img-chrome.png' alt='Google Chrome icon' style='width: 24px; height: 24px;' />",
+                  "<div class='IENotification__browsername'>Google Chrome</div>",
+                "</a>",
+                "<a class='IENotification__link' href='https://www.microsoft.com/en-us/edge'target='_blank' rel='noopener'>",
+                  "<img src='https://production-static.ondemandkorea.com/img/browser/img-edge.png'  alt='Microsoft Edge icon' style='width: 24px; height: 24px;'/>",
+                  "<div class='IENotification__browsername'>Microsoft Edge</div>",
+                "</a>",
+                "<a class='IENotification__link' href='https://www.apple.com/safari/'target='_blank' rel='noopener'>",
+                  "<img src='https://production-static.ondemandkorea.com/img/browser/img-safari.png'  alt='Safari icon' style='width: 24px; height: 24px;' />",
+                  "<div class='IENotification__browsername'>Safari</div>",
+                "</a>",
+              "</div>",
+              "<button class='IENotification__button'>",
+                "<img id='image-close' src='https://production-static.ondemandkorea.com/img/browser/close.png' alt='close'>",
+              "</button>",
+            "</div>"
+          ];
+          $('#IENotification').append(ieElements.join(' '));
+        }
+      }
+
+      $('.IENotification__button').click(function() {
+        Cookies.set(IE_COOKIE, 'true', { expires: 1 });
+        $('#IENotification').empty();
+      });
+    })
+  </script>
+
+
+    
+    
+    <header>
+      <section class="header">
+        <h1 class="logo"><a href="/" class="odk">OnDemandKorea</a></h1>
+        <div class="gnb">
+          <div class="paymentState bi-membership">
+            
+              
+                <a href="https://www.signup.ondemandkorea.com/en"
+                   class="plus en"></a>
+              
+            
+          </div>
+          <ul class="account">
+          
+            <li><a href="/includes15/signup" class="sign-up-link">Sign Up</a></li>
+            <li><a href="/includes15/login" class="login_menu">Log In</a></li>
+          
+          </ul>
+          <div class="languageToggleBox">
+            <a href="#">
+              <i class="material-icons ls">&#xE894;</i>
+              English
+              <i class="material-icons rs">&#xE5CF;</i>
+            </a>
+            <div class="languageToggleMenu">
+              <a href="javascript:setLang('ko');">한국어</a>
+              <a href="javascript:setLang('en');">English</a>
+            </div>
+            <form id="form-set-lang" action="/setlang/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="uurjolJ0i53ZHYtOV3wkXtUi9kUeyX8VGZwYsLS51DGho4OSHi9NkVIKIWlPb4Mo">
+                <input name="next" type="hidden" value="/golden-time-signal-e21.html" />
+                
+                
+                <input name="language" type="hidden" value="en">
+            </form>
+          </div>
+          <div class="searchBox">
+              <span id="searchindicator"></span>
+              <span id="searchsubmit" aria-hidden="true"></span>
+              <input id="s" name="s" type="search" autocomplete="off" placeholder="Search for titles or people">
+              <span id="searchreset" style="display: none;"></span>
+          </div>
+          <ul class="browser">
+            <li><a href="//">Home</a></li>
+            <li><a href="/movie">Movie</a></li>
+            <li><a href="/tv-guide">TV Guide</a></li>
+          </ul>
+        </div>
+        <div class="floatBanner right">
+          <div id='div-gpt-ad-1595206726844-0' class="_odkAdGamUnit code:/66416091/ODK_Floating_160x600"></div>
+        </div>
+        <div id="search_result" class="searchResult"></div>
+      </section>
+      <nav>
+        
+<ul class="navigation">
+  <li ><a href="/pay-per-view">Pay-Per-View</a></li>
+  <li ><a href="/korean-news">News</a></li>
+  <li ><a href="/drama">Drama</a></li>
+  <li ><a href="/variety">Variety</a></li>
+  <li ><a href="/daily-life">Daily Life<img style="margin-bottom: 12px;" src="https://production-static.ondemandkorea.com/img/badge/nav-new.svg" alt="Coming Soon" width="10px" height="10px"></a></li>
+  <li class="active"><a href="/documentary">Documentary</a></li>
+  <li class="navToggleBox ">
+    <a href="/life">
+      <span class="toggleText">Life</span>
+      <i class="material-icons">&#xE5CF;</i>
+    </a>
+    <div class="navToggleMenu">
+      <a href="/senior-tv">Senior TV</a>
+      <a href="/food">Food</a>
+      <a href="/health">Health</a>
+    </div>
+  </li>
+  <li ><a href="/home-shopping">Home Shopping</a></li>
+  <li ><a href="/kids">Kids</a></li>
+  <li class="navToggleBox ">
+    <a href="/sports">
+      <span class="toggleText">Sports</span>
+      <i class="material-icons">&#xE5CF;</i>
+    </a>
+    <div class="navToggleMenu">
+      <a href="/baduk">Baduk</a>
+      <a href="/golf">Golf</a>
+      <a href="/fishing">Fishing</a>
+      <a href="/billiards">Billiards</a>
+    </div>
+  </li>
+  <li ><a href="/education">Education</a></li>
+  <li ><a href="/religion">Religion</a></li>
+  <li ><a href="/kocowa">KOCOWA</a></li>
+</ul>
+
+      </nav>
+    </header>
+
+    <section class="wrapper">
+      
+      
+  
+
+
+<link rel="stylesheet" href="https://production-static.ondemandkorea.com/CACHE/css/output.f3eeb9015799.css" type="text/css">
+
+
+<script id="ad_block_template" type="text/html">
+  <div class="player-inner-message adblock">
+    <div class="message">
+      <strong>Are you using AdBlock?</strong>
+      <p>OnDemandKorea provides free legal streaming service to our users through ad revenue. <b>You can watch all content in full HD without video ads with an ODK Membership.</b></p>
+      <a href="/membership" target="_blank" rel="noopener">
+        <div class="learn-more">
+          <p>Learn more ODK membership</p>
+        </div>
+      </a>
+      <a href="https://www.wikihow.com/Disable-AdBlock" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</script>
+
+
+
+<!-- UA: PC / Mac OS X 10.13.6 / Chrome 91.0.4472 -->
+<div id="playback_app" class="">
+  
+  <div id="video_player" class="flex-left"></div>
+  
+  <div class="flex-right">
+    <div id='div-gpt-ad-1594977364599-0' class="banner_265x383 _odkAdGamUnit code:/66416091/ODK_Side_265x383"></div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="episode_infos">
+      <div>
+        <p class="episode_title">Golden Time Signal : E21 - 07/14/2021</p>
+        <p class="episode_subtitle">Synopsis</p>
+        <p class="episode_desc01"></p>
+        <p class="episode_desc01"></p>
+        <p class="episode_desc02">Your illness is not a sudden threat: your body kept sending signals to warn you. Golden Time Signal, a new healthcare/information show, focuses on those preceding signs from the body and informs how to prevent the illness before it happens. The program aims to raise awareness of our physical health by studying various cases, including celebrities who overcame health problems.</p>
+        <p class="episode_tags"><span>Tags</span> MBN, Documentary, healthcare, information, Golden Time Signal, Lee Sang-min, Park Jun-kyu, Chaeyeon, Noh Ji-hoon</p>
+      </div>
+      <div id="milkshake" style="flex-grow:0; flex-shrink: 0; margin-left:20px;  overflow: hidden;">
+        
+          <script src="https://static.vidazoo.com/basev/vwpt.js" data-widget-id="612b8bd32263cf00044021d6" defer></script>
+      </div>
+      <div class="player_banner_300x250">
+        
+          <div>
+            <img src="https://s0.2mdn.net/10865900/Frutly_BannerAd_300x250.jpg" alt="Advertisement" border="0" width="300" height="250" style="display:block">
+          </div>
+      </div>
+ 
+    </div>
+  </div>
+
+  <!-- Episode List -->
+  
+  <div class="container episodeWrap">
+    <p class="title">Golden Time Signal - Episode</p>
+    <div id="program_episode_list"></div>
+    <div class="clear"></div>
+    <div id="pg"></div>
+    <div class="clear"></div>
+  </div>
+  
+
+  <!-- New Update List -->
+  <div class="container newUpdateWrap">
+    <p class="title">New Episode</p>
+    <ul class="mediaList">
+    
+      <li class="portraitItem">
+        
+        <a href="/fact-in-star-e232.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Fact iN Star : 07/11/2021">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/poster_fact_in_star.png"
+                 class="mutual_poster"
+                 alt="Fact iN Star : 07/11/2021"
+                 title="Fact iN Star : 07/11/2021" />
+          </p>
+          <p class="title">Fact iN Star : 07/11/2021</p>
+          
+          <p class="info">07/11/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/be-my-dream-family-e76.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Be My Dream Family : E76">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/poster_be_my_dream_family.jpg"
+                 class="mutual_poster"
+                 alt="Be My Dream Family : E76"
+                 title="Be My Dream Family : E76" />
+          </p>
+          <p class="title">Be My Dream Family : E76</p>
+          
+          <p class="info">07/13/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/lets-love-again-e50.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Let&#39;s Love Again : E50">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/poster_lets_love_again.jpg"
+                 class="mutual_poster"
+                 alt="Let&#39;s Love Again : E50"
+                 title="Let&#39;s Love Again : E50" />
+          </p>
+          <p class="title">Let&#39;s Love Again : E50</p>
+          
+          <p class="info">07/12/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/live-info-show-2-e1557.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Live Info Show 2 : E1557">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/portrait_live_info_show_2_kr.jpg"
+                 class="mutual_poster"
+                 alt="Live Info Show 2 : E1557"
+                 title="Live Info Show 2 : E1557" />
+          </p>
+          <p class="title">Live Info Show 2 : E1557</p>
+          
+          <p class="info">07/13/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/every-question-e4825.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Every Question : Abnormal Signal from Sweat">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/portrait_every_question_kr-1.jpg"
+                 class="mutual_poster"
+                 alt="Every Question : Abnormal Signal from Sweat"
+                 title="Every Question : Abnormal Signal from Sweat" />
+          </p>
+          <p class="title">Every Question : Abnormal Signal from Sweat</p>
+          
+          <p class="info">07/13/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/secrets-of-nature-e474.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Secrets of Nature : The Power of RED Colored Foods">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/secret_of_the_nature_web.jpg"
+                 class="mutual_poster"
+                 alt="Secrets of Nature : The Power of RED Colored Foods"
+                 title="Secrets of Nature : The Power of RED Colored Foods" />
+          </p>
+          <p class="title">Secrets of Nature : The Power of RED Colored Foods</p>
+          
+          <p class="info">07/09/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/be-my-dream-family-e74.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Be My Dream Family : E74">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/poster_be_my_dream_family.jpg"
+                 class="mutual_poster"
+                 alt="Be My Dream Family : E74"
+                 title="Be My Dream Family : E74" />
+          </p>
+          <p class="title">Be My Dream Family : E74</p>
+          
+          <p class="info">07/09/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/show-champion-e401.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Show! Champion : E401">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/portrait_show_champion_kr.jpg"
+                 class="mutual_poster"
+                 alt="Show! Champion : E401"
+                 title="Show! Champion : E401" />
+          </p>
+          <p class="title">Show! Champion : E401</p>
+          
+          <p class="info">07/14/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/ask-us-anything-e288.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Ask Us Anything : T-ara">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/poster_ask_us_anything.jpg"
+                 class="mutual_poster"
+                 alt="Ask Us Anything : T-ara"
+                 title="Ask Us Anything : T-ara" />
+          </p>
+          <p class="title">Ask Us Anything : T-ara</p>
+          
+          <p class="info">07/10/2021</p>
+          
+        </a>
+      </li>
+    
+      <li class="portraitItem">
+        
+        <a href="/hometown-report-e7333.html?from_collection_name=Other%20Series%3AGolden%20Time%20Signal%20%3A%20E21" title="Hometown Report : E7333">
+          <p class="thumbnail">
+            <img src="https://sp.ondemandkorea.com/includes/timthumb.php?w=168&amp;h=238&amp;src=/wp-content/themes/ondemandkorea/uploads/poster/portrait_hometown_report_kr.jpg"
+                 class="mutual_poster"
+                 alt="Hometown Report : E7333"
+                 title="Hometown Report : E7333" />
+          </p>
+          <p class="title">Hometown Report : E7333</p>
+          
+          <p class="info">07/14/2021</p>
+          
+        </a>
+      </li>
+    
+    </ul>
+  </div>
+  <!-- player end -->
+  <!-- loadVideos에서 가져다 쓰기 위해 hidden input으로 만들어놓음 -->
+  <input id="episode_title_text" type="hidden" value="Golden Time Signal : E21">
+  
+  <script id="episode_template" type="text/x-handlebars-template">
+    <div class="ep_wrap">
+      <div class="ep">
+        <a href="{{ appendKCPCollectionName url 'Other Episode' episodeTitle }}" title="{{ title }}" class="poster">
+          <img src="{{thumbnail}}" title="{{title}}" alt="{{title}}">
+          <div class="ep_title">
+            <b>{{title}}</b>
+            <span class="ep_secondline">{{second_line_text}}</span>
+          </div>
+        </a>
+        {{#if episode_badge_url}}
+        <div class="episode-badge">
+          <img src="{{episode_badge_url}}" />
+        </div>
+        {{/if}}
+        {{#if subtitles.length}}
+        <div class="availble-subtitles">
+          {{#each subtitles}}
+            <span>
+              <img src="{{this}}" />
+            </span>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </script>
+  
+
+    </section>
+
+    <footer>
+      
+        
+          
+        
+      
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="https://www.odkmedia.net" target="_blank" rel="noopener noreferrer">Company</a>
+        <a href="https://www.odkmedia.net/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="/terms-of-use">Terms of Use</a>
+        <a href="/ads">Advertise</a>
+        <a href="/features">Features</a>
+        <a href="/help">Contact Us</a>
+        <a href="/faq">FAQs</a>
+        <a href="https://privacyportal.onetrust.com/webform/5ace1796-24fd-4b65-9564-9e8e8df7ec5d/6adc38fb-7317-430f-aecb-7382f7162dd3" target="_blank" rel="noopener noreferrer">Do Not Sell My Personal Information</a>
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=93430837-0281-4c7c-935c-8e833153f4d0" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=93430837-0281-4c7c-935c-8e833153f4d0" alt="DMCA.com Protection Status" /></a>
+      </div>
+      <p class="copyright">
+        &copy; 2012-2021 ODK Media, Inc.<br />
+        OnDemandKorea & Design Reg. U.S. Pat. & Tm. Off.
+      </p>
+    </footer>
+
+    
+
+    
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+      
+<script id="adblock_message" type="text/html">
+  Are you using AdBlock?\nIf you enable AdBlock, your service accessibility on OnDemandKorea may be limited. Please disable AdBlock.
+</script>
+
+
+      <!-- Required by Bootstrap v4 -->
+      <!--<script src="//code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+      <!-- when it goes with other js framework instead of jQuery, then we need only slim version of jQuery for bootstrap, which can reduce 20% of file size -->
+      <script src="https://production-static.ondemandkorea.com/vendor/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+      <!-- Your stuff: Third-party javascript libraries go here -->
+      <script src="https://production-static.ondemandkorea.com/vendor/js/jquery.tzineClock.min.js" type="text/javascript" ></script>
+      <script src="https://production-static.ondemandkorea.com/vendor/js/jquery.iosslider.min.js" type="text/javascript" ></script>
+      <script src="https://production-static.ondemandkorea.com/vendor/js/jquery.fancybox.3.0.40.min.js" type="text/javascript" ></script>
+      <script src="https://production-static.ondemandkorea.com/vendor/js/js.cookie.js" type="text/javascript" ></script>
+      <script src="https://production-static.ondemandkorea.com/vendor/js/list.js/v1.5.0/list.min.js" type="text/javascript"></script>
+      <script src="https://production-static.ondemandkorea.com/vendor/scroller/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" ></script>
+      <script type="text/javascript" src="/jsi18n/?en"></script>
+      <script id="kcp-logger">
+        // kcp log 메시지 남기기용
+        var kcpLog = console.log.bind(console, '%c %s', 'background-color: black; color: white;')
+      </script>
+      
+      <script src="https://production-static.ondemandkorea.com/CACHE/js/output.9998170197a0.js"></script>
+
+      <!-- DMCA Script-->
+      <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+
+      <!-- misc script -->
+      <script>
+        $(document).ready(function() {
+          function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+          }
+          var csrftoken = Cookies.get('csrf_token');
+          $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+            }
+          });
+
+          // 광고 초기화: 헤더비딩 + GAM
+          odkAdPrebid.init();
+          odkAdGam.init();
+        });
+
+        function close_fancybox() {
+          $.fancybox.close();
+        }
+
+        function setCookie(cname, value, exdays) {
+          exdays = typeof exdays !== 'undefined' ? exdays : 3650;
+          Cookies.set(cname, value, { path: "/", expires: exdays });
+        }
+
+        function getCookie(cname) {
+          var ret = Cookies.get(cname, { path: "/" });
+          return ret === undefined ? "" : ret;
+        }
+
+        $('.login_menu').on('click', function() {
+          var hasKCPSessionValues = Object.keys(sessionStorage).some(function(key){
+            return key.startsWith('kcpa_');
+          })
+
+          // kcp 관련 session이 남아있다면 SIGNOUT 시키기
+          if (hasKCPSessionValues) {
+            kcpLog('[KCP] clear kcp sessionStorage');
+            kcpAnalytics.updateSignoutSession();
+          }
+        })
+
+        $('.login_menu, .sign-up-link').on('click', function(e) {
+          e.preventDefault();
+          var url = $(this).attr('href');
+          var pathname = window.location.pathname;
+
+          if (pathname !== '/') {
+            url += '?next=' + pathname;
+          }
+          window.location.href = url;
+        });
+      </script>
+      <!-- misc script end-->
+      
+      
+      </script>
+      <script id="odk-web-version">
+        window.ODK_WEB_VERSION = '2021.4.0'
+      </script>
+      
+    
+
+    <!-- Page specific javascript -->
+    <!-- HAVE_NO_IDEA -->
+    <!-- TODO: implement this with relevant logic -->
+    <script>var is_bot = false;</script>
+    <!-- HAVE_NO_IDEA end -->
+    
+  <script type="text/javascript" src="https://production-static.ondemandkorea.com/vendor/js/slick/slick.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+
+  <script src="https://production-static.ondemandkorea.com/CACHE/js/output.bf9c019b0085.js"></script>
+  <script>
+    odkEpisode.setPageDataUrl('/includes15/episode_page/golden-time-signal_983606_en_-00000000');
+    odkEpisode.loadVideos(1);
+  </script>
+
+  
+
+  
+  <script src="https://production-static.ondemandkorea.com/CACHE/js/output.ed8efc4146dc.js"></script>
+  <script>
+    jwplayer.key="G5AxXru4aWvxlEQF3m0Ymp4TgLjljSJ/b3XpTw==";
+    odkPlayer.setConfig(
+      '983606',
+      '',
+      '',
+      ['https://www.ondemandkorea.com/includes/daily_1x1.php?parent=450&program=8042&post_id=983606&post_name=golden-time-signal-e21'],
+      'en',
+      0,
+      0,
+      {
+        smart_tv_error_message: 'The video you are watching has been paused due to a media banner ad. Press the play button to continue watching the video. If a media ad is playing in the banner, please stop the ad and play the video.'
+      },
+      'cloudfront',
+      'https://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/114479492/odk_player&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=0&ad_rule=1&ad_type=video&vad_type=linear&cmsid=2533809&vid=983606&correlator=602319&url=http%3A%2F%2Fwww.ondemandkorea.com%2Fgolden-time-signal-e21.html&cust_params=category%3Ddocumentary%26program%3Dgolden-time-signal%26episode%3Dgolden-time-signal-e21%26platform%3Dodk_web%26lang%3Den%26kocowa%3Dfalse%26partner%3Dmbn%26membership%3Dguest%26plan%3Dfree%26customAdCue%3D0'
+    )
+    odkPlayer.init([{'tracks': [], 'sources': [{'file': 'https://hls.ondemandkorea.com/v1/202107/documentary/golden-time-signal/golden-time-signal-e21/playlist_720p.m3u8'}]}]);
+
+    var isPremiumMember = !!0
+
+    if(isPremiumMember){
+      $('#playback_app').addClass('premium-member')
+    }
+    // focus video player
+    jwplayer('video_player').on('play',function() {
+      if( $('#video_player video.jw-video:first').length === 1 ) {
+        $('#video_player video.jw-video:first').focus();
+      }
+    });
+  </script>
+  
+
+
+
+    
+  </body>
+  <!-- GIT_ID: 34b6ac18868101540752bbeeef7f5db47d490569 -->
+</html>
