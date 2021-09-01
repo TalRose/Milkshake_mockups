@@ -961,7 +961,7 @@ textarea {
 }
 @font-face {
   font-family: 'NarkisBlock';
-  src: url('/images/fonts/NarkissBlock-Medium.woff2') format('woff2'), url('/images/fonts/NarkissBlock-Medium.woff') format('woff'), url('/images/fonts/NarkissBlock-Medium.ttf') format('truetype');
+  src: url('https://www.ynet.co.il/images/fonts/NarkissBlock-Medium.woff2') format('woff2'), url('https://www.ynet.co.il/images/fonts/NarkissBlock-Medium.woff') format('woff'), url('https://www.ynet.co.il/images/fonts/NarkissBlock-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
