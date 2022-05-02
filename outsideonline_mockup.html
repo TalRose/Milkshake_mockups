@@ -1,0 +1,1376 @@
+
+<!DOCTYPE html>
+<html class="no-js no-svg" lang="en-US">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-d6714aecd50e6990d34",applicationID:"1357970914"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="pingback" href="https://www.outsideonline.com/xmlrpc.php" />
+  <meta name="google-site-verification" content="AltUrEwPn1GcXYUaHGnHR9aaM3zNhF2jC6mjfFKtvSs" />
+
+          
+<script async src="data:text/javascript,var%20style%20%3D%20document.createElement%28%27style%27%29%3B%0Aif%20%28document.cookie.indexOf%28%27_rm%3Dtrue%27%29%20%3D%3D%3D%20-1%29%20%7B%0A%20%20%20%20style.innerText%20%2B%3D%20%27.js-thin-banner%20%7Bdisplay%3A%20block%20%21important%7D%27%3B%7D%20else%20%7B%0A%20%20%20%20style.innerText%20%3D%20%27.o-content-cta%20%7Bdisplay%3A%20none%20%21important%7D%27%3B%0A%7D%0Aif%20%28style.innerText%29%20document.head.appendChild%28style%29%3B%0A"></script>
+
+    
+
+
+
+  
+  <!-- OneTrust Cookies Consent Notice start -->
+  <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="21ad0d5c-740d-4c8d-9f0b-5fe7c476b948" defer></script>
+  <script type="text/javascript">
+  function OptanonWrapper() { }
+  </script>
+  <!-- OneTrust Cookies Consent Notice end  -->
+
+
+
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v17.3 (Yoast SEO v17.3) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Could One of These Be Our Next National Park? - Outside Online</title>
+	<meta name="description" content="Our national parks are overcrowded, especially in summer. One solution is to create more of them. Here are the regions that get our votes." />
+	<link rel="canonical" href="https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Could One of These Be Our Next National Park?" />
+	<meta property="og:description" content="Our national parks are overcrowded, especially in summer. One solution is to create more of them. Here are the regions that get our votes." />
+	<meta property="og:url" content="https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/" />
+	<meta property="og:site_name" content="Outside Online" />
+	<meta property="article:published_time" content="2022-05-02T10:30:34+00:00" />
+	<meta property="article:modified_time" content="2022-04-29T21:39:33+00:00" />
+	<meta property="og:image" content="https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg?width=1200" />
+	<meta property="og:image:width" content="2400" />
+	<meta property="og:image:height" content="1350" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.outsideonline.com/#organization","name":"Outside","url":"https://www.outsideonline.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://www.outsideonline.com/#logo","inLanguage":"en-US","url":"https://www.outsideonline.com/wp-content/uploads/2021/07/logo-outside.png","contentUrl":"https://www.outsideonline.com/wp-content/uploads/2021/07/logo-outside.png","width":1200,"height":306,"caption":"Outside"},"image":{"@id":"https://www.outsideonline.com/#logo"}},{"@type":"WebSite","@id":"https://www.outsideonline.com/#website","url":"https://www.outsideonline.com/","name":"Outside Online","description":"Live Bravely","publisher":{"@id":"https://www.outsideonline.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.outsideonline.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#primaryimage","inLanguage":"en-US","url":"https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg","contentUrl":"https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg","width":2400,"height":1350,"caption":"There are currently two active bills aiming to change the title of Chiricahua National Monument, often touted as a \u201cwonderland of rocks.\u201d"},{"@type":"WebPage","@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#webpage","url":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/","name":"Could One of These Be Our Next National Park? - Outside Online","isPartOf":{"@id":"https://www.outsideonline.com/#website"},"primaryImageOfPage":{"@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#primaryimage"},"datePublished":"2022-05-02T10:30:34+00:00","dateModified":"2022-04-29T21:39:33+00:00","description":"Our national parks are overcrowded, especially in summer. One solution is to create more of them. Here are the regions that get our votes.","breadcrumb":{"@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/"]}]},{"@type":"BreadcrumbList","@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.outsideonline.com/"},{"@type":"ListItem","position":2,"name":"Could One of These Be Our Next National Park?"}]},{"@type":"Article","@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#article","isPartOf":{"@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#webpage"},"author":{"@id":"https://www.outsideonline.com/#/schema/person/750613e900de65e16df5a959c10319ac"},"headline":"Could One of These Be Our Next National Park?","datePublished":"2022-05-02T10:30:34+00:00","dateModified":"2022-04-29T21:39:33+00:00","mainEntityOfPage":{"@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#webpage"},"wordCount":1116,"publisher":{"@id":"https://www.outsideonline.com/#organization"},"image":{"@id":"https://www.outsideonline.com/adventure-travel/national-parks/next-national-park/#primaryimage"},"thumbnailUrl":"https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg","keywords":["National Parks","Nature","Politics","Public Lands"],"articleSection":["National Parks"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.outsideonline.com/#/schema/person/750613e900de65e16df5a959c10319ac","name":"mturner"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.outsideonline.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='sailthru-subscribe-widget-styles-css'  href='https://www.outsideonline.com/wp-content/plugins/sailthru-widget/css/widget.subscribe.css?ver=5.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='sage/ool-styles.css-css'  href='https://www.outsideonline.com/wp-content/themes/outside-child/dist/styles/ool-styles_38f83945.css' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://www.outsideonline.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.outsideonline.com/wp-json/wp/v2/posts/2574878" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.outsideonline.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.outsideonline.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.1" />
+<link rel='shortlink' href='https://www.outsideonline.com/?p=2574878' />
+<link rel="alternate" type="application/json+oembed" href="https://www.outsideonline.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.outsideonline.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F&#038;format=xml" />
+
+
+<!-- BEGIN Sailthru Horizon Meta Information -->
+<meta name="sailthru.date" content="2022-05-02 04:30:34" />
+<meta name="sailthru.title" content="Could One of These Be Our Next National Park?" />
+<meta name="sailthru.tags" content=",National Parks,Nature,Politics,Public Lands,National Parks,Emily Pennington" />
+<meta name="sailthru.author" content="mturner" />
+<meta name="sailthru.description" content="Our national parks are overcrowded, especially in summer. One solution is to create more of them. Here are the regions that get our votes." />
+<meta name="sailthru.image.full" content="https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg" />
+<meta name="sailthru.image.thumb" content="https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg" />
+<!-- END Sailthru Horizon Meta Information -->
+
+
+<!-- BEGIN Parse.ly 2.6.0 -->
+<script type="application/ld+json">
+{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/next-national-park\/"},"headline":"Could One of These Be Our Next National Park?","url":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/next-national-park\/","thumbnailUrl":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/04\/chiricahua-colorful-landscape_h.jpg","image":{"@type":"ImageObject","url":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/04\/chiricahua-colorful-landscape_h.jpg"},"dateCreated":"2022-05-02T10:30:34Z","datePublished":"2022-05-02T10:30:34Z","dateModified":"2022-05-02T10:30:34Z","articleSection":"Travel - National Parks","author":[{"@type":"Person","name":"Emily Pennington"}],"publisher":{"@type":"Organization","name":"Outside Online","logo":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2021\/07\/favicon-194x194-1.png"},"keywords":["editor: mturner","parent_category: Travel","tag: National Parks","tag: Nature","tag: Politics","tag: Public Lands","type: Stack"]}
+</script>
+<!-- END Parse.ly -->
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><script type="text/javascript">var sailthru_vars = {"ajaxurl":"https:\/\/www.outsideonline.com\/wp-admin\/admin-ajax.php"}</script><link rel="icon" href="https://www.outsideonline.com/wp-content/uploads/2021/07/favicon-194x194-1.png" sizes="32x32" />
+<link rel="icon" href="https://www.outsideonline.com/wp-content/uploads/2021/07/favicon-194x194-1.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.outsideonline.com/wp-content/uploads/2021/07/favicon-194x194-1.png" />
+<meta name="msapplication-TileImage" content="https://www.outsideonline.com/wp-content/uploads/2021/07/favicon-194x194-1.png" />
+		<style type="text/css" id="wp-custom-css">
+			.home .u-breakout .c-newsletter-signup {
+	display: none !important;
+}
+
+.c-main-header__utility--nav a {
+	position: relative;
+}
+
+.c-main-header__utility--nav a span {
+	color: red;
+	position: absolute;
+	font-size: 9px;
+	top: -9px;
+	right: 0;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.c-main-header__utility--nav a small {
+	font-size: 9px;
+}		</style>
+		
+    <!-- global js vars -->
+<script id="js_gpt_ad_vars">
+    var gpt_ad_vars = {"id":"21732621108","property":"outside_online","wordcount":"300","uam":"","hb":"","abv":"ool","disableAds":false,"targets":{"env":"production","ID":"2574878","Type":"post-stack","Title":"Could One of These Be Our Next National Park?","Category":"adventure-travel","Subcategory":"national-parks","Tag":"national-parks,nature,politics,public-lands","ad_cat":""}};
+  </script><script id="js_analytics_vars">
+    var analytics_vars = {"domain":"outside-online","segmentID":"JirxYpxJvNYS4HBS7983fVFYOAzz5drF","metarouterID":"JirxYpxJvNYS4HBS7983fVFYOAzz5drF","metarouterURL":"cdn.metarouter.io\/outside\/v1\/JirxYpxJvNYS4HBS7983fVFYOAzz5drF.js.gz","metarouterPercentage":"100","status":"publish"};
+  </script><script id="js_gtm_id">
+    var gtm_id = "GTM-K4NWW8";
+  </script><script id="js_jw_id">
+    var jw_id = "D213qQ0J";
+  </script><script id="js_jw_membership_id">
+    var jw_membership_id = "5HDK2QkJ";
+  </script><script id="js_ad_tag">
+    var ad_tag = "https://pubads.g.doubleclick.net/gampad/ads?iu=/21732621108/outside_online/pre-roll-ool&description_url=[placeholder]&tfcd=0&npa=0&sz=400x300%7C640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
+  </script><script id="js_ad_mid_tag">
+    var ad_mid_tag = "https://pubads.g.doubleclick.net/gampad/ads?iu=/21732621108/outside_online/mid-roll-ool&description_url=[placeholder]&tfcd=0&npa=0&sz=400x300%7C640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
+  </script><script id="js_opt_id">
+    var opt_id = "";
+  </script><script id="js_pom_dd">
+    var pom_dd = {"env":"production","applicationId":"e5a429c9-6926-42bc-ac54-c8c79f3e1e2c","clientToken":"pub6c00d3924c75205b15bcd9922d69d379"};
+    var app_css = "https://www.outsideonline.com/wp-content/themes/outside-child/dist/styles/app_38f83945.css";
+  </script>  
+  </head>
+  <body class="body post-template-default single single-post postid-2574878 single-format-standard next-national-park site--outside-online site-property--outside-online " data-template="base.twig">
+    <div class="js-ad js-ad-skip-placeholder" data-child-zone="pixel-ool" data-size="[[1,1]]"></div>
+    <a class="skip-link screen-reader-text visually-hidden" href="#content">Skip to content</a>
+    
+<header role="banner" class="c-header c-main-header c-main-header--fixed">
+  <div class="l-wrap c-main-header__utility">
+  <div class="c-main-header__utility--inner u-flex u-align-items--center u-justify-content--space-between">
+    <div class="c-main-header__utility--inner--left u-flex u-align-items--center">
+      <div class="c-main-header__utility--logo">
+        <span>Outside</span>
+      </div>
+            <button class="c-main-header__mega-trigger o-icon o-icon--small js-toggle u-space--right" data-toggled=".c-main-header" data-prefix="c-mega-" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-mega-search", "type": "button"}}'><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FFD204" fill-rule="nonzero" cx="10" cy="10" r="10"/><path fill="#000" d="M15.454 8.546l-1.272-1.273L10 11.453l-4.182-4.18-1.273 1.272L10 14l5.456-5.454z"/></g></svg>
+</button>
+      <ul class="c-main-header__utility--nav u-spacing--right u-text-transform--upper u-flex u-color--dark-black u-hide-until--l">
+        <li><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-tv", "type": "link"}}' href="https://watch.outsideonline.com">Watch</a></li>
+        <li><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-learn", "type": "link"}}' href="https://learn.outsideonline.com">Learn</a></li>
+        <li><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-podcasts", "type": "link"}}' href="https://www.velonews.com/podcast-directory/">Podcasts</a></li>
+        <li><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-maps", "type": "link"}}' href="https://www.gaiagps.com">Maps</a></li>
+        <li><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-events", "type": "link"}}' href="https://www.athletereg.com/events">Events</a></li>
+        <li><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-shop", "type": "link"}}' href="https://www.getcairn.com/outside-shop">Shop</a></li>
+        <li><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-nft", "type": "link"}}' href="https://outside.io"><span>New</span> NFT<small>s</small></a></li>
+        <li class="c-main-header__utility--outsideplus"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "name": "top-nav-outside", "type": "link"}}' href="/outsideplus">Outside&#x2b;</a></li>
+      </ul>
+    </div>
+    <div class="c-main-header__utility--inner--right">
+      <div class="u-flex u-text-transform--upper">
+        <button class="c-main-header__app-trigger">
+          <a class="o-pill o-pill--gold" data-analytics-event="click" href="/outsideplus" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "top-nav-join-nav", "type": "button"}}'>Join Now</a>
+          <a class="c-main-header__app-trigger--signin u-font-weight--bold u-display--inline-block u-text-transform--upper u-space--half--left u-letter-spacing--1 u-color--dark-black" data-analytics-event="click" href="#_login" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "top-nav-sign-in-nav", "type": "button"}}'>Sign In</a>
+                    <span class="o-icon u-icon--rivt js-toggle js-toggle--app-menu" data-prevent-default data-toggled="body, .c-main-header__app-trigger" data-prefix="app-menu" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "top-nav-user-menu", "type": "button"}}'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<g><path d="M500,10C228.8,10,10,228.8,10,500c0,271.3,218.8,490,490,490c271.3,0,490-218.8,490-490C990,228.8,771.3,10,500,10z M804.5,822C794,657.5,619,613.8,619,613.8s106.8-71.8,68.3-217c-19.3-75.3-91-131.3-189-131.3c-98,0-169.7,56-189,131.3c-38.5,145.2,68.2,217,68.2,217S202.5,652.3,192,822C109.7,739.7,57.3,626,57.3,500C57.3,255,255,57.3,500,57.3C745,57.3,942.8,255,942.8,500C942.8,626,890.2,739.7,804.5,822z"/></g>
+</svg></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="c-main-header__mega">
+    <div class="c-mega-menu">
+
+    <button class="c-mega-menu__close o-icon u-icon--l u-path-fill--black js-toggle" data-remove-class="c-mega--is-active" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "burger", "type": "burger"}}'><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
+</svg>
+</button>
+
+  <div class="c-mega-menu__wrap l-wrap">
+    <div bp="l-container" class="l-container--mid u-position--relative">
+      <div bp="grid" class="c-mega-menu__inner">
+
+        <div bp="4@lg" class="u-hide-after--l">
+          <div class="c-mega-menu__inner--last u-text-align--center">
+            <h3 class="u-space--half--bottom u-color--dark-black">Become a Member</h3>
+            <p class="u-space--and-half--bottom">Get access to more than 30 brands, premium video, exclusive content, events, mapping, and more.</p>
+            <div class="u-flex u-flex-directon--column u-space--bottom">
+              <a href="/outsideplus" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/outsideplus", "domain": "<<analytics_vars.domain>>", "name": "mega-join-outside-plus", "type": "link"}}' class="o-button o-button--tertiary--black u-space--bottom o-button--small">Join Outside+</a>
+              <a href="/#_signup" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/#_signup", "domain": "<<analytics_vars.domain>>", "name": "mega-create-free-account", "type": "link"}}' data-remove-class="c-mega--is-active" class="js-toggle js-not-stop o-button o-button--tertiary--border--black js-toggle">Create Free Account</a>
+            </div>
+            <h6 data-remove-class="c-mega--is-active" class="js-toggle js-not-stop">Already have an account? <a href="/#_login" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/#_login", "domain": "<<analytics_vars.domain>>", "name": "mega-signin", "type": "link"}}' class="u-color--light-red u-font--xs--plus u-text-transform--upper u-font-weight--bold">Sign In</a></h6>
+          </div>
+        </div>
+
+        <div bp="4@lg" class="c-mega-menu__inner--column">
+          <div class="c-mega-menu__inner--block">
+            <h5 class="u-color--dark-black">Outside Watch</h5>
+            <a href="https://watch.outsideonline.com" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://watch.outsideonline.com", "domain": "<<analytics_vars.domain>>", "name": "mega-outsidetv", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-color--dark-black u-font--xs--plus u-letter-spacing--1">Premium Films and Live TV</a><br>
+            <a href="https://www.outsidetvcampfire.com/home" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsidetvcampfire.com/home", "domain": "<<analytics_vars.domain>>", "name": "mega-capfire", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-color--dark-black u-font--xs--plus u-letter-spacing--1">Campfire</a>
+          </div>
+
+          <div class="c-mega-menu__inner--block">
+            <h5 class="u-color--dark-black">Outside Learn</h5>
+            <a href="https://learn.outsideonline.com/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://learn.outsideonline.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-outside-learn", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-color--dark-black u-font--xs--plus u-letter-spacing--1">Expand your Skills with Online Courses</a>
+          </div>
+
+          <div class="c-mega-menu__inner--block">
+            <h5 class="u-color--dark-black">Podcasts</h5>
+            <a href="https://www.outsideonline.com/podcasts" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/podcasts", "domain": "<<analytics_vars.domain>>", "name": "mega-podcasts", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-color--dark-black u-font--xs--plus u-letter-spacing--1">The Outside Podcast</a>
+          </div>
+
+          <div class="c-mega-menu__inner--block">
+            <h5 class="c-menu__heading u-font--xl u-color--dark-black">Maps</h5>
+            <a href="https://www.gaiagps.com" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.gaiagps.com", "domain": "<<analytics_vars.domain>>", "name": "mega-map", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-color--dark-black u-font--xs u-letter-spacing--1">Get the Free Gaia GPS App</a>
+            <br>
+            <a href="https://www.trailforks.com/apps/map/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.trailforks.com/apps/map/", "domain": "<<analytics_vars.domain>>", "name": "mega-trailforks-app", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-color--dark-black u-font--xs u-letter-spacing--1">Get the Free Trailforks App</a>
+          </div>
+        </div>
+
+        <div bp="4@lg" class="c-mega-menu__inner--column">
+          <div class="c-mega-menu__inner--block">
+            <h5 class="u-color--dark-black">Events</h5>
+            <a href="https://www.athletereg.com/events" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.athletereg.com/events", "domain": "<<analytics_vars.domain>>", "name": "mega-events", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-font--xs--plus u-color--dark-black u-letter-spacing--1">Find Your Event</a>
+          </div>
+
+          <div class="c-mega-menu__inner--block">
+            <h5 class="u-color--dark-black"><span>New</span> NFT<small>s</small></h5>
+            <a href="https://outside.io" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://outside.io", "domain": "<<analytics_vars.domain>>", "name": "mega-outside-plus", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-font--xs--plus u-color--dark-black u-letter-spacing--1">Discover NFT Market</a>
+          </div>
+
+          <div class="c-mega-menu__inner--block">
+            <h5 class="u-color--dark-black">Outside+</h5>
+            <a href="/outsideplus" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/outsideplus", "domain": "<<analytics_vars.domain>>", "name": "mega-outside-plus", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-font--xs--plus u-color--dark-black u-letter-spacing--1">See Membership Programs</a>
+          </div>
+
+          <div class="c-mega-menu__inner--block">
+            <h5 class="c-menu__heading u-font--xl u-color--dark-black">Shop</h5>
+            <a href="https://www.getcairn.com/outside-shop" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.getcairn.com/outside-shop", "domain": "<<analytics_vars.domain>>", "name": "mega-shop", "type": "link"}}' class="u-text-transform--upper u-font-weight--bold u-font--xs u-color--dark-black u-letter-spacing--1">Discover Outdoor Products</a>
+            <br><br>
+          </div>
+        </div>
+
+        <div bp="4@lg" class="c-mega-menu--member u-hide-until--l">
+          <div class="c-mega-menu__inner--last u-text-align--center">
+            <h3 class="u-space--half--bottom u-color--dark-black">Become a Member</h3>
+            <p class="u-space--and-half--bottom">Get access to more than 30 brands, premium video, exclusive content, events, mapping, and more.</p>
+            <div class="u-flex u-flex-directon--column u-space--bottom">
+              <a href="/outsideplus" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/outsideplus", "domain": "<<analytics_vars.domain>>", "name": "mega-join-outside-plus", "type": "link"}}' class="o-button o-button--tertiary--black u-space--bottom o-button--small">Join Outside+</a>
+              <a href="/#_signup" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/#_signup", "domain": "<<analytics_vars.domain>>", "name": "mega-free-account", "type": "link"}}' data-remove-class="c-mega--is-active" class="js-toggle js-not-stop o-button o-button--tertiary--border--black js-toggle">Create Free Account</a>
+            </div>
+            <h6 data-remove-class="c-mega--is-active" class="js-toggle js-not-stop u-font--xs--plus">Already have an account? <a href="/#_login" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/#_login", "domain": "<<analytics_vars.domain>>", "name": "mega-signin", "type": "link"}}' class="u-color--light-red u-font--xs--plus u-text-transform--upper u-font-weight--bold">Sign In</a></h6>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="u-space--top u-space--and-half--bottom"><a href="" class=" u-color--dark-black">Brands</a></h3>
+
+      <section class="c-mega-menu__brands u-hide-until--l">
+        <div bp="grid 3@md">
+          <div>
+            <h5 class="u-space--bottom u-font-weight--bold u-text-transform--upper u-color--dark-gold u-font--xs--plus u-letter-spacing--2">Outdoor</h5>
+            <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.backpacker.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-backpacker-link", "type": "link"}}' href="https://www.backpacker.com/">Backpacker</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.climbing.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-climbing-link", "type": "link"}}' href="https://www.climbing.com/">Climbing</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://flyfilmtour.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-flyfilmtour-link", "type": "link"}}' href="https://flyfilmtour.com/">Fly Fishing Film Tour</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.gaiagps.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-gaiagps-link", "type": "link"}}' href="https://www.gaiagps.com/">Gaia GPS</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.nationalparktrips.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-npt-link", "type": "link"}}' href="https://www.nationalparktrips.com/">National Park Trips</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-outsideonline-link", "type": "link"}}' href="https://www.outsideonline.com/">Outside</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://watch.outsideonline.com", "domain": "<<analytics_vars.domain>>", "name": "mega-outsidetv-link", "type": "link"}}' href="https://watch.outsideonline.com">Outside Watch</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.skimag.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-ski-link", "type": "link"}}' href="https://www.skimag.com/">Ski</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://warrenmiller.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-warrenmiller-link", "type": "link"}}' href="https://warrenmiller.com/">Warren Miller Entertainment</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="u-space--bottom u-font-weight--bold u-text-transform--upper u-color--dark-gold u-font--xs--plus u-letter-spacing--2">Healthy Living</h5>
+            <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.cleaneatingmag.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-ce-link", "type": "link"}}' href="https://www.cleaneatingmag.com/">Clean Eating</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.oxygenmag.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-oxy-link", "type": "link"}}' href="https://www.oxygenmag.com/">Oxygen</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.vegetariantimes.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-vt-link", "type": "link"}}' href="https://www.vegetariantimes.com/">Vegetarian Times</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.yogajournal.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-yj-link", "type": "link"}}' href="https://www.yogajournal.com/">Yoga Journal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="u-space--bottom u-font-weight--bold u-text-transform--upper u-color--dark-gold u-font--xs--plus u-letter-spacing--2">Endurance</h5>
+            <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-beta-link", "type": "link"}}' href="https://www.betamtb.com/">Beta</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-peloton-link", "type": "link"}}' href="https://pelotonmagazine.com/">Peloton Magazine</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-roll-link", "type": "link"}}' href="https://www.rollmassif.com/">Roll Massif</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-trail-link", "type": "link"}}' href="https://trailrunnermag.com/">Trail Runner</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-tri-link", "type": "link"}}' href="https://www.triathlete.com/">Triathlete</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-vn-link", "type": "link"}}' href="https://www.velonews.com/">VeloNews</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-wr-link", "type": "link"}}' href="https://www.womensrunning.com/">Women's Running</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="u-space--bottom u-font-weight--bold u-text-transform--upper u-color--dark-gold u-font--xs--plus u-letter-spacing--2">Industry</h5>
+            <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.athletereg.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-athletereg-link", "type": "link"}}' href="https://www.athletereg.com/">athleteReg</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.bicycleretailer.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-bicycleretailer-link", "type": "link"}}' href="https://www.bicycleretailer.com/">Bicycle Retailer & Industry News</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.getcairn.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-cairn-link", "type": "link"}}' href="https://www.getcairn.com/">Cairn</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.finisherpix.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-finisherpix-link", "type": "link"}}' href="https://www.finisherpix.com/">FinisherPix</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.ideafit.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-idea-link", "type": "link"}}' href="https://www.ideafit.com/">Idea</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.nastar.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-nastar-link", "type": "link"}}' href="https://www.nastar.com/">NASTAR</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsidebusinessjournal.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-obj-link", "type": "link"}}' href="https://www.outsidebusinessjournal.com/">Outside Business Journal</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.velopress.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-vp-link", "type": "link"}}' href="https://www.velopress.com/">VeloPress</a></li>
+              <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.veloswap.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-veloswap-link", "type": "link"}}' href="https://www.veloswap.com/">VeloSwap</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="u-hide-after--l">
+        <div class="c-menu-accordion">
+          <div class="c-menu-accordion__item">
+            <div data-accordion-title class="c-menu-accordion__title u-flex u-font-weight--bold u-color--black--light u-justify-content--space-between">Outdoor</div>
+            <div class="c-menu-accordion__body" style="min-height: 0;">
+              <div class="c-menu-accordion__content">
+                <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.backpacker.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-backpacker-link-accordion", "type": "link"}}' href="https://www.backpacker.com/">Backpacker</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.climbing.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-climbing-link-accordion", "type": "link"}}' href="https://www.climbing.com/">Climbing</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://flyfilmtour.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-flyfilmtour-link-accordion", "type": "link"}}' href="https://flyfilmtour.com/">Fly Fishing Film Tour</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.gaiagps.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-gaiagps-link-accordion", "type": "link"}}' href="https://www.gaiagps.com/">Gaia GPS</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.nationalparktrips.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-npt-link-accordion", "type": "link"}}' href="https://www.nationalparktrips.com/">National Park Trips</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-outsideonline-link-accordion", "type": "link"}}' href="https://www.outsideonline.com/">Outside</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://watch.outsideonline.com", "domain": "<<analytics_vars.domain>>", "name": "mega-outsidetv-link-accordion", "type": "link"}}' href="https://watch.outsideonline.com">Outside Watch</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.skimag.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-ski-link-accordion", "type": "link"}}' href="https://www.skimag.com/">Ski</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://warrenmiller.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-warrenmiller-link-accordion", "type": "link"}}' href="https://warrenmiller.com/">Warren Miller Entertainment</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="c-menu-accordion__item">
+            <div data-accordion-title class="c-menu-accordion__title u-flex u-font-weight--bold u-color--black--light u-justify-content--space-between">Healthy Living</div>
+            <div class="c-menu-accordion__body" style="min-height: 0;">
+              <div class="c-menu-accordion__content">
+                <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.cleaneatingmag.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-ce-link-accordion", "type": "link"}}' href="https://www.cleaneatingmag.com/">Clean Eating</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.oxygenmag.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-oxy-link-accordion", "type": "link"}}' href="https://www.oxygenmag.com/">Oxygen</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.vegetariantimes.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-vt-link-accordion", "type": "link"}}' href="https://www.vegetariantimes.com/">Vegetarian Times</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.yogajournal.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-yj-link-accordion", "type": "link"}}' href="https://www.yogajournal.com/">Yoga Journal</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="c-menu-accordion__item">
+            <div data-accordion-title class="c-menu-accordion__title u-flex u-font-weight--bold u-color--black--light u-justify-content--space-between">Endurance</div>
+            <div class="c-menu-accordion__body" style="min-height: 0;">
+              <div class="c-menu-accordion__content">
+                <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-beta-link-accordion", "type": "link"}}' href="https://www.betamtb.com/">Beta</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-peloton-link-accordion", "type": "link"}}' href="https://pelotonmagazine.com/">Peloton Magazine</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-roll-link-accordion", "type": "link"}}' href="https://www.rollmassif.com/">Roll Massif</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-trail-link-accordion", "type": "link"}}' href="https://trailrunnermag.com/">Trail Runner</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-tri-link-accordion", "type": "link"}}' href="https://www.triathlete.com/">Triathlete</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-vn-link-accordion", "type": "link"}}' href="https://www.velonews.com/">VeloNews</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "mega-wr-link-accordion", "type": "link"}}' href="https://www.womensrunning.com/">Women's Running</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="c-menu-accordion__item">
+            <div data-accordion-title class="c-menu-accordion__title u-flex u-font-weight--bold u-color--black--light u-justify-content--space-between">Industry</div>
+            <div class="c-menu-accordion__body" style="min-height: 0;">
+              <div class="c-menu-accordion__content">
+                <ul class="c-mega-menu__brands--list u-text-transform--upper u-font-weight--bold u-font--xs--plus">
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.athletereg.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-athletereg-link-accordion", "type": "link"}}' href="https://www.athletereg.com/">athleteReg</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.bicycleretailer.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-bicycleretailer-link-accordion", "type": "link"}}' href="https://www.bicycleretailer.com/">Bicycle Retailer & Industry News</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.getcairn.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-cairn-link-accordion", "type": "link"}}' href="https://www.getcairn.com/">Cairn</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.finisherpix.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-finisherpix-link-accordion", "type": "link"}}' href="https://www.finisherpix.com/">FinisherPix</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.ideafit.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-idea-link-accordion", "type": "link"}}' href="https://www.ideafit.com/">Idea</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.nastar.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-nastar-link-accordion", "type": "link"}}' href="https://www.nastar.com/">NASTAR</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsidebusinessjournal.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-obj-link-accordion", "type": "link"}}' href="https://www.outsidebusinessjournal.com/">Outside Business Journal</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.velopress.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-vp-link-accordion", "type": "link"}}' href="https://www.velopress.com/">VeloPress</a></li>
+                  <li class="u-color--dark-black u-space--half--bottom"><a data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.veloswap.com/", "domain": "<<analytics_vars.domain>>", "name": "mega-veloswap-link-accordion", "type": "link"}}' href="https://www.veloswap.com/">VeloSwap</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+  </div>
+  
+
+  <div class="c-thinbanner js-thin-banner">
+    <div class="l-wrap">
+      <a href="https://www.getcairn.com/pages/gear-up-give-back?utm_medium=internal-referral&utm_source=outside&utm_term=sticky_banner&utm_campaign=earth-day-2022" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "thinbanner-cta", "type": "link"}}'>
+        <div class="c-thinbanner__inner u-position--relative">
+          <div class="c-thinbanner__title">
+            <p class="u-text-transform--upper">
+              Gear Up, Give Back
+            </p>
+          </div>
+          <span class="c-thinbanner__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.4042 0V6.51H0.230203V10.962H6.4042V17.472H11.6122V10.962H17.7862V6.51H11.6122V0H6.4042Z" fill="#333333"/>
+</svg></span>
+          <div class="c-thinbanner__text">
+            <p class="u-font-weight--bold">
+              Give your old gear new life this Earth Day
+            </p>
+          </div>
+                      <span class="c-thinbanner__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.4042 0V6.51H0.230203V10.962H6.4042V17.472H11.6122V10.962H17.7862V6.51H11.6122V0H6.4042Z" fill="#333333"/>
+</svg></span>
+            <div class="c-thinbanner__cta">
+              <p class="u-text-transform--upper">
+                Learn More
+                <span class="c-thinbanner__cta__icon"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M27.4155 7.56666C27.78 7.20053 27.78 6.60691 27.4155 6.24078L21.4758 0.274594C21.1113 -0.0915308 20.5204 -0.0915307 20.1559 0.274594C19.7914 0.64072 19.7914 1.23428 20.1559 1.60041L25.4356 6.90372L20.1559 12.207C19.7914 12.5731 19.7914 13.1667 20.1559 13.5328C20.5204 13.899 21.1113 13.899 21.4758 13.5328L27.4155 7.56666ZM-2.60792e-07 7.84122L26.7556 7.84122L26.7556 5.96622L-2.61156e-07 5.96622L-2.60792e-07 7.84122Z" fill="#FDD20A"/>
+</svg>
+</span>
+              </p>
+            </div>
+                  </div>
+      </a>
+    </div>
+  </div>
+  <div class="c-main-header__wrap l-container--xl">
+    <div class="c-main-header__brand">
+  <div class="c-main-header__brand--logo">
+    <div class="o-logo" role="banner">
+      <a class="o-logo__link" href="https://www.outsideonline.com" data-href-is-logged-in="https://www.outsideonline.com?h=y" rel="home">
+        Outside Online
+      </a>
+    </div>
+  </div>
+  <div class="c-main-header__brand--toggle">
+
+              
+  <button role="button" class="o-button __icon-search js-toggle"    aria-label=Search data-toggled=body data-prefix=search data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","name":"navigation-search","type":"button"}}'>
+            
+  <span class="o-icon o-icon--small" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.41 20.41"><path d="M20.41,19l-5.76-5.76a8.24,8.24,0,1,0-1.41,1.41L19,20.41ZM2,8.2a6.2,6.2,0,1,1,6.2,6.2A6.21,6.21,0,0,1,2,8.2Z"></path></svg>  </span>
+              </button>
+
+        <div class="u-hide-after--l u-space--half--left u-flex u-align-items--center">
+            
+  <button role="button" class="o-button __icon-menu js-toggle"    aria-label=Menu data-toggled=header.c-main-header data-prefix=menu data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","name":"burger","type":"button"}}'>
+            
+  <span class="o-icon o-icon--small" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16"><path d="M0,16V14H24v2ZM0,7H24V9H0ZM0,0H24V2H0Z"/></svg>  </span>
+              </button>
+      </div>
+      <div class="c-main-header__toggled-nav">
+  <div class="c-mobile-menu u-background-color--yellow">
+    <div class="l-wrap">
+      <div bp="container">
+        <button class="c-mobile-menu__close o-close o-icon js-toggle" data-remove-class="menu-is-active" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "burger", "type": "burger"}}'><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
+</svg>
+</button>
+        <div class="c-mobile-menu__inner">
+          <nav role="navigation" aria-label="Primary Menu Mobile">
+            <ul role="menubar" class="c-mobile-menu__list" aria-label="Primary Menu Mobile">
+              <li class="search-item c-mobile-menu__list--item u-flex u-justify-content--space-between u-align-items--center"><span>Search</span>
+                      
+  <button role="button" class="o-button __icon-search js-toggle"    aria-label=Search data-toggled=body data-prefix=search data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","name":"navigation-search","type":"button"}}'>
+            
+  <span class="o-icon o-icon--small" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.41 20.41"><path d="M20.41,19l-5.76-5.76a8.24,8.24,0,1,0-1.41,1.41L19,20.41ZM2,8.2a6.2,6.2,0,1,1,6.2,6.2A6.21,6.21,0,0,1,2,8.2Z"></path></svg>  </span>
+              </button>
+              </a></li>
+                                                <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-taxonomy c-mobile-menu__menu-item-object-category c-mobile-menu__menu-item-2512449 c-mobile-menu__menu-item-has-children">
+                    <a role="menuitem" tabindex="0" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/outdoor-gear/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/outdoor-gear/", "name": "modal-menu", "type": "link"}}'><span>Gear</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-taxonomy c-mobile-menu__menu-item-object-category c-mobile-menu__menu-item-2512446 c-mobile-menu__menu-item-has-children">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/outdoor-adventure/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/outdoor-adventure/", "name": "modal-menu", "type": "link"}}'><span>Adventure</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-taxonomy c-mobile-menu__menu-item-object-category c-mobile-menu__menu-item-2512447 c-mobile-menu__menu-item-has-children">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/health/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/health/", "name": "modal-menu", "type": "link"}}'><span>Health</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-taxonomy c-mobile-menu__menu-item-object-category c-mobile-menu__current-post-ancestor c-mobile-menu__menu-item-2512450 c-mobile-menu__menu-item-has-children">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/adventure-travel/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/adventure-travel/", "name": "modal-menu", "type": "link"}}'><span>Travel</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-taxonomy c-mobile-menu__menu-item-object-category c-mobile-menu__menu-item-2512448 c-mobile-menu__menu-item-has-children">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/culture/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/culture/", "name": "modal-menu", "type": "link"}}'><span>Culture</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-taxonomy c-mobile-menu__menu-item-object-post_tag c-mobile-menu__menu-item-2512455">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/tag/outside-features/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/tag/outside-features/", "name": "modal-menu", "type": "link"}}'><span>Long Reads</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-post_type_archive c-mobile-menu__menu-item-object-video c-mobile-menu__menu-item-2512451">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/video/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/video/", "name": "modal-menu", "type": "link"}}'><span>Videos</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-post_type_archive c-mobile-menu__menu-item-object-podcast c-mobile-menu__menu-item-2512452">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/podcast/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/podcast/", "name": "modal-menu", "type": "link"}}'><span>Podcasts</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-custom c-mobile-menu__menu-item-object-custom c-mobile-menu__menu-item-2528978">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://link.outsideonline.com/join/6du/multisignup" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://link.outsideonline.com/join/6du/multisignup", "name": "modal-menu", "type": "link"}}'><span>Newsletters</span></a>
+                  </li>
+                                  <li class=" c-mobile-menu__menu-item c-mobile-menu__menu-item-type-custom c-mobile-menu__menu-item-object-custom c-mobile-menu__menu-item-2536152">
+                    <a role="menuitem" tabindex="-1" class="c-mobile-menu__list--item" href="https://www.outsideonline.com/adventure-travel/destinations/modern-adventure-trips/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": { "domain": "<<analytics_vars.domain>>", "destination_url": "https://www.outsideonline.com/adventure-travel/destinations/modern-adventure-trips/", "name": "modal-menu", "type": "link"}}'><span>Trips</span></a>
+                  </li>
+                                          </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+    
+  <nav role="navigation" class="c-main-header__nav">
+          <ul class="c-main-header__nav__list">
+                  <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2512449 menu-item-has-children" href="https://www.outsideonline.com/outdoor-gear/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;outdoor-gear&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Gear
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2512446 menu-item-has-children" href="https://www.outsideonline.com/outdoor-adventure/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;outdoor-adventure&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Adventure
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2512447 menu-item-has-children" href="https://www.outsideonline.com/health/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;health&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Health
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-2512450 menu-item-has-children" href="https://www.outsideonline.com/adventure-travel/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Travel
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2512448 menu-item-has-children" href="https://www.outsideonline.com/culture/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;culture&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Culture
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-2512455" href="https://www.outsideonline.com/tag/outside-features/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;tag&#x2F;outside-features&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Long Reads
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-post_type_archive menu-item-object-video menu-item-2512451" href="https://www.outsideonline.com/video/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;video&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Videos
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-post_type_archive menu-item-object-podcast menu-item-2512452" href="https://www.outsideonline.com/podcast/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;podcast&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Podcasts
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-custom menu-item-object-custom menu-item-2528978" href="https://link.outsideonline.com/join/6du/multisignup" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;link.outsideonline.com&#x2F;join&#x2F;6du&#x2F;multisignup","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Newsletters
+          </a>
+                    <li class="c-main-header__nav__item">
+              
+  <a class="o-link c-main-header__nav__link menu-item menu-item-type-custom menu-item-object-custom menu-item-2536152" href="https://www.outsideonline.com/adventure-travel/destinations/modern-adventure-trips/" target="_self"  data-analytics-event=click data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;destinations&#x2F;modern-adventure-trips&#x2F;","domain":"<<analytics_vars.domain>>","name":"main-navigation","type":"link"}}'>
+              Trips
+          </a>
+                  </li>
+      </ul>
+      </nav>
+    <div class="c-main-header__nav--scroll u-fixed u-background-color--white u-full-width">
+  <div class="l-wrap">
+    <div class="c-main-header__nav--scroll--inner l-container l-container--xxl u-justify-content--space-between u-align-items--center u-flex">
+      <div class="c-main-header__nav--scroll--logo u-align-items--center u-flex">
+        <div class="u-space--half--right">
+          <button class="o-menu-toggle js-toggle" aria-label="Menu" data-toggled=".c-main-header" data-prefix="menu" aria-expanded="false">
+  <span class="o-menu-toggle__line"></span>
+  <span class="o-menu-toggle__line"></span>
+  <span class="o-menu-toggle__line"></span>
+</button>
+        </div>
+        <div class="o-logo" role="banner">
+
+  
+  <a class="o-logo__link u-display--block" href="https://www.outsideonline.com" data-href-is-logged-in="https://www.outsideonline.com?h=y" rel="home" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "site-logo", "type": "link"}}'>Outside Online</a>
+</div>
+
+      </div>
+      <div class="c-main-header__nav--main u-flex u-justify-content--center u-align-items--center">
+        <nav class="c-menu c-inline-menu o-scroll-nav u-relative" role="navigation" aria-label="Main Menu">
+  <ul class="c-menu__list o-scroll-nav__links u-padding--zero--left" role="menubar" aria-label="Main Menu">
+                  <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-taxonomy c-menu__menu-item-object-category c-menu__menu-item-2512449 c-menu__menu-item-has-children">
+          <a role="menuitem" tabindex="0" class="c-menu__link" href="https://www.outsideonline.com/outdoor-gear/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/outdoor-gear/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Gear</span></a>
+                      <ul class="c-menu__menu-item--dropdown u-align--left u-padding u-absolute u-background-color--white">
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/gear-news/">Gear News</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/cars-trucks/">Cars &amp; Trucks</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/clothing-apparel/">Apparel</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/bikes-and-biking/">Biking</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/camping/">Camping</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/climbing-gear/">Climbing</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/hiking-gear/">Hiking</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/run/">Running</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/snow-sports-gear/">Snow Sports</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/water-sports-gear/">Water Sports</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-gear/tools/">Tools &amp; Tech</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/gift-guide/gear-picks/">Gear Picks</a>
+                </li>
+                          </ul>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-taxonomy c-menu__menu-item-object-category c-menu__menu-item-2512446 c-menu__menu-item-has-children">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/outdoor-adventure/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/outdoor-adventure/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Adventure</span></a>
+                      <ul class="c-menu__menu-item--dropdown u-align--left u-padding u-absolute u-background-color--white">
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/exploration-survival/">Exploration &amp; Survival</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/environment/">Environment</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/everest/">Everest</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/biking/">Biking</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/climbing/">Climbing</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/hiking-and-backpacking/">Hiking</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/snow-sports/">Snow Sports</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/outdoor-adventure/water-activities/">Water Sports</a>
+                </li>
+                          </ul>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-taxonomy c-menu__menu-item-object-category c-menu__menu-item-2512447 c-menu__menu-item-has-children">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/health/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/health/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Health</span></a>
+                      <ul class="c-menu__menu-item--dropdown u-align--left u-padding u-absolute u-background-color--white">
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/health/nutrition/">Nutrition</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/health/training-performance/">Training &amp; Performance</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/health/wellness/">Wellness</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/health/running/">Running</a>
+                </li>
+                          </ul>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-taxonomy c-menu__menu-item-object-category c-menu__current-post-ancestor c-menu__menu-item-2512450 c-menu__menu-item-has-children">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/adventure-travel/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/adventure-travel/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Travel</span></a>
+                      <ul class="c-menu__menu-item--dropdown u-align--left u-padding u-absolute u-background-color--white">
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/adventure-travel/destinations/">Destinations</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/adventure-travel/advice/">Travel Advice</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/adventure-travel/essays/">Essays</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/adventure-travel/news-analysis/">News and Analysis</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/adventure-travel/national-parks/">National Parks</a>
+                </li>
+                          </ul>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-taxonomy c-menu__menu-item-object-category c-menu__menu-item-2512448 c-menu__menu-item-has-children">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/culture/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/culture/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Culture</span></a>
+                      <ul class="c-menu__menu-item--dropdown u-align--left u-padding u-absolute u-background-color--white">
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/culture/active-families/">Active Families</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/culture/books-media/">Books &amp; Media</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/culture/food/">Food</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/culture/essays-culture/">Essays</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/culture/love-humor/">Love &amp; Humor</a>
+                </li>
+                              <li class="u-space--quarter--bottom">
+                  <a class="u-font--xs" href="https://www.outsideonline.com/culture/opinion/">Opinion</a>
+                </li>
+                          </ul>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-taxonomy c-menu__menu-item-object-post_tag c-menu__menu-item-2512455">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/tag/outside-features/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/tag/outside-features/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Long Reads</span></a>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-post_type_archive c-menu__menu-item-object-video c-menu__menu-item-2512451">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/video/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/video/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Videos</span></a>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-post_type_archive c-menu__menu-item-object-podcast c-menu__menu-item-2512452">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/podcast/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/podcast/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Podcasts</span></a>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-custom c-menu__menu-item-object-custom c-menu__menu-item-2528978">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://link.outsideonline.com/join/6du/multisignup" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://link.outsideonline.com/join/6du/multisignup", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Newsletters</span></a>
+                  </li>
+              <li class="c-menu__menu-item  c-menu__menu-item c-menu__menu-item-type-custom c-menu__menu-item-object-custom c-menu__menu-item-2536152">
+          <a role="menuitem" tabindex="-1" class="c-menu__link" href="https://www.outsideonline.com/adventure-travel/destinations/modern-adventure-trips/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "https://www.outsideonline.com/adventure-travel/destinations/modern-adventure-trips/", "domain": "<<analytics_vars.domain>>", "name": "main-navigation", "type": "link"}}'><span>Trips</span></a>
+                  </li>
+            </ul>
+</nav>
+      </div>
+      <div class="c-main-header__nav--scroll--join u-flex u-text-transform--upper u-justify-content--flex-end u-align-items--center">
+        <button class="c-main-header__app-trigger">
+          <a class="o-pill o-pill--gold" data-analytics-event="click" href="/outsideplus" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "top-nav-sticky-join-nav", "type": "button"}}'>Join Now</a>
+          
+          <a class="c-main-header__app-trigger--signin u-font-weight--bold u-font--xs u-display--inline-block u-text-transform--upper u-space--half--left u-letter-spacing--1 u-color--dark-black" data-analytics-event="click" href="#_login" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "top-nav-sign-in-nav", "type": "button"}}'>Sign In</a>
+          
+          <span class="o-icon u-icon--rivt u-no-padding js-toggle js-toggle--app-menu" data-prevent-default data-toggled="body, .c-main-header__app-trigger" data-prefix="app-menu" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "top-nav-sticky-user-menu", "type": "button"}}'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<g><path d="M500,10C228.8,10,10,228.8,10,500c0,271.3,218.8,490,490,490c271.3,0,490-218.8,490-490C990,228.8,771.3,10,500,10z M804.5,822C794,657.5,619,613.8,619,613.8s106.8-71.8,68.3-217c-19.3-75.3-91-131.3-189-131.3c-98,0-169.7,56-189,131.3c-38.5,145.2,68.2,217,68.2,217S202.5,652.3,192,822C109.7,739.7,57.3,626,57.3,500C57.3,255,255,57.3,500,57.3C745,57.3,942.8,255,942.8,500C942.8,626,890.2,739.7,804.5,822z"/></g>
+</svg></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+    
+<div id="root" class="c-app" data-site-key="Nc8Y8wIc.pNo20zKirnFbJMyZX2QF4JMN0sRDkFsX" data-site-name="Outside"></div>
+  <div class="c-main-header__member-wrapper u-padding--double-and-half--top u-padding--double-and-half--bottom">
+  <div class="l-container--xl">
+    <nav class="c-main-header__nav" role="navigation" aria-label="Outside Feed Menu">
+      <ul class="c-main-header__nav__list" role="menubar" aria-label="Outside Feed Menu">
+        <li class="c-main-header__nav__item">
+          <a href="/#_feed" role="menuitem" class="o-link c-main-header__nav__link"
+          data-analytics-event="click"
+          data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "#_feed", "domain": "<<analytics_vars.domain>>", "name": "myfeed-home-toggle", "type": "link"}}'
+          >Outside Feed</a>
+        </li>
+        <li class="c-main-header__nav__item">
+          <a role="menuitem" class="o-link c-main-header__nav__link current-menu-item" href="/"
+          data-analytics-event="click"
+          data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/#", "domain": "<<analytics_vars.domain>>", "name": "myfeed-home-toggle", "type": "link"}}'
+          >Home</a>
+        </li>
+        <li class="c-main-header__nav__item">
+          <a href="/#_member/content" role="menuitem" class="o-link c-main-header__nav__link"
+          data-analytics-event="click"
+          data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "#_member/content", "domain": "<<analytics_vars.domain>>", "name": "myfeed-home-toggle", "type": "link"}}'
+          >Member Exclusives</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+</header>
+
+
+<div class="c-search-modal">
+        
+  <button role="button" class="o-button c-search-modal__close js-toggle"    aria-label=Close data-toggled=body data-prefix=search>
+            
+  <span class="o-icon o-icon--large" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.71 25.71"><path d="M25.71,1.35,24.36,0,12.85,11.51,1.35,0,0,1.35l11.52,11.5L0,24.36l1.35,1.35,11.5-11.52L24.36,25.71l1.35-1.35L14.19,12.85Z"/></svg>  </span>
+              </button>
+  <div class="c-search-modal__form l-container--s u-padding">
+    
+<form class="c-search-form" id="search-form" action="https://www.outsideonline.com" method="get" accept-charset="UTF-8" role="search">
+  <fieldset class="c-search-form__fieldset o-fieldset">
+    <label class="o-form-item__label is-vishidden" for="s">Search</label>
+    <input class="o-form-item__search" name="s" id="s" type="text" value="" placeholder="Search Outside">
+          
+  <button role="button" class="o-button o-form-item__button"    aria-label=Search>
+            
+  <span class="o-icon o-icon--large" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.41 20.41"><path d="M20.41,19l-5.76-5.76a8.24,8.24,0,1,0-1.41,1.41L19,20.41ZM2,8.2a6.2,6.2,0,1,1,6.2,6.2A6.21,6.21,0,0,1,2,8.2Z"></path></svg>  </span>
+              <span>Search</span>
+          </button>
+  </fieldset>
+</form>
+  </div>
+</div>
+
+  
+        
+
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <div class="c-secondary-nav">
+  <nav role="navigation" class="c-secondary-nav--inner l-container">
+    <ul class="c-secondary-nav__list">
+              <li class="c-secondary-nav__item">
+            
+  <a class="o-link c-secondary-nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2522297" href="https://www.outsideonline.com/adventure-travel/destinations/" target="_self"  data-analytics-event='click' data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;destinations&#x2F;","name":"sub-navigation","type":"link"}}'>
+              Destinations
+          </a>
+                <li class="c-secondary-nav__item">
+            
+  <a class="o-link c-secondary-nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2522301" href="https://www.outsideonline.com/adventure-travel/advice/" target="_self"  data-analytics-event='click' data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;advice&#x2F;","name":"sub-navigation","type":"link"}}'>
+              Travel Advice
+          </a>
+                <li class="c-secondary-nav__item">
+            
+  <a class="o-link c-secondary-nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2522298" href="https://www.outsideonline.com/adventure-travel/essays/" target="_self"  data-analytics-event='click' data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;essays&#x2F;","name":"sub-navigation","type":"link"}}'>
+              Essays
+          </a>
+                <li class="c-secondary-nav__item">
+            
+  <a class="o-link c-secondary-nav__link menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2522300" href="https://www.outsideonline.com/adventure-travel/news-analysis/" target="_self"  data-analytics-event='click' data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;news-analysis&#x2F;","name":"sub-navigation","type":"link"}}'>
+              News and Analysis
+          </a>
+                <li class="c-secondary-nav__item">
+            
+  <a class="o-link c-secondary-nav__link menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2522299" href="https://www.outsideonline.com/adventure-travel/national-parks/" target="_self"  data-analytics-event='click' data-analytics-data='{"name":"Element Clicked","props":{"domain":"<<analytics_vars.domain>>","destination_url":"https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;national-parks&#x2F;","name":"sub-navigation","type":"link"}}'>
+              National Parks
+          </a>
+              </li>
+    </ul>
+  </nav>
+</div>
+  
+    <main role="document">
+                    <div class="l-content-wrap l-wrap">
+          <div class="l-main l-container">
+              
+
+  
+        
+  
+<div class="c-content-modal">
+        
+  <button role="button" class="o-button c-content-modal__close js-toggle"    aria-label=Close data-toggled=body data-prefix=content-modal>
+            
+  <span class="o-icon o-icon--large" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.71 25.71"><path d="M25.71,1.35,24.36,0,12.85,11.51,1.35,0,0,1.35l11.52,11.5L0,24.36l1.35,1.35,11.5-11.52L24.36,25.71l1.35-1.35L14.19,12.85Z"/></svg>  </span>
+              </button>
+  <div class="c-content-modal__content u-spacing--half">
+    <div class="c-content-modal__body">
+            
+
+          <div class="c-content-modal-media__image">
+                
+  
+  <figure class="o-figure ">
+          
+    
+  <picture class="o-picture">
+              
+  
+  <img class="o-image lazy "
+          data-srcset="https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg?crop=16:9&width=720&enable=upscale 720w, https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg?crop=16:9&width=960&enable=upscale 960w,https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg?crop=16:9&width=1200&enable=upscale 1200w"
+            data-src="https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg?crop=25:14&width=500&enable=upscale"
+    alt="Chiricahua, Arizona Sunset"
+                
+  />
+  </picture>
+              <figcaption class="o-figure__caption o-small u-space--half--top">There are currently two active bills aiming to change the title of Chiricahua National Monument, often touted as a “wonderland of rocks.” (Photo: Ron Stewart)</figcaption>
+      </figure>
+      </div>
+        </div>
+  </div>
+</div>
+
+          <div class="u-spacing" data-stack-array='[{"title":"Could One of These Be Our Next National Park?","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/next-national-park\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/04\/chiricahua-colorful-landscape_h.jpg","id":2574878,"is_sponsored_item":false},{"title":"Cuyahoga Valley Is One of America\u2019s Great Underrated National Parks","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/cuyahoga-valley-national-park-63-parks-traveler\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/04\/brandywine-falls-cuyahoga_h.jpg","id":2574334,"is_sponsored_item":false},{"title":"It\u2019s Time to Plan Your Summer Visit to Indiana Dunes","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/indiana-dunes-national-park-63-parks-traveler\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/04\/end-cowles-bog-trail_h.jpg","id":2574259,"is_sponsored_item":false},{"title":"How to Visit National Parks Responsibly","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/responsible-national-parks-travel-tips\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/03\/GettyImages-1233981536.jpg","id":2562313,"is_sponsored_item":false},{"title":"As Yellowstone National Park Turns 150, Indigenous Voices Take Center Stage","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/yellowstone-national-park-turns-150-indigenous-cultural-events\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/02\/yellowstone-heart-spring-upper-geyser-basin_h.jpg","id":2561995,"is_sponsored_item":false},{"title":"10 Things to Do with Kids at Rocky Mountain National Park","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/rocky-mountain-national-park-family-activities\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/02\/family-rocky-mountain-national-park_h.jpg","id":2561240,"is_sponsored_item":false},{"title":"How to Visit 7 National Parks in a Single Road Trip","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/national-parks-road-trip-utah-grand-canyon\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/02\/canyonlands-national-park-hiker_h.jpg","id":2561403,"is_sponsored_item":false},{"title":"Everything You Need to Know About the America the Beautiful Interagency Pass","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/america-the-beautiful-national-park-pass\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/02\/america-the-beautiful-annual-pass_h.jpg","id":2561223,"is_sponsored_item":false},{"title":"Everything You Need to Know About National Park Entrance Fees","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/national-park-entrance-fees-info\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/02\/HORIZONTAL-GettyImages-1162215137.jpg","id":2561243,"is_sponsored_item":false},{"title":"Which Entrance to Yellowstone National Park Should I Take?","link":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/yellowstone-park-entrances\/","image":"https:\/\/www.outsideonline.com\/wp-content\/uploads\/2022\/02\/yellowstone-roosevelt-arch-entrance_h.jpg","id":2561419,"is_sponsored_item":false}]'>
+    <article class="c-content-single c-content-single--stack" data-stack-target data-uuid="62030c511ac2803920c64e75bb3dc0af" data-post-analytics-data="{&quot;authors&quot;:[&quot;Emily Pennington&quot;],&quot;categories&quot;:[&quot;adventure-travel,national-parks&quot;],&quot;tags&quot;:[&quot;national-parks&quot;,&quot;nature&quot;,&quot;politics&quot;,&quot;public-lands&quot;],&quot;domain&quot;:&quot;&lt;&lt;analytics_vars.domain&gt;&gt;&quot;,&quot;post_uuid&quot;:&quot;62030c511ac2803920c64e75bb3dc0af&quot;,&quot;publish_date&quot;:&quot;May 2, 2022&quot;,&quot;title&quot;:&quot;Could One of These Be Our Next National Park?&quot;,&quot;type&quot;:&quot;post&quot;}">
+      <div class="c-content-single__container l-container--l u-spacing--half">
+        
+  <nav role="navigation" class="c-breadcrumbs">
+                          
+  <a class="o-link o-link--small c-breadcrumbs__link" href="https://www.outsideonline.com/adventure-travel/" target="_self" >
+              Travel
+          </a>
+              
+  <a class="o-link o-link--small c-breadcrumbs__link" href="https://www.outsideonline.com/adventure-travel/national-parks/" target="_self" >
+              National Parks
+          </a>
+      </nav>
+        <div class="c-content-single__wrap">
+
+          <div class="c-content-single__header">
+            
+<div class="c-page-header u-spacing--quarter">
+            
+  <h1 class="o-heading o-heading__primary o-heading__primary--xl">
+          Could One of These Be Our Next National Park?
+      </h1>
+    
+        
+  <div bp="7--max" class="o-dek o-dek--large">
+    <p>Our national parks are overcrowded, especially in summer. One solution is to create more of them. Here are the regions that get our votes.</p>
+  </div>
+</div>
+          </div>
+
+                              <div class="c-hero-media__image c-content-single__hero js-toggle"  data-prefix=content-modal data-toggled=body>
+          
+    
+  <picture class="o-picture">
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source  media="(max-width: 599px)" srcset=https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_s.jpg>
+              <source  media="(min-width: 600px)" srcset=https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_h.jpg?crop=16:9&width=960&enable=upscale&quality=100>
+            <!--[if IE 9]></video><![endif]-->
+              
+  
+  <img class="o-image lazy "
+            data-src="https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-colorful-landscape_s.jpg"
+    alt="Chiricahua, Arizona Sunset"
+                
+  />
+  </picture>
+    
+    
+  </div>
+
+                      <div class="c-content-single__content u-gradient--top--white">
+                              
+            
+        
+  <div class="o-meta o-meta--with-image">
+                  <a href="https://www.outsideonline.com/byline/emily-pennington/" class="o-meta__image-link">
+              <div class="o-meta__image u-filter--bw">
+          
+    
+  
+  <img class="o-image lazy "
+            data-src="https://www.outsideonline.com/wp-content/uploads/2019/05/16/emily_pennington.jpg?crop=1:1&width=100&enable=upscale"
+    alt="Image"
+                
+  />
+        </div>
+              </a>
+                    <span class="o-meta__authors">
+                                                <a href="https://www.outsideonline.com/byline/emily-pennington/" class="o-meta__link">
+                                <span itemprop="author" itemtype="https://schema.org/Person" class="o-meta__author">
+              <strong>Emily Pennington</strong>
+            </span>
+                                          </a>
+                        </span>
+          
+  <hr class="o-hr o-hr--accent">
+          <time datetime="May 2, 2022" class="o-meta__date" >May 2, 2022</time>
+          </div>
+              <div class="c-content-single__body-wrap u-spacing--double">
+                
+  
+  <div class="c-social-share c-social-share--stacked">
+                    
+  <a class="o-link c-social-share__item c-social-share__item--facebook" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F%3Futm_source%3Doutside%26utm_medium%3Dfacebook%26utm_campaign%3Donsiteshare" target="_blank" rel="noreferrer"  aria-label=Facebook>
+            
+  <span class="o-icon o-icon--xsmall" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512"><path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"/></svg>  </span>
+              </a>
+                          
+  <a class="o-link c-social-share__item c-social-share__item--twitter" href="https://twitter.com/intent/tweet/?text=Could One of These Be Our Next National Park? @outsidemagazine&amp;url=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F%3Futm_source%3Doutside%26utm_medium%3Dtwitter%26utm_campaign%3Donsiteshare" target="_blank" rel="noreferrer"  aria-label=Twitter>
+            
+  <span class="o-icon o-icon--xsmall" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Twitter Icon</title><path d="M248.63,158.41l1.08,18-18.23-2.16C165,165.73,107,136.95,57.58,88.74l-24.11-24L27.24,82.38C14,121.84,22.44,163.57,49.91,191.51,64.42,207,61.18,209.26,36,200c-8.75-2.88-16.43-5.16-17.15-4.08-2.52,2.64,6.24,36.1,13.19,49.41,9.47,18.47,28.9,36.46,50.13,47.25L100,301l-21.23.36c-20.51,0-21.23.36-18.95,8.16,7.32,24,36.22,49.41,68.36,60.44l22.67,7.68L131.1,389.4a206.11,206.11,0,0,1-97.86,27.22c-16.43.36-30,1.8-30,3,0,3.72,44.61,24.35,70.52,32.5,77.83,24,170.18,13.67,239.62-27.34C362.68,395.63,412,337.71,435,281.7c12.35-29.86,24.83-84.43,24.83-110.57,0-16.91,1.08-19.19,21.59-39.46C493.53,119.92,504.8,107,507,103.25c3.6-7,3.24-7-15.35-.72-31.06,11-35.5,9.59-20.15-7,11.39-11.87,24.83-33.22,24.83-39.46,0-1.08-5.52.72-11.63,4.08-6.6,3.72-21.23,9.23-32.14,12.59L432.72,79,414.85,66.79c-9.83-6.6-23.75-14-31.06-16.19-18.59-5.16-47.13-4.44-63.92,1.44C274.18,68.83,245.39,111.52,248.63,158.41Z"></path></svg>  </span>
+              </a>
+                          
+  <a class="o-link c-social-share__item c-social-share__item--email" href="mailto:?subject=Could One of These Be Our Next National Park?&amp;body=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F%3Futm_source%3Doutside%26utm_medium%3Demail%26utm_campaign%3Donsiteshare" target="_blank" rel="noreferrer"  aria-label=Email>
+            
+  <span class="o-icon o-icon--xsmall" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.3 44.18"><path d="M51.57,44.18H4.67l-.46-.09a5.14,5.14,0,0,1-4.16-5V14.35l.07,0,.1.17A21.47,21.47,0,0,0,2,16.11c1.46,1.07,3,2.08,4.45,3.11q6.6,4.61,13.19,9.24a25,25,0,0,0,5.31,3,8.28,8.28,0,0,0,6,.13,21.43,21.43,0,0,0,5-2.66q7.86-5.52,15.76-11a28.3,28.3,0,0,0,3.76-2.87l.81-.78v25a5,5,0,0,1-3.88,4.77C52.07,44.09,51.82,44.14,51.57,44.18ZM28.06,0H50.94a5,5,0,0,1,4.84,3A5.48,5.48,0,0,1,56,6.67a9.9,9.9,0,0,1-2.36,4.39A18.75,18.75,0,0,1,50,14.23C44.36,18.12,38.79,22,33.21,25.88A16.38,16.38,0,0,1,30,27.71a5,5,0,0,1-4-.1,23.58,23.58,0,0,1-3.71-2.21L6.87,14.65a21.85,21.85,0,0,1-3.71-3A14,14,0,0,1,.51,7.88,6.16,6.16,0,0,1,.88,2.25,4.35,4.35,0,0,1,4.81,0H28.06Z"/></svg>  </span>
+              </a>
+            </div>
+                <div class="c-content-single__body">
+                  
+  <aside class="c-sidebar u-spacing"><div class="o-ad o-ad--right-rail u-align--center u-full-width"><div class="js-ad js-ad-skip-placeholder js-scroll-load" data-child-zone="initial-leaderboard-ool" data-size="[[300,250]]" data-size-map="[[[961,0],[[300,250],[1,1]]],[[0,0],[]]]"></div></div><div class="o-ad o-ad--right-rail u-align--center u-full-width is-sticky"><div class="js-ad js-scroll-load js-refresh  js-scroll-load--sticky" data-child-zone="right-rail-ool" data-size="[[300,250],[300,600],[160,600],[1,1]]" data-size-map="[[[961,0],[[300,600],[300,250],[160,600],[1,1]]],[[0,0],[]]]"></div></div></aside>                  <div class="c-content-single__text">
+                                          
+  <div class="o-content-cta">
+    <p class="o-content-cta-text">
+      Get full access to Outside Learn, our online education hub featuring in-depth fitness, nutrition, and adventure courses and more than 2,000 instructional videos when you 
+      <a href="/outsideplus" class="o-content-cta-link" data-analytics-event="click" data-analytics-data='{"name":"Element Clicked","props":{"destination_url":"/outsideplus","domain":"<<analytics_vars.domain>>","name":"in-content-cta","type":"link"}}'>sign up for Outside+</a>.
+    </p>
+  </div>
+                                              
+    <div class="o-rich-text has-dropcap"  data-inject-ads=true data-inject-ads-options='{"markup":["<div class=&#39;o-ad-wrap&#39;><div class=&#39;js-ad js-scroll-load&#39; data-child-zone=&#39;in-content-leaderboard-ool&#39; data-size=&#39;[\"fluid\",[300,250],[1,1]]&#39;><\/div><\/div>"],"renderIntial":true,"wordCount":350}'>
+      <p>It’s not even novel to say it anymore: top national parks are experiencing an overcrowding dilemma. In 2021, <a href="https://www.nps.gov/orgs/1207/most-famous-national-parks-set-visitation-records-in-2021.htm">forty-four National Park Service units</a> set visitation records, and, for the first time in history, <a href="https://www.wate.com/news/smoky-mountains/multiple-visitation-records-broken-in-2021-at-great-smoky-mountains-national-park/#:~:text=(WATE)%20%E2%80%94%202021%20visitation%20broke,to%20the%20National%20Park%20Service.">Great Smoky Mountains</a> crossed the 14 million visitor mark.</p>
+<p>Last year, 50 percent of total recreational visits occurred in just 6 percent of all parks, explained Will Shafroth, President and CEO of the National Park Foundation, when I emailed him about the current crisis. “We need more people to know that there are more than 420 NPS sites across the country and many of them are in folks’ backyards,” he said.</p>
+
+<div id="milkshake">
+	
+	<script src="https://static.vidazoo.com/basev/vwpt.js" data-widget-id="626ff3fedb165d05a9c97641" defer></script>
+</div>
+<p>Dan Ritzman, Director of the Lands, Water, and Wildlife Campaign for the Sierra Club, noted that this increase in visitation comes at a cost. “We are definitely concerned with the impacts from the increased visitation to these areas,” he said, citing <a href="https://www.outsideonline.com/adventure-travel/national-parks/yosemite-national-park-travel-guide/">Yosemite</a>, <a href="https://www.outsideonline.com/adventure-travel/national-parks/zion-national-park-travel-guide/">Zion</a>, and <a href="https://www.outsideonline.com/adventure-travel/national-parks/rocky-mountain-national-park-travel-guide/">Rocky Mountain</a>.</p>
+<p>Although taking visitation pressure off top parks will require a variety of tactics—like increasing funding, raising awareness about lesser-known public lands, and increasing access to NPS units closer to urban areas—some legislators, like <a href="https://www.eenews.net/articles/more-national-parks-summer-of-overcrowding-could-spur-push/#:~:text=Angus%20King%20says%20there's%20one,in%20an%20interview%20last%20week.">U.S. Senator Angus King</a>, have hinted that we’re dealing with a supply and demand issue. One logical steam vent for the surge in crowds is simple: create more parks.</p>
+<p>&#8220;Expanding opportunities in our parks and public lands has to be a part of our national recovery,” said U.S. Senator Martin Heinrich (D-N.M.) in a statement to <em>Outside</em>. “These lands are our lands, and they heal us in a way few things can.” Senator Heinrich was a key advocate for the advancement of <a href="https://www.outsideonline.com/adventure-travel/national-parks/white-sands-new-mexico-national-park/">White Sands</a> into park status, seeing its bill succeed after a large <a href="https://www.heinrich.senate.gov/press-releases/heinrich-unveils-white-sands-national-park-establishment-act-with-community-leaders-in-southern-nm">community effort</a> and two years in Congress changed its designation in 2020.</p>
+<p>But legislation to elevate an area to fabled national park status is difficult, and congresspeople routinely introduce bills to upgrade a noteworthy national lakeshore or monument, only to have them shot down during the committee process. A vote for final approval (from both houses of Congress) can take years.</p>
+<p>We’ve been tracking the top contenders for areas that are the most likely to become America’s 64th national park, based on local support and legislative action currently in progress. At the end of the day, it’s anyone’s guess, but these three monuments are well on their way to park recognition.</p>
+<h2>Chiricahua, Arizona</h2>
+<figure id="attachment_2578663" class="pom-image-wrap photo-alignnone"><img loading="lazy" class="alignnone size-full wp-image-2578663" src="https://www.outsideonline.com/wp-content/uploads/2022/04/chiricahua-rocks-trees_h.jpg?width=730" alt="hiricahua National Monument" width="2400" height="1350" /><figcaption class="pom-caption ">(Photo: Dukas/Universal Images Group/Getty)</figcaption></figure>
+<p>Often touted as a “wonderland of rocks,” <a href="https://www.nps.gov/chir/index.htm">Chiricahua National Monument</a>, in southeastern Arizona, is known for its “unique landscape of rhyolitic rock formations created by massive volcanic eruptions and the subsequent erosion of that rock by wind, water, and ice over millennia,” said Naaman Horn, a spokesperson for the National Park Service. A paved, eight-mile scenic drive and 17 miles of day-use hiking trails crisscross the 12,025-acre space, bringing visitors face-to-face with miles upon miles of towering pinnacles and delicately eroded balancing boulders. The monument is also an historic Apache Homeland.</p>
+<p>There are currently <a href="https://www.doi.gov/ocl/hr-6451">two active bills</a> aiming to <a href="https://www.doi.gov/ocl/s-1320">change the title</a> of Chiricahua, the latest of which was introduced in the House of Representatives in February 2022. Support for this park designation has already <a href="https://news.azpm.org/p/news-splash/2022/4/4/208635-senate-votes-to-make-arizona-monument-a-national-park/">passed in the Senate</a>, and so far, the Department of the Interior has supported both bills and is working to establish a Tribal Commission to ensure the protection of and access to traditional plant and mineral resources, as well as historic cultural and religious sites. A formal vote by the House of Representatives is still needed to designate the unit.</p>
+<h2>Delaware Water Gap, New Jersey and Pennsylvania</h2>
+<figure id="attachment_2578455" class="pom-image-wrap photo-alignnone"><img loading="lazy" class="alignnone size-full wp-image-2578455" src="https://www.outsideonline.com/wp-content/uploads/2022/04/delaware-water-gap_h.jpg?width=730" alt="Delaware Water Gap" width="2400" height="1350" /><figcaption class="pom-caption ">(Photo: Posnov/Getty)</figcaption></figure>
+<p>Encompassing 66,741 acres of forested hillsides, dozens of cascading waterfalls, over 100 miles of trails, and a 40-mile swath of the mighty Delaware River, <a href="https://www.nps.gov/dewa/index.htm">Delaware Water Gap National Recreation Area</a> is one of the most beloved natural sites in the country, receiving over 4.5 million visitors annually. Grassroots organizations like the Sierra Club are rallying behind a huge local effort to make the area better known on a national scale. In January of this year, New Jersey’s Warren County Board of Commissioners<a href="https://www.warrencountynj.gov/Home/Components/News/News/286/14"> voted unanimously</a> on a resolution that could turn “the Water Gap” into a national park, though an act of Congress is needed for final approval.</p>
+<p>If the proposal goes through, it would be the <a href="https://www.backpacker.com/news-and-events/news/delaware-water-gap-national-park/">first national park in New Jersey and Pennsylvania</a>, adding to the scant nine parks east of the Mississippi River, providing outdoor access to millions of city dwellers in nearby states. “That extra level of conservation [will] provide them with the additional resources needed to work with the increased visitation that would come with national park protections,” said the Sierra Club’s Dan Ritzman.</p>
+<h2>Ocmulgee Mounds, Georgia</h2>
+<figure id="attachment_2578662" class="pom-image-wrap photo-alignnone"><img loading="lazy" class="alignnone size-full wp-image-2578662" src="https://www.outsideonline.com/wp-content/uploads/2022/04/ocmulgee-mounds-georgia-2_h.jpg?width=730" alt="The Earth Lodge" width="2400" height="1350" /><figcaption class="pom-caption ">(Photo: Open Space Institute; Mac Stone Photography)</figcaption></figure>
+<p>There’s public record as far back as 1935 that highlights efforts to create a national park out of the culturally significant and ecologically diverse lands that make up <a href="https://www.nps.gov/ocmu/index.htm">Ocmulgee Mounds National Historic Park</a> in central Georgia, said Seth Clark, Executive Director of the <a href="https://www.ocmulgeepark.org/">Ocmulgee National Park and Preserve Initiative</a>. Not only is the Ocmulgee River Corridor home to endangered plant and wildlife species and a fantastic spot for anglers, it’s also home to 17,000 years of human history, dating back to the Paleo-Indian Period.</p>
+<p><a href="https://www.nps.gov/ocmu/learn/historyculture/places.htm">The more than 800 archeological sites</a> that the park is named for began to be excavated during Roosevelt’s New Deal and contain the only known example of a ceremonial spiral mound in North America, thought to have been built around 900 AD. “Our coalition sees the preservation of these lands in true partnership and consultation with the Muscogee (Creek) Nation as a necessary act of atonement worthy of the country’s most vaulted public lands designation,” said Clark, who also serves as the mayor pro tem of the neighboring town of Macon. If the NPS’ <a href="https://parkplanning.nps.gov/projectHome.cfm?projectId=91276">Ocmulgee River Corridor Special Resource Study</a>, initiated in 2019, succeeds, it could become the first national park in Georgia.</p>
+<p>No matter where you visit this summer, outdoor lovers will need to get creative if they want to experience the pristine, untrammeled nature that the ideal of a national park is supposed to provide. “For park visitors, it’s always a good idea to ‘know before you go.’ If you’re considering a trip to a well-known park, call the park first and ask about ways to avoid crowds and inquire about other nearby lesser-known parks to also add to your journey,” said National Park Foundation’s Will Shafroth.</p>
+<p>With park attendance expected to <a href="https://www.bozemandailychronicle.com/news/yellowstone_national_park/150-years-of-drawing-a-crowd-yellowstone-national-park-looks-toward-a-future-with-more/article_3d6a495e-2c02-5645-8246-ed5133f2d595.html">rise even higher</a> in the coming years, there’s no better time than now to do a little research, dig deeper, and check out one of the under-appreciated gems among the National Park Service’s 423 sites.</p>
+
+    </div>
+                    </div>
+                </div>
+                <div class="u-spacing">
+                                      
+  <small class="o-issue">
+    From 
+                            <a href="https://www.outsideonline.com/?post_type=magazine_issue&#038;p=2560268">Online Exclusive</a>
+                    </small>
+                  
+  
+  <div class="c-tags">
+    <span class="c-tags__title">Filed to:</span>
+    <ul class="c-tags__list">
+                      <li class="c-tags__item">
+            
+  <a class="o-link o-link--small c-tags__link" href="https://www.outsideonline.com/tag/national-parks/" target="_self" >
+              National Parks
+          </a>
+        </li>
+                              <li class="c-tags__item">
+            
+  <a class="o-link o-link--small c-tags__link" href="https://www.outsideonline.com/tag/nature/" target="_self" >
+              Nature
+          </a>
+        </li>
+                              <li class="c-tags__item">
+            
+  <a class="o-link o-link--small c-tags__link" href="https://www.outsideonline.com/tag/politics/" target="_self" >
+              Politics
+          </a>
+        </li>
+                              <li class="c-tags__item">
+            
+  <a class="o-link o-link--small c-tags__link" href="https://www.outsideonline.com/tag/public-lands/" target="_self" >
+              Public Lands
+          </a>
+        </li>
+                  </ul>
+  </div>
+                    
+  <small class="o-small u-display--block">
+    Lead Photo: Ron Stewart
+  </small>
+                  
+                </div>
+              </div>
+            </div>
+                  </div>
+      </div>
+        
+  <section class="c-recirc c-recirc--article l-wrap">
+    <div class="c-recirc--inner l-container u-spacing">
+      <div class="c-recirc__heading">
+          
+  <h2 class="o-heading o-heading__primary o-heading__primary--xl c-recirc__heading-text">
+          Read this next
+      </h2>
+      </div>
+      <div class="c-recirc__grid" bp="grid 6@md 3@lg">
+                                                                                                                                                                
+  <a href="https://www.outsideonline.com/adventure-travel/national-parks/indiana-dunes-national-park-63-parks-traveler/?itm_source=parsely-api" class="c-card-recirc c-recirc__grid-item"  data-analytics-event=click data-analytics-data='{"name":"Post Clicked","props":{"domain":"<<analytics_vars.domain>>","path":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/indiana-dunes-national-park-63-parks-traveler\/?itm_source=parsely-api","listing_type":"recirc","location":"list","title":"It&#x2019;s&#x20;Time&#x20;to&#x20;Plan&#x20;Your&#x20;Summer&#x20;Visit&#x20;to&#x20;Indiana&#x20;Dunes"}}'>
+        <div class="c-card-recirc__content">
+                    <div class="c-card-recirc__heading">
+            
+  <h3 class="o-heading o-heading__primary o-heading__primary--m">
+          It’s Time to Plan Your Summer Visit to Indiana Dunes
+      </h3>
+        </div>
+                    <div class="c-card-recirc__meta u-space--half--top">
+            
+            
+  
+  <div class="o-meta">
+              <span class="o-meta__authors">
+                  <span class="o-meta__author-prefix">By: </span>
+                                                          <span itemprop="author" itemtype="https://schema.org/Person" class="o-meta__author">
+              <strong>Emily Pennington</strong>
+            </span>
+                                            </span>
+                  </div>
+        </div>
+          </div>
+  </a>
+                                                                                                                                                                
+  <a href="https://www.outsideonline.com/adventure-travel/national-parks/cuyahoga-valley-national-park-63-parks-traveler/?itm_source=parsely-api" class="c-card-recirc c-recirc__grid-item"  data-analytics-event=click data-analytics-data='{"name":"Post Clicked","props":{"domain":"<<analytics_vars.domain>>","path":"https:\/\/www.outsideonline.com\/adventure-travel\/national-parks\/cuyahoga-valley-national-park-63-parks-traveler\/?itm_source=parsely-api","listing_type":"recirc","location":"list","title":"Cuyahoga&#x20;Valley&#x20;Is&#x20;One&#x20;of&#x20;America&#x2019;s&#x20;Great&#x20;Underrated&#x20;National&#x20;Parks"}}'>
+        <div class="c-card-recirc__content">
+                    <div class="c-card-recirc__heading">
+            
+  <h3 class="o-heading o-heading__primary o-heading__primary--m">
+          Cuyahoga Valley Is One of America’s Great Underrated National Parks
+      </h3>
+        </div>
+                    <div class="c-card-recirc__meta u-space--half--top">
+            
+            
+  
+  <div class="o-meta">
+              <span class="o-meta__authors">
+                  <span class="o-meta__author-prefix">By: </span>
+                                                          <span itemprop="author" itemtype="https://schema.org/Person" class="o-meta__author">
+              <strong>Emily Pennington</strong>
+            </span>
+                                            </span>
+                  </div>
+        </div>
+          </div>
+  </a>
+                                                                                                                                                                
+  <a href="https://www.outsideonline.com/culture/books-media/obama-netflix-national-parks-nature-series/?itm_source=parsely-api" class="c-card-recirc c-recirc__grid-item"  data-analytics-event=click data-analytics-data='{"name":"Post Clicked","props":{"domain":"<<analytics_vars.domain>>","path":"https:\/\/www.outsideonline.com\/culture\/books-media\/obama-netflix-national-parks-nature-series\/?itm_source=parsely-api","listing_type":"recirc","location":"list","title":"What&#x2019;s&#x20;Up&#x20;with&#x20;President&#x20;Obama&#x20;Narrating&#x20;a&#x20;Netflix&#x20;Nature&#x20;Series&#x3F;"}}'>
+        <div class="c-card-recirc__content">
+                    <div class="c-card-recirc__heading">
+            
+  <h3 class="o-heading o-heading__primary o-heading__primary--m">
+          What’s Up with President Obama Narrating a Netflix Nature Series?
+      </h3>
+        </div>
+                    <div class="c-card-recirc__meta u-space--half--top">
+            
+            
+  
+  <div class="o-meta">
+              <span class="o-meta__authors">
+                  <span class="o-meta__author-prefix">By: </span>
+                                                          <span itemprop="author" itemtype="https://schema.org/Person" class="o-meta__author">
+              <strong>Isabella Rosario</strong>
+            </span>
+                                            </span>
+                  </div>
+        </div>
+          </div>
+  </a>
+                                                                                                                                                                
+  <a href="https://www.outsideonline.com/adventure-travel/destinations/north-america/most-quiet-parks-us/?itm_source=parsely-api" class="c-card-recirc c-recirc__grid-item"  data-analytics-event=click data-analytics-data='{"name":"Post Clicked","props":{"domain":"<<analytics_vars.domain>>","path":"https:\/\/www.outsideonline.com\/adventure-travel\/destinations\/north-america\/most-quiet-parks-us\/?itm_source=parsely-api","listing_type":"recirc","location":"list","title":"The&#x20;Quietest&#x20;Parks&#x20;in&#x20;the&#x20;U.S."}}'>
+        <div class="c-card-recirc__content">
+                    <div class="c-card-recirc__heading">
+            
+  <h3 class="o-heading o-heading__primary o-heading__primary--m">
+          The Quietest Parks in the U.S.
+      </h3>
+        </div>
+                    <div class="c-card-recirc__meta u-space--half--top">
+            
+            
+  
+  <div class="o-meta">
+              <span class="o-meta__authors">
+                  <span class="o-meta__author-prefix">By: </span>
+                                                          <span itemprop="author" itemtype="https://schema.org/Person" class="o-meta__author">
+              <strong>Kathleen Rellihan</strong>
+            </span>
+                                            </span>
+                  </div>
+        </div>
+          </div>
+  </a>
+              </div>
+          </div>
+  </section>
+      <div data-stack-remove class="u-space--double--bottom">
+        <div bp="container">
+  <section class="o-promo-module o-section">
+    <h2 class="o-promo-module__title u-space--half--bottom" data-js-promo-title></h2>
+    <div class="o-promo-module__desc u-spacing">
+      <p class="u-font--secondary" data-js-promo-desc></p>
+      <a href="" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "destination_url": "", "name": "app-promotional-module", "type": "button"}}' class="o-button o-button--gold" data-js-promo-cta></a>
+    </div>
+    <div class="o-promo-module__image">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy-load data-src="" alt="promo" data-js-promo-mobile />
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy-load data-src="" alt="logo" data-js-promo-logo />
+      
+    </div>
+  </section>
+    <script async src="data:text/javascript,%20%20%28function%20%28%29%20%7B%0A%20%20%20%20const%20promoData%20%3D%20%5B%7B%22title%22%3A%22TRAILFORKS%20APP%22%2C%22desc%22%3A%22Discover%20the%20best%20trails%20in%20the%20world%20for%20biking%2C%20hiking%2C%20skiing%2C%20moto%2C%20and%20more%20with%20Trailforks.%20Put%20the%20most%20accurate%20interactive%20trails%20maps%20in%20your%20pocket%2C%20with%20400%2C000%20trails%20to%20discover%2C%20plan%2C%20and%20track%20any%20trail%20adventure.%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.trailforks.com%5C%2Fapps%5C%2Fmap%5C%2F%22%2C%22cta%22%3A%22Download%20app%22%2C%22logo%22%3A%22%5C%2Fwp-content%5C%2Fthemes%5C%2Fpom-sites%5C%2Fresources%5C%2Fassets%5C%2Fimages%5C%2Flogos%5C%2Fmarketing%5C%2Fpromo%5C%2Ftrailforks.svg%22%2C%22mobile%22%3A%22%5C%2Fwp-content%5C%2Fthemes%5C%2Fpom-sites%5C%2Fresources%5C%2Fassets%5C%2Fimages%5C%2Fmarketing%5C%2Fpromo%5C%2Ftrailforks_mobile.png%22%7D%2C%7B%22title%22%3A%22GAIA%20GPS%20APP%22%2C%22desc%22%3A%22Get%20off%20the%20beaten%20path%2C%20and%20stay%20found.%20Link%20up%20new%20routes%20with%20intelligent%20planning%20tools.%20Access%20the%20best%20topographic%2C%20satellite%20imagery%2C%20and%20weather%20maps%20for%20every%20adventure.%20Always%20know%20your%20location%20--%20even%20when%20you%5Cu2019re%20out%20of%20cell%20service.%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.gaiagps.com%5C%2F%22%2C%22cta%22%3A%22Download%20app%22%2C%22logo%22%3A%22%5C%2Fwp-content%5C%2Fthemes%5C%2Fpom-sites%5C%2Fresources%5C%2Fassets%5C%2Fimages%5C%2Flogos%5C%2Fmarketing%5C%2Fpromo%5C%2Fgaia.svg%22%2C%22mobile%22%3A%22%5C%2Fwp-content%5C%2Fthemes%5C%2Fpom-sites%5C%2Fresources%5C%2Fassets%5C%2Fimages%5C%2Fmarketing%5C%2Fpromo%5C%2Fgaia_mobile.png%22%7D%2C%7B%22title%22%3A%22WATCH%20OUTSIDE%20APP%22%2C%22desc%22%3A%22The%20Outside%20App%20unlocks%20600%2B%20hours%20of%20members-only%20films%20and%20series%20to%20watch%20ad-free.%20You%27ll%20also%20enjoy%20access%20to%20Outside%27s%2024%5C%2F7%20stream%20and%20thousands%20of%20free%20videos.%22%2C%22url%22%3A%22http%3A%5C%2F%5C%2Foutside.tv%5C%2Fapp%22%2C%22cta%22%3A%22Download%20app%22%2C%22logo%22%3A%22%5C%2Fwp-content%5C%2Fthemes%5C%2Fpom-sites%5C%2Fresources%5C%2Fassets%5C%2Fimages%5C%2Flogos%5C%2Fmarketing%5C%2Fpromo%5C%2Fwatch.svg%22%2C%22mobile%22%3A%22%5C%2Fwp-content%5C%2Fthemes%5C%2Fpom-sites%5C%2Fresources%5C%2Fassets%5C%2Fimages%5C%2Fmarketing%5C%2Fpromo%5C%2Fwatch_mobile.png%22%7D%5D%3B%0A%20%20%20%20const%20randomIndex%20%3D%20Math.floor%28Math.random%28%29%20%2A%20%283%20-%201%20%2B%201%29%20%2B%201%29%20-%201%3B%0A%20%20%20%20const%20data%20%3D%20promoData%5BrandomIndex%5D%3B%0A%20%20%20%20const%20cta%20%3D%20document.querySelector%28%27%5Bdata-js-promo-cta%5D%27%29%3B%0A%20%20%20%20const%20cta_data%20%3D%20JSON.parse%28cta.getAttribute%28%27data-analytics-data%27%29%29%3B%0A%20%20%20%20cta_data.props.destination_url%20%3D%20data.url%3B%0A%20%20%20%20cta.innerText%20%3D%20data.cta%3B%0A%20%20%20%20cta.setAttribute%28%27href%27%2C%20data.url%29%3B%0A%20%20%20%20cta.setAttribute%28%27data-analytics-data%27%2C%20JSON.stringify%28cta_data%29%29%3B%0A%20%20%20%20document.querySelector%28%27%5Bdata-js-promo-title%5D%27%29.innerText%20%3D%20data.title%3B%0A%20%20%20%20document.querySelector%28%27%5Bdata-js-promo-desc%5D%27%29.innerText%20%3D%20data.desc%3B%0A%20%20%20%20document.querySelector%28%27%5Bdata-js-promo-mobile%5D%27%29.setAttribute%28%27data-src%27%2C%20data.mobile%29%3B%0A%20%20%20%20document.querySelector%28%27%5Bdata-js-promo-logo%5D%27%29.setAttribute%28%27data-src%27%2C%20data.logo%29%3B%0A%20%20%7D%28%29%29%3B%0A%20%20"></script>
+ </div>      </div>
+      
+
+<div class="c-article-share no-print">
+  <div class="c-article-share__links u-spacing--half">
+            
+  <a class="o-link c-article-share__item c-article-share__item--facebook" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F%3Futm_source%3Doutside%26utm_medium%3Dfacebook%26utm_campaign%3Donsiteshare" target="_blank" rel="noreferrer"  aria-label=Facebook Share data-share-type=Facebook data-share-url=https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;national-parks&#x2F;next-national-park&#x2F; data-analytics-event='click' data-analytics-data='{"name":"Post Shared","props":{"authors":"[\"Emily Pennington\"]","categories":"[\"adventure-travel,national-parks\"]","domain":"<<analytics_vars.domain>>","platform":"facebook","post_uuid":"\"62030c511ac2803920c64e75bb3dc0af\"","publish_date":"\"May 2, 2022\"","tags":"[\"national-parks\",\"nature\",\"politics\",\"public-lands\"]","title":"\"Could One of These Be Our Next National Park?\""}}'>
+            
+  <span class="o-icon o-icon--medium" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512"><path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"/></svg>  </span>
+              </a>
+            
+  <a class="o-link c-article-share__item c-article-share__item--twitter" href="https://twitter.com/intent/tweet/?text=Could One of These Be Our Next National Park? @outsidemagazine&amp;url=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F%3Futm_source%3Doutside%26utm_medium%3Dtwitter%26utm_campaign%3Donsiteshare" target="_blank" rel="noreferrer"  aria-label=Twitter Share data-share-type=Twitter data-share-url=https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;national-parks&#x2F;next-national-park&#x2F; data-analytics-event='click' data-analytics-data='{"name":"Post Shared","props":{"authors":"[\"Emily Pennington\"]","categories":"[\"adventure-travel,national-parks\"]","domain":"<<analytics_vars.domain>>","platform":"twitter","post_uuid":"\"62030c511ac2803920c64e75bb3dc0af\"","publish_date":"\"May 2, 2022\"","tags":"[\"national-parks\",\"nature\",\"politics\",\"public-lands\"]","title":"\"Could One of These Be Our Next National Park?\""}}'>
+            
+  <span class="o-icon o-icon--medium" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Twitter Icon</title><path d="M248.63,158.41l1.08,18-18.23-2.16C165,165.73,107,136.95,57.58,88.74l-24.11-24L27.24,82.38C14,121.84,22.44,163.57,49.91,191.51,64.42,207,61.18,209.26,36,200c-8.75-2.88-16.43-5.16-17.15-4.08-2.52,2.64,6.24,36.1,13.19,49.41,9.47,18.47,28.9,36.46,50.13,47.25L100,301l-21.23.36c-20.51,0-21.23.36-18.95,8.16,7.32,24,36.22,49.41,68.36,60.44l22.67,7.68L131.1,389.4a206.11,206.11,0,0,1-97.86,27.22c-16.43.36-30,1.8-30,3,0,3.72,44.61,24.35,70.52,32.5,77.83,24,170.18,13.67,239.62-27.34C362.68,395.63,412,337.71,435,281.7c12.35-29.86,24.83-84.43,24.83-110.57,0-16.91,1.08-19.19,21.59-39.46C493.53,119.92,504.8,107,507,103.25c3.6-7,3.24-7-15.35-.72-31.06,11-35.5,9.59-20.15-7,11.39-11.87,24.83-33.22,24.83-39.46,0-1.08-5.52.72-11.63,4.08-6.6,3.72-21.23,9.23-32.14,12.59L432.72,79,414.85,66.79c-9.83-6.6-23.75-14-31.06-16.19-18.59-5.16-47.13-4.44-63.92,1.44C274.18,68.83,245.39,111.52,248.63,158.41Z"></path></svg>  </span>
+              </a>
+            
+  <a class="o-link c-article-share__item c-article-share__item--sms" href="https://www.addtoany.com/add_to/sms?linkurl=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F&linkname=Could One of These Be Our Next National Park?%3Futm_source%3Doutside%26utm_medium%3Demail%26utm_campaign%3Donsiteshare" target="_blank" rel="noreferrer"  aria-label=Sms Share data-share-type=Sms data-share-url=https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;national-parks&#x2F;next-national-park&#x2F; data-analytics-event='click' data-analytics-data='{"name":"Post Shared","props":{"authors":"[\"Emily Pennington\"]","categories":"[\"adventure-travel,national-parks\"]","domain":"<<analytics_vars.domain>>","platform":"sms","post_uuid":"\"62030c511ac2803920c64e75bb3dc0af\"","publish_date":"\"May 2, 2022\"","tags":"[\"national-parks\",\"nature\",\"politics\",\"public-lands\"]","title":"\"Could One of These Be Our Next National Park?\""}}'>
+            
+  <span class="o-icon o-icon--medium" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58"><title>sms</title><path d="M29,3.37C13.4,3.37.67,13.63.67,26.2c0,7.5,4.51,14.18,11.5,18.33a19.85,19.85,0,0,1-5.24,7.06A1.25,1.25,0,0,0,6.64,53a1.27,1.27,0,0,0,1.09.73h.14A30.67,30.67,0,0,0,22,48.32,36.67,36.67,0,0,0,29,49c15.63,0,28.36-10.25,28.36-22.84S44.68,3.37,29,3.37Zm-14.69,28a4.8,4.8,0,1,1,4.8-4.8,4.8,4.8,0,0,1-4.8,4.8Zm15.13,0a4.8,4.8,0,1,1,4.8-4.8,4.8,4.8,0,0,1-4.8,4.8h0Zm15.06-.22a4.8,4.8,0,1,1,4.8-4.8h0a4.8,4.8,0,0,1-4.79,4.8h0Z"/></svg>  </span>
+              </a>
+            
+  <a class="o-link c-article-share__item c-article-share__item--email" href="mailto:?subject=Could One of These Be Our Next National Park?&amp;body=https%3A%2F%2Fwww.outsideonline.com%2Fadventure-travel%2Fnational-parks%2Fnext-national-park%2F%3Futm_source%3Doutside%26utm_medium%3Demail%26utm_campaign%3Donsiteshare" target="_blank" rel="noreferrer"  aria-label=Email Share data-share-type=Email data-share-url=https&#x3A;&#x2F;&#x2F;www.outsideonline.com&#x2F;adventure-travel&#x2F;national-parks&#x2F;next-national-park&#x2F; data-analytics-event='click' data-analytics-data='{"name":"Post Shared","props":{"authors":"[\"Emily Pennington\"]","categories":"[\"adventure-travel,national-parks\"]","domain":"<<analytics_vars.domain>>","platform":"email","post_uuid":"\"62030c511ac2803920c64e75bb3dc0af\"","publish_date":"\"May 2, 2022\"","tags":"[\"national-parks\",\"nature\",\"politics\",\"public-lands\"]","title":"\"Could One of These Be Our Next National Park?\""}}'>
+            
+  <span class="o-icon o-icon--medium" aria-label="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.3 44.18"><path d="M51.57,44.18H4.67l-.46-.09a5.14,5.14,0,0,1-4.16-5V14.35l.07,0,.1.17A21.47,21.47,0,0,0,2,16.11c1.46,1.07,3,2.08,4.45,3.11q6.6,4.61,13.19,9.24a25,25,0,0,0,5.31,3,8.28,8.28,0,0,0,6,.13,21.43,21.43,0,0,0,5-2.66q7.86-5.52,15.76-11a28.3,28.3,0,0,0,3.76-2.87l.81-.78v25a5,5,0,0,1-3.88,4.77C52.07,44.09,51.82,44.14,51.57,44.18ZM28.06,0H50.94a5,5,0,0,1,4.84,3A5.48,5.48,0,0,1,56,6.67a9.9,9.9,0,0,1-2.36,4.39A18.75,18.75,0,0,1,50,14.23C44.36,18.12,38.79,22,33.21,25.88A16.38,16.38,0,0,1,30,27.71a5,5,0,0,1-4-.1,23.58,23.58,0,0,1-3.71-2.21L6.87,14.65a21.85,21.85,0,0,1-3.71-3A14,14,0,0,1,.51,7.88,6.16,6.16,0,0,1,.88,2.25,4.35,4.35,0,0,1,4.81,0H28.06Z"/></svg>  </span>
+              </a>
+      </div>
+        
+  <button role="button" class="o-button c-article-share__toggle js-toggle"    aria-label=Share data-toggled=body data-prefix=article-share>
+              <span>Share</span>
+          </button>
+</div>
+    </article>
+        <div class="o-ad-wrap" data-stack-divider>
+      <div class="o-ad o-ad--footer">
+  <div class="js-ad js-scroll-load" data-child-zone="footer-ool" data-size='["fluid",[970,250],[728,90],[468,60],[320,100],[320,50],[300,250],[300,100],[300,50],[336,280],[1,1]]' data-size-map='[[[1100, 0],[[970,250],[1,1]]],[[970, 0],[[728, 90],[468, 60],[1,1]]],[[728, 0],["fluid",[468, 60],[1,1]]],[[0, 0],["fluid",[300, 250],[320, 100],[300, 100],[320, 50],[300, 50],[336,280],[1,1]]]]'></div>
+</div>
+    </div>
+    <div data-stack-trigger></div>
+      </div>
+                      </div>
+        </div>
+          </main>
+        
+<div class="o-ad-footer l-wrap u-flex u-justify-content--center u-padding--double--top">
+  <div class="o-ad o-ad--footer">
+  <div class="js-ad js-scroll-load" data-child-zone="footer-ool" data-size='["fluid",[970,250],[728,90],[468,60],[320,100],[320,50],[300,250],[300,100],[300,50],[336,280],[1,1]]' data-size-map='[[[1100, 0],[[970,250],[1,1]]],[[970, 0],[[728, 90],[468, 60],[1,1]]],[[728, 0],["fluid",[468, 60],[1,1]]],[[0, 0],["fluid",[300, 250],[320, 100],[300, 100],[320, 50],[300, 50],[336,280],[1,1]]]]'></div>
+</div>
+</div>
+
+<footer class="c-main-footer u-text-align--center ">
+  <div class="l-wrap">
+                        <div class="c-main-footer__inner u-spacing--triple">
+                      <section class="c-magazine-promo o-section u-spacing">
+                              <h2 class="o-section__heading">Outside+</h2>
+              
+                              <a class="c-magazine-promo__cover u-display--inline-block" href="/outsideplus">
+                  <img class="lazy" data-src="https://www.outsideonline.com/wp-content/uploads/2022/04/outside-magazine-march-april-2022-cover.jpg?width=200" alt="">
+                </a>
+              
+                              <div class="u-spacing--double u-space--triple--bottom">
+                                      <p bp="4--max" class="c-magazine-promo__copy u-center-block u-font--secondary u-padding--half--right u-padding--half--left"><strong>Join Outside+ to get Outside magazine, access to exclusive content, 1,000s of training plans, and more.</strong></p>
+                                                        <a href="/outsideplus" class="c-magazine-promo__cta o-button o-button--gold" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "/outsideplus", "domain": "<<analytics_vars.domain>>", "name": "footer-print-subscribe", "type": "button"}}'>Learn More</a>
+                                  </div>
+                            <div class="c-main-footer__social">
+                <div class="c-utility-links">
+
+  <a href="https://www.facebook.com/outsidemagazine" class="c-utility-links__link o-icon u-icon--m" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "social-profile-facebook", "type": "button"}}' target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Facebook Icon</title><path d="M294.51,509.5V256h68.84l9-87.34H294.51l.12-43.73c0-22.83,2.16-35.08,34.36-35.08h43V2.5H303c-82.78,0-111.85,42.41-111.85,113.65v52.38H139.64V256H191.3V509.5Z"/></svg>
+</a>
+
+  <a href="https://twitter.com/outsidemagazine" class="c-utility-links__link o-icon u-icon--m" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "social-profile-twitter", "type": "button"}}' target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Twitter Icon</title><path d="M248.63,158.41l1.08,18-18.23-2.16C165,165.73,107,136.95,57.58,88.74l-24.11-24L27.24,82.38C14,121.84,22.44,163.57,49.91,191.51,64.42,207,61.18,209.26,36,200c-8.75-2.88-16.43-5.16-17.15-4.08-2.52,2.64,6.24,36.1,13.19,49.41,9.47,18.47,28.9,36.46,50.13,47.25L100,301l-21.23.36c-20.51,0-21.23.36-18.95,8.16,7.32,24,36.22,49.41,68.36,60.44l22.67,7.68L131.1,389.4a206.11,206.11,0,0,1-97.86,27.22c-16.43.36-30,1.8-30,3,0,3.72,44.61,24.35,70.52,32.5,77.83,24,170.18,13.67,239.62-27.34C362.68,395.63,412,337.71,435,281.7c12.35-29.86,24.83-84.43,24.83-110.57,0-16.91,1.08-19.19,21.59-39.46C493.53,119.92,504.8,107,507,103.25c3.6-7,3.24-7-15.35-.72-31.06,11-35.5,9.59-20.15-7,11.39-11.87,24.83-33.22,24.83-39.46,0-1.08-5.52.72-11.63,4.08-6.6,3.72-21.23,9.23-32.14,12.59L432.72,79,414.85,66.79c-9.83-6.6-23.75-14-31.06-16.19-18.59-5.16-47.13-4.44-63.92,1.44C274.18,68.83,245.39,111.52,248.63,158.41Z"/></svg>
+</a>
+
+  <a href="https://www.instagram.com/outsidemagazine" class="c-utility-links__link o-icon u-icon--m" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"domain": "<<analytics_vars.domain>>", "name": "social-profile-instagram", "type": "button"}}' target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Instagram Icon</title><path d="M256,49.47c67.27,0,75.23.26,101.8,1.47,24.56,1.12,37.9,5.22,46.78,8.67a78.05,78.05,0,0,1,29,18.84,78.05,78.05,0,0,1,18.84,29c3.45,8.88,7.55,22.22,8.67,46.78,1.21,26.56,1.47,34.53,1.47,101.8s-.26,75.23-1.47,101.8c-1.12,24.56-5.22,37.9-8.67,46.78a83.43,83.43,0,0,1-47.81,47.81c-8.88,3.45-22.22,7.55-46.78,8.67-26.56,1.21-34.53,1.47-101.8,1.47s-75.24-.26-101.8-1.47c-24.56-1.12-37.9-5.22-46.78-8.67a78.05,78.05,0,0,1-29-18.84,78.05,78.05,0,0,1-18.84-29c-3.45-8.88-7.55-22.22-8.67-46.78-1.21-26.56-1.47-34.53-1.47-101.8s.26-75.23,1.47-101.8c1.12-24.56,5.22-37.9,8.67-46.78a78.05,78.05,0,0,1,18.84-29,78.05,78.05,0,0,1,29-18.84c8.88-3.45,22.22-7.55,46.78-8.67,26.56-1.21,34.53-1.47,101.8-1.47m0-45.39c-68.42,0-77,.29-103.87,1.52S107,11.08,91,17.31A123.49,123.49,0,0,0,46.36,46.36,123.49,123.49,0,0,0,17.31,91C11.08,107,6.82,125.32,5.6,152.13S4.08,187.58,4.08,256s.29,77,1.52,103.87S11.08,405,17.31,421a123.49,123.49,0,0,0,29.06,44.62A123.49,123.49,0,0,0,91,494.7c16,6.23,34.34,10.49,61.15,11.71s35.45,1.52,103.87,1.52,77-.29,103.87-1.52S405,500.92,421,494.7A128.82,128.82,0,0,0,494.7,421c6.23-16,10.49-34.34,11.71-61.15s1.52-35.45,1.52-103.87-.29-77-1.52-103.87S500.92,107,494.7,91a123.49,123.49,0,0,0-29.06-44.62A123.49,123.49,0,0,0,421,17.31C405,11.08,386.68,6.82,359.87,5.6S324.42,4.08,256,4.08Z"/><path d="M256,126.64A129.36,129.36,0,1,0,385.36,256,129.36,129.36,0,0,0,256,126.64ZM256,340a84,84,0,1,1,84-84A84,84,0,0,1,256,340Z"/><circle cx="390.48" cy="121.52" r="30.23"/></svg>
+</a>
+
+  
+  
+  
+</div>
+              </div>
+            </section>
+                  </div>
+            <div class="c-main-footer__logo u-center-block">
+        <img class="lazy" data-src="https://www.outsideonline.com/wp-content/themes/outside-child/resources/assets/images/outside-footer-logo.svg" alt="Outside">
+      </div>
+      </div>
+      <div class="c-main-footer__lower u-background-color--black-dark">
+      <div bp="l-container" class="l-container--mid l-wrap u-spacing--double">
+        <nav class="c-main-footer__nav u-space--triple--bottom" role="navigation" aria-label="Footer Menu">
+                      <ul class="o-inline-list" role="menubar" aria-label="Footer Menu">
+                              <li><a class="o-rubric u-text-transform--upper" target="_blank" role="menuitem" tabindex="0" href="https://outsideinc.com/partner-with-us/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "footer-menu", "type": "link"}}'>Advertise</a></li>
+                              <li><a class="o-rubric u-text-transform--upper" target="_blank" role="menuitem" tabindex="0" href="https://outsideinc.com/privacy-policy/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "footer-menu", "type": "link"}}'>Privacy Policy</a></li>
+                              <li><a class="o-rubric u-text-transform--upper" target="_blank" role="menuitem" tabindex="0" href="https://outsideinc.com/contact-us/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "footer-menu", "type": "link"}}'>Contact</a></li>
+                              <li><a class="o-rubric u-text-transform--upper" target="_blank" role="menuitem" tabindex="0" href="https://outsideinc.com/careers/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "footer-menu", "type": "link"}}'>Careers</a></li>
+                              <li><a class="o-rubric u-text-transform--upper" target="_blank" role="menuitem" tabindex="0" href="https://outsideinc.com/terms-of-use/" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "footer-menu", "type": "link"}}'>Terms of Use</a></li>
+                              <li><a class="o-rubric u-text-transform--upper" target="_blank" role="menuitem" tabindex="0" href="https://info.wrightsmedia.com/outside-licensing-reprints" data-analytics-event="click" data-analytics-data='{"name": "Element Clicked", "props": {"destination_url": "", "domain": "<<analytics_vars.domain>>", "name": "footer-menu", "type": "link"}}'>Licensing & Accolades</a></li>
+                            <li class="cookie-settings">
+                <!-- OneTrust Cookies Settings button start -->
+                <button class="o-rubric">
+                  <a class="ot-sdk-show-settings u-text-transform--upper">Cookie Settings</a>
+                </button>
+                <!-- OneTrust Cookies Settings button end -->
+              </li>
+            </ul>
+                  </nav>
+        <section bp="grid 6 3@lg" class="c-main-footer__logos">
+          <div>
+            <h5 class="u-text-transform--upper u-font-weight--bold u-font--xs--plus u-space--bottom u-letter-spacing--1 u-color--gray--dark">Healthy Living</h5>
+            <ul class="c-main-footer__logos--list">
+              <li><a href="https://www.yogajournal.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/healthy-living/yj.svg" alt="Yoga Jounal"></a></li>
+              <li><a href="https://www.oxygenmag.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/healthy-living/oxy.svg" alt=""></a></li>
+              <li><a href="https://www.cleaneatingmag.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/healthy-living/ce.svg" alt=""></a></li>
+              <li><a href="https://www.vegetariantimes.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/healthy-living/vt.svg" alt=""></a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="u-text-transform--upper u-font-weight--bold u-font--xs--plus u-space--bottom u-letter-spacing--1 u-color--gray--dark">Outdoor</h5>
+            <ul class="c-main-footer__logos--list">
+              <li><a href="https://www.backpacker.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/bp.svg" alt=""></a></li>
+              <li><a href="https://www.climbing.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/clm.svg" alt=""></a></li>
+              <li><a href="https://www.gaiagps.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/gaia.svg" alt=""></a></li>
+              <li><a href="https://www.nationalparktrips.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/npt.svg" alt=""></a></li>
+              <li><a href="http://www.outsidetv.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/otv.svg" alt=""></a></li>
+              <li><a href="https://www.outsideonline.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/out.svg" alt=""></a></li>
+              <li><a href="https://www.skimag.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/ski.svg" alt=""></a></li>
+              <li><a href="https://warrenmiller.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/wm.svg" alt=""></a></li>
+              <li><a href="https://flyfilmtour.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/outdoors/ff.svg" alt=""></a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="u-text-transform--upper u-font-weight--bold u-font--xs--plus u-space--bottom u-letter-spacing--1 u-color--gray--dark">Endurance</h5>
+            <ul class="c-main-footer__logos--list">
+              <li><a href="https://www.betamtb.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/beta.svg" alt=""></a></li>
+              <li><a href="https://cyclingtips.com/"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/cyclingtips.svg" alt=""></a></li>
+              <li><a href="https://pelotonmagazine.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/peloton.svg" alt=""></a></li>
+              <li><a href="https://www.pinkbike.com/"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/pinkbike.svg" alt=""></a></li>
+              <li><a href="https://www.trailforks.com/"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/trailforks.svg" alt=""></a></li>
+              <li><a href="https://www.trailrunnermag.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/tr.svg" alt=""></a></li>
+              <li><a href="https://www.triathlete.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/tri.svg" alt=""></a></li>
+              <li><a href="https://www.velonews.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/velonews.svg" alt=""></a></li>
+              <li><a href="https://www.womensrunning.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/endurance/wr.svg" alt=""></a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="u-text-transform--upper u-font-weight--bold u-font--xs--plus u-space--bottom u-letter-spacing--1 u-color--gray--dark">Industry</h5>
+            <ul class="c-main-footer__logos--list">
+              <li><a href="https://www.athletereg.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/ar.svg" alt=""></a></li>
+              <li><a href="https://www.bicycleretailer.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/brain.svg" alt=""></a></li>
+              <li><a href="https://www.finisherpix.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/fp.svg" alt=""></a></li>
+              <li><a href="https://www.getcairn.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/cairn.svg" alt=""></a></li>
+              <li><a href="https://www.ideafit.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/idea.svg" alt=""></a></li>
+              <li><a href="https://www.nastar.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/nastar.svg" alt=""></a></li>
+              <li><a href="https://www.outsidebusinessjournal.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/obj.svg" alt=""></a></li>
+              <li><a href="https://www.pinkbike.com/buysell/"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/marketplace.svg" alt="Outside Marketplace Logo"></a></li>
+              <li><a href="https://www.rollmassif.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/rm.svg" alt=""></a></li>
+              <li><a href="https://www.velopress.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/vp.svg" alt=""></a></li>
+              <li><a href="https://www.veloswap.com"><img class="lazy" data-src="/wp-content/themes/pom-sites/resources/assets/images/logos/industry/vs.svg" alt=""></a></li>
+            </ul>
+          </div>
+        </section>
+        <p class="u-color--gray u-font--xs--plus u-letter-spacing--1 u-font--primary">&copy; 2022 Outside Interactive, Inc</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type='text/javascript' src='https://www.outsideonline.com/wp-content/themes/outside-child/dist/scripts/main_38f83945.js' id='sage/main.js-js'></script>
+<script type='text/javascript' src='https://www.outsideonline.com/wp-includes/js/wp-embed.min.js?ver=5.8.1' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://www.outsideonline.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://www.outsideonline.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-parsely-api-js-extra'>
+/* <![CDATA[ */
+var wpParsely = {"apikey":"outsideonline.com"};
+/* ]]> */
+</script>
+<script data-cfasync="false" type='text/javascript' src='https://www.outsideonline.com/wp-content/plugins/wp-parsely/build/init-api.js?ver=2.6.0' id='wp-parsely-api-js'></script>
+<script data-cfasync="false" type='text/javascript' data-parsely-site="outsideonline.com" src='https://cdn.parsely.com/keys/outsideonline.com/p.js?ver=2.6.0' id="parsely-cfg"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-d6714aecd50e6990d34","applicationID":"1357970914","transactionName":"M1UAbUdUCBFZVk1dDAofN0tcGkkLVlFcTE0UWBI=","queueTime":0,"applicationTime":1018,"atts":"HxIDGw9OGx8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
