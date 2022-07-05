@@ -1,0 +1,1938 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQAPVVFbABADVVJSDwcGUl0=",licenseKey:"f6eecb2ebf",applicationID:"313086149"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(27),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(28),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(10),t(9),"addEventListener"in window&&t(6),c.xhrWrappable&&t(11),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function i(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+l])try{window.performance[h](m,i,!1)}catch(t){}else try{window.performance[h]("webkit"+m,i,!1)}catch(t){}}function o(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(10),f=t(9),u=t(5),d=t(19),l="learResourceTimings",p="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",S=t("loader");if(!S.disabled){S.features.stn=!0,t(8),"addEventListener"in window&&t(6);var O=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof O&&(this.bstStart=S.now())}),a.on(b,function(t,e){var n=t[0];n instanceof O&&s("bst",[n,e,this.bstStart,S.now()])}),c.on(x,function(t,e,n){this.bstStart=S.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),this.bstType])}),f.on(x,function(){this.bstStart=S.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=S.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):p in window.performance&&(window.performance["c"+l]?window.performance[p](m,i,d(!1)):window.performance[p]("webkit"+m,i,d(!1))),document[p]("scroll",o,d(!1)),document[p]("keypress",o,d(!1)),document[p]("click",o,d(!1))}}},{}],5:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(28),a=t(27);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],10:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],11:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function o(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,S.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=t(19),p=NREUM.o,h=p.XHR,m=p.MO,v=p.PR,w=p.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,i,l(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,S=document.createTextNode(R);new m(a).observe(S,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],12:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&l())&&(w.traceContextParentHeader=i(h,m),w.traceContextStateHeader=o(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(24),h=t(14);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],13:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function i(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(14),f=t(12).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(20),m=t(18),v=t(15),w=t(19),g=t(21).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(11),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;if("string"==typeof o?n=o:"object"==typeof o&&o instanceof y?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n),"data"!==this.params.protocol){var s=(""+(o&&o instanceof y&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],14:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],15:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(18);e.exports=r},{}],16:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),o(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(27),s=t(28),c=t("ee").get("tracer"),f=t("loader"),u=t(21),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var l=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(l,function(t,e){d[e]=i(p,e,!0,"api")}),d.addPageAction=i(p,"addPageAction",!0),d.setCurrentRouteName=i(p,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),o("err",[t,f.now(),!1,e])}},{}],17:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],18:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],19:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],20:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[s,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:i}},{}],22:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(29);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],23:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var i=[r],o=a({});o&&i.push(o),p("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,l,p=t("handle"),h=t("loader"),m=t(26),v=t(19),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}l=new PerformanceObserver(o);try{l.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],24:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(t)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],25:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],26:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(19);e.exports=r;var o,a,s;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],27:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],28:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],29:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return l[t]=l[t]||i(n)}function w(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(27),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!O++){var t=S.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+S.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){s("mark",["domContent",a()+S.offset],null,"api")}var a=t(22),s=t("handle"),c=t(27),f=t("ee"),u=t(25),d=t(17),l=t(19),p=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),S=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(16),t(23),m[v]?(m[v]("DOMContentLoaded",o,l(!1)),h[v]("load",r,l(!1))):(m[w]("onreadystatechange",i),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var O=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(28),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,13,4,3]);</script>
+<title>Here are the world&#039;s top 5 most liveable cities in 2022 — none of them are in the US and one is located in &#039;the land that inflation left behind&#039;</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="csrf-token" content="8ahDyKtCSz718VxZs1TWly12X1qJjXgcXqVzRt95">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://moneywise.com/favicons/mon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://moneywise.com/favicons/mon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://moneywise.com/favicons/mon/favicon-16x16.png">
+<link rel="manifest" href="https://moneywise.com/favicons/mon/manifest.json">
+<link rel="mask-icon" href="https://moneywise.com/favicons/mon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://moneywise.com/favicons/mon/favicon.ico">
+<meta name="msapplication-config" content="/favicons/mon/browserconfig.xml">
+<meta name="theme-color" content="#780095">
+<link rel="stylesheet" href="https://moneywise.com/css/critical/moneywise-critical-organic.min.css?cb=2460">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700|Prata|Roboto+Slab:400,700" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://moneywise.com/css/moneywise.css?cb=2460" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://moneywise.com/css/header.css?cb=2460" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://moneywise.com/css/footer.css?cb=2460" media="print" onload="this.media='all'">
+<script type="text/javascript">
+        window.Ribn = window.Ribn || {cmd: []};
+        window.Scottie = window.Scottie || {cmd: []};
+
+        // Global js app config settings
+        window.MW_SETTINGS = {
+            reAuthQueryParam: "refreshAuth",
+            loadModalQueryParam: "modal",
+        };
+    </script>
+
+<script type="text/javascript" async=true>
+        (function() {
+            var host = window.location.hostname;
+            var element = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var url = 'https://quantcast.mgr.consensu.org'
+                .concat('/choice/', 'L9J8ZeaX0v9v6', '/', host, '/choice.js')
+            var uspTries = 0;
+            var uspTriesLimit = 3;
+            element.async = true;
+            element.type = 'text/javascript';
+            element.src = url;
+
+            firstScript.parentNode.insertBefore(element, firstScript);
+
+            function makeStub() {
+                var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                var queue = [];
+                var win = window;
+                var cmpFrame;
+
+                function addFrame() {
+                    var doc = win.document;
+                    var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                    if (!otherCMP) {
+                        if (doc.body) {
+                            var iframe = doc.createElement('iframe');
+
+                            iframe.style.cssText = 'display:none';
+                            iframe.name = TCF_LOCATOR_NAME;
+                            doc.body.appendChild(iframe);
+                        } else {
+                            setTimeout(addFrame, 5);
+                        }
+                    }
+                    return !otherCMP;
+                }
+
+                function tcfAPIHandler() {
+                    var gdprApplies;
+                    var args = arguments;
+
+                    if (!args.length) {
+                        return queue;
+                    } else if (args[0] === 'setGdprApplies') {
+                        if (
+                            args.length > 3 &&
+                            args[2] === 2 &&
+                            typeof args[3] === 'boolean'
+                        ) {
+                            gdprApplies = args[3];
+                            if (typeof args[2] === 'function') {
+                                args[2]('set', true);
+                            }
+                        }
+                    } else if (args[0] === 'ping') {
+                        var retr = {
+                            gdprApplies: gdprApplies,
+                            cmpLoaded: false,
+                            cmpStatus: 'stub'
+                        };
+
+                        if (typeof args[2] === 'function') {
+                            args[2](retr);
+                        }
+                    } else {
+                        queue.push(args);
+                    }
+                }
+
+                function postMessageEventHandler(event) {
+                    var msgIsString = typeof event.data === 'string';
+                    var json = {};
+
+                    try {
+                        if (msgIsString) {
+                            json = JSON.parse(event.data);
+                        } else {
+                            json = event.data;
+                        }
+                    } catch (ignore) {}
+
+                    var payload = json.__tcfapiCall;
+
+                    if (payload) {
+                        window.__tcfapi(
+                            payload.command,
+                            payload.version,
+                            function(retValue, success) {
+                                var returnMsg = {
+                                    __tcfapiReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: payload.callId
+                                    }
+                                };
+                                if (msgIsString) {
+                                    returnMsg = JSON.stringify(returnMsg);
+                                }
+                                event.source.postMessage(returnMsg, '*');
+                            },
+                            payload.parameter
+                        );
+                    }
+                }
+
+                while (win) {
+                    try {
+                        if (win.frames[TCF_LOCATOR_NAME]) {
+                            cmpFrame = win;
+                            break;
+                        }
+                    } catch (ignore) {}
+
+                    if (win === window.top) {
+                        break;
+                    }
+                    win = win.parent;
+                }
+                if (!cmpFrame) {
+                    addFrame();
+                    win.__tcfapi = tcfAPIHandler;
+                    win.addEventListener('message', postMessageEventHandler, false);
+                }
+            };
+
+            if (typeof module !== 'undefined') {
+                module.exports = makeStub;
+            } else {
+                makeStub();
+            }
+
+            var uspStubFunction = function() {
+                var arg = arguments;
+                if (typeof window.__uspapi !== uspStubFunction) {
+                    setTimeout(function() {
+                        if (typeof window.__uspapi !== 'undefined') {
+                            window.__uspapi.apply(window.__uspapi, arg);
+                        }
+                    }, 500);
+                }
+            };
+
+            var checkIfUspIsReady = function() {
+                uspTries++;
+                if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                    console.warn('USP is not accessible');
+                } else {
+                    clearInterval(uspInterval);
+                }
+            };
+
+            if (typeof window.__uspapi === 'undefined') {
+                window.__uspapi = uspStubFunction;
+                var uspInterval = setInterval(checkIfUspIsReady, 6000);
+            }
+        })();
+    </script>
+
+<script src="https://moneywise.com/js/device-type.js?cb=2460"></script>
+<script src="https://moneywise.com/js/user-cookies.js?cb=2460"></script>
+<script> var global_article_id = 22283;</script>
+<link rel="canonical" href="https://moneywise.com/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us" />
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Looking for a better life? It may be time to point your compass westward — to Western Europe and Western Canada, specifically. Cities in both those regions...">
+<meta name="author" content="Sigrid Forberg">
+<meta property="og:url" content="https://moneywise.com/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us" />
+<meta property="og:site_name" content="MoneyWise" />
+<meta property="og:title" content="Here are the world&#039;s top 5 most liveable cities in 2022 — none of them are in the US and one is located in &#039;the land that inflation left behind&#039;" />
+<meta property="og:description" content="The US is the land of the free. But your money could go further elsewhere." />
+<meta property="og:type" content="article" />
+<meta property="og:ttl" content="345600" />
+<meta property="og:image" content="https://media1.moneywise.com/a/22283/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us_facebook_thumb_1200x628_v20220630150109.jpg" />
+<meta property="og:image:height" content="628" />
+<meta property="og:image:width" content="1200" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://moneywise.com/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us" />
+<meta name="twitter:title" content="Here are the world&#039;s top 5 most liveable cities in 2022 — none of them are in the US and one is located in &#039;the land that inflation left behind&#039;" />
+<meta name="twitter:description" content="The US is the land of the free. But your money could go further elsewhere." />
+<meta name="twitter:image" content="https://media1.moneywise.com/a/22283/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us_twitter_card_800x320_v20220630150139.jpg" />
+<meta name="twitter:site" content="MoneyWise" />
+<script>
+            var next_article = false;
+            var page_method = 'server';
+        var server_page = '1';
+        var total_pages = '1';
+        var utm_source = getCookie("utm_source");
+        var template_type = 'paginated';
+        var layout = 'organic';
+
+    </script>
+<script>
+        // Script loader
+        var loadedScripts = [];
+        function loadScript( url, callback ) {
+            // Stop the same script being loaded more than once
+            if(loadedScripts.indexOf(url) != -1){
+                // script is already loaded so just fire the callback
+                // callback();
+                // return false;
+            }
+            loadedScripts.push(url);
+            var script = document.createElement( "script" )
+            script.type = "text/javascript";
+            if(script.readyState) {  //IE
+                script.onreadystatechange = function() {
+                    if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+                        script.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            } else {  //Others
+                script.onload = function() {
+                    callback();
+                };
+            }
+            script.src = url;
+            document.getElementsByTagName( "head" )[0].appendChild( script );
+        }
+
+    </script>
+<script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+        "url":"https://moneywise.com",
+        "sameAs":[
+            "https://twitter.com/moneywisecom",
+            "https://www.facebook.com/moneywisecom"
+        ],
+        "name":"MoneyWise",
+        "logo":{
+            "@type":"ImageObject",
+            "url":"https://moneywise.com/img/logo.svg",
+            "width":"326px",
+            "height":"66px"
+        }
+    }
+
+</script>
+<script type="application/ld+json">
+        {
+
+            "@context": "http://schema.org",
+            "@type": "Article",
+            "headline": "Here are the world&#039;s top 5 most liveable cities in 2022 — none of them are in the US and one is located in &#039;the land that inflation left behind&#039;",
+            "image": "https://media1.moneywise.com/a/22283/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us_facebook_thumb_1200x628_v20220630150109.jpg",            "author": {
+                "@type": "Person", 
+                "name": "Sigrid Forberg",
+                "url": "https://moneywise.com/author/sigrid-forberg"
+            },
+                        "publisher": {
+                "@type": "Organization",
+                "name": "MoneyWise",
+                "logo":{
+                    "@type":"ImageObject",
+                    "url":"https://moneywise.com/img/logo.svg",
+                    "width":"326px",
+                    "height":"66px"
+                }
+              },
+             "url": "https://moneywise.com/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us",
+             "datePublished": "2022-07-01T11:20:53-04:00",
+             "dateCreated": "2022-07-01T11:20:53-04:00",
+             "dateModified": "2022-07-01T11:20:53-04:00",
+             "description": "The US is the land of the free. But your money could go further elsewhere.",
+             "mainEntityOfPage": {
+                 "@type": "WebPage",
+                 "@id": "https://moneywise.com/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us"
+             }
+        }
+
+    </script>
+
+<script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9XRFBG');
+    </script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100215634-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var ga_tracking_id = "UA-100215634-1";
+    gtag('config', ga_tracking_id);
+    gtag('get', ga_tracking_id, 'client_id', function(client_id){
+        Scottie.cmd.push(function(){
+            Scottie.setPageAttribute({gaClientId:client_id});
+        });
+        Ribn.cmd.push(function(){
+            Ribn.setAttribute({gaClientId:client_id});
+        });
+    })
+
+    
+                        gtag('set', {
+                'dimension11': 'https://moneywise.com/a/ch-c/the-big-brands-behind-costcos-kirkland-signature-items',
+            });
+                    gtag('set', {
+                'dimension16': 'Life',
+            });
+                    gtag('set', {
+                'dimension7': 'Lifestyle',
+            });
+                    gtag('set', {
+                'dimension3': 'related_articles',
+            });
+                    gtag('set', {
+                'dimension12': 'ws',
+            });
+                    gtag('set', {
+                'dimension8': '00',
+            });
+                    gtag('set', {
+                'dimension9': 'organic',
+            });
+                    gtag('set', {
+                'dimension19': 'organic',
+            });
+                    gtag('set', {
+                'dimension1': 'organic',
+            });
+            
+                        gtag('set', {
+                'metric1': '00',
+            });
+                    gtag('set', {
+                'metric3': '22283',
+            });
+            
+    
+
+
+    function engagement() {
+        var engaged = false;
+        setTimeout(function () {
+            if (!engaged) {
+                engaged = true;
+                //insert GA custom event code
+                gtag('event', 'engaged user', {
+                    'event_category': 'engaged',
+                });
+            }
+        }, 30000);
+
+        document.addEventListener('click', function (event) {
+            if (!engaged && event.target.closest('a')) {
+                engaged = true;
+                //insert GA custom event code
+                gtag('event', 'engaged user', {
+                    'event_category': 'engaged',
+                });
+            }
+        });
+    }
+
+    engagement();
+</script>
+<script defer src="https://assets.wisepublishing.com/scottie/production/scottie.js"></script>
+<script>
+
+
+
+        Scottie.cmd.push(function () {
+            window.Ribn = window.Ribn || {cmd: []};
+
+            Ribn.cmd.push(function () {
+                Ribn.setAttribute({
+                    suid: Scottie.getSUID(),
+                    session_id: Scottie.getSession(),
+                    s_entry_path: Scottie.getSEntryPath(),
+                    u_entry_path: Scottie.getUEntryPath()
+                })
+            });
+
+
+
+            if(getCookie('scottie_session_attributes') && getCookie('scottie_session_attributes').s_article_id !== undefined){
+                Ribn.cmd.push(function(){
+                    Ribn.setAttribute({
+                        s_article_id: getCookie('scottie_session_attributes').s_article_id
+                    });
+                });
+            }
+
+            if (typeof article_id !== "undefined") Scottie.setArticleId(article_id);
+
+            if (typeof user_meta != "undefined" && typeof user_meta['geo'] != "undefined") {
+                var scottie_geo = [];
+                scottie_geo['country'] = window.user_meta['geo']['country'];
+                scottie_geo['city'] = window.user_meta['geo']['city'];
+                scottie_geo['region'] = window.user_meta['geo']['region'];
+                scottie_geo['zip'] = window.user_meta['geo']['zip'];
+                Scottie.setGeo(scottie_geo);
+            }
+
+            if (getCookie("ay_c")) {
+                Scottie.setUserAttribute({
+                    ay_udata: {
+                        clientUUID: getCookie("ay_c").u,
+                        clientEntryPathname: getCookie("ay_c").ep,
+                    }
+                });
+
+                Scottie.setPageAttribute({
+                    ay_pdata: {
+                        clientPageViewN: getCookie("ay_c").pn,
+                    }
+                });
+            }
+
+            if (getCookie("ay_s")) {
+                Scottie.setSessionAttribute({
+                    ay_sdata: {
+                        sessionUUID: getCookie("ay_s").u,
+                        sessionEntryPathname: getCookie("ay_s").ep,
+                        sessionPageViewN: getCookie("ay_s").pn,
+                    }
+                });
+            }
+
+            gtag('get', "UA-100215634-1", 'client_id', function (client_id) {
+                Scottie.setPageAttribute({gaClientId: client_id});
+            })
+
+            Scottie.setPageAttribute({
+                ads: {
+                    wiseads: window.WiseAds !== undefined,
+                    pbjs: window.pbjs !== undefined,
+                    ay: window.assertive !== undefined,
+                    googletag: window.googletag !== undefined
+                }
+            });
+
+                    });
+    </script>
+<script>
+        Scottie.cmd.push(function(){
+            Scottie.setPageAttribute({
+                content: {
+    "article_id": 22283,
+    "channel": {
+        "id": 1,
+        "name": "Website",
+        "slug": "ws"
+    },
+    "category": {
+        "id": 118,
+        "name": "Life"
+    },
+    "subcategory": {
+        "id": 336,
+        "name": "Lifestyle"
+    },
+    "type": {
+        "id": 5,
+        "slug": "adfree_editorial",
+        "layout": "organic",
+        "layout_style": "default"
+    },
+    "author": {
+        "id": 321,
+        "name": "Sigrid Forberg"
+    },
+    "tier": 1,
+    "tags": []
+}            })
+
+            Scottie.setArticleId(22283)
+        })
+    </script>
+<script>
+        Scottie.cmd.push(function () {
+            Scottie.setPageAttribute({
+                response: {
+                    status: 200
+                }
+            })
+        })
+    </script>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+            Scottie.sendEvent("pageview");
+        })
+    </script>
+<script>
+        window.Ribn = window.Ribn || { cmd: [] };
+        (function(w,d,s){
+            var f=d.getElementsByTagName(s)[0],j=d.createElement(s);
+            j.async=true;
+            j.src='https://assets.ribn.com/v3/production/ribn.js';
+            f.parentNode.insertBefore(j,f);
+        })(window,document,'script');
+
+                Ribn.cmd.push(function () {
+            Ribn.setAttribute({ article_id: 22283 });
+        })
+        
+            </script>
+<script nomodule src="/js/polyfills.js?cb=2460"></script>
+
+<script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    (window.Scottie.getSUID) ? fbq('init', '131147930823002',{ external_id: Scottie.getSUID() }) :  fbq('init', '131147930823002');
+
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"src="https://www.facebook.com/tr?id=131147930823002&ev=PageView&noscript=1"/>
+</noscript>
+
+<style>
+.image-next-button__button {
+	display: none;
+}
+</style>
+<link rel="preload" href="https://moneywise.com/css/footer.css?cb=2460" as="style">
+<link rel="stylesheet" href="https://moneywise.com/css/footer.css?cb=2460" media="print" onload="this.media='all'">
+<noscript>
+            <link rel="stylesheet" href="https://moneywise.com/css/footer.css?cb=2460">
+        </noscript>
+<script async src='https://moneywise.com/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+
+<noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9XRFBG" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+<input type="hidden" name="_token" value="8ahDyKtCSz718VxZs1TWly12X1qJjXgcXqVzRt95"><input type="hidden" id="_authenticated" value="">
+
+<div id="top"></div>
+<main id="main" class="default article-template" data-site-id="1" data-css-ref="moneywise" data-site-ref="MON">
+
+<div class="section-header-primary">
+<header class="header
+                        ">
+<div class="header__fixed">
+<div class="header__container">
+<div class="header__wrapper">
+<div class="header__logo">
+<a href="/"><img src="https://moneywise.com/img/logo.svg" alt="MoneyWise logo" height="20" width="99" /></a>
+</div>
+<div class="header__controls">
+<div class="header__controls-container">
+<ul class="header__controls-items">
+<li class="header__controls-item header__controls-item--subscribe header__controls-item--logged-out">
+<a href="#" data-join-moneywise="join" class="header__controls-link tracking" title="Become a subscriber" data-category="top_navigation" data-action="subscribe" data-label="">
+<img src="https://media1.moneywise.com/icons/plus.svg" alt="" height="" width="25" /><br>
+<small>Subscribe</small>
+</a>
+</li>
+<li class="header__controls-item header__controls-item--logged-out">
+<a href="#" data-join-moneywise="signin" class="header__controls-link tracking" title="Sign in" data-category="top_navigation" data-action="sign_in" data-label="">
+<img src="https://media1.moneywise.com/icons/sign-in.svg" alt="" height="" width="26" /><br>
+<small>Sign In</small>
+</a>
+</li>
+<li class="header__controls-item header__controls-item--logged-in header__controls-item--hidden">
+<a href="/my-account" class="header__controls-link" title="Account">
+<img src="https://media1.moneywise.com/icons/account.svg" alt="" height="" width="26" /><br>
+<small>Account</small>
+</a>
+</li>
+<li class="header__controls-item header__controls-item--logged-in header__controls-item--hidden">
+<a href="/logout" data-user-logout class="header__controls-link" title="Logout">
+<img src="https://media1.moneywise.com/icons/logout.svg" alt="" height="" width="26" /><br>
+<small>Logout</small>
+</a>
+</li>
+<li class="header__controls-item">
+<a href="/search" class="header__controls-link tracking" data-category="top_navigation" data-action="search" data-label="">
+<img src="https://media1.moneywise.com/icons/search-2.svg" alt="" height="25" width="26" /><br>
+<small>Search</small>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__nav">
+<div class="header__blur header__blur--mobile"></div>
+<div class="header__nav-container">
+<nav aria-label="Main navigation">
+<ul class="header__nav-items--level-1">
+<li class="header__nav-row">
+<ul class="header__nav-row-container">
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/life" id="link-0" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Money.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Money icon" height="36" width="36" />
+</span>
+Money
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-0">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/life" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Money.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Money icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">How to Save Money</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/budgeting/how-to-save-money-for-a-house" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="save_money_for_a_house" data-label="save_money_for_a_house">Save Money for a House</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/budgeting/how-to-save-money-fast" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="how_to_save_money_fast" data-label="how_to_save_money_fast">How to Save Money Fast</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/banking-basics/why-and-how-to-create-your-emergency-fund" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="create_an_emergency_fund" data-label="create_an_emergency_fund">Create an Emergency Fund</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/life/food/online-grocery-sales-are-way-up-heres-how-to-get-the-most-out-of-your-order" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="save_on_groceries" data-label="save_on_groceries">Save on Groceries</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">How to Earn Money</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/how-to-earn-money/apps-that-make-you-money" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="apps_that_make_you_money" data-label="apps_that_make_you_money">Apps That Make You Money</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/how-to-earn-money/6-side-hustle-ideas-that-you-can-do-from-home" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="side_hustles_from_home" data-label="side_hustles_from_home">Side Hustles From Home</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/how-to-earn-money/how-to-make-money-playing-video-games" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="make_money_playing_video_games" data-label="make_money_playing_video_games">Make Money Playing Video Games</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/how-to-earn-money/how-to-sell-on-ebay-for-beginners" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="how_to_sell_on_ebay" data-label="how_to_sell_on_ebay">How to Sell on eBay</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Homeownership</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/home/budget-home-improvements" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="affordable_home_improvements" data-label="affordable_home_improvements">Affordable Home Improvements</a>
+ </li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/should-you-refinance-your-mortgage" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="when_to_refinance" data-label="when_to_refinance">When to Refinance</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/how-to-sell-your-house-in-7-steps" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="how_to_sell_your_home" data-label="how_to_sell_your_home">How to Sell Your Home</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Family</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/budgeting/5-essential-money-moves-for-newlyweds" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="money_tips_for_newlyweds" data-label="money_tips_for_newlyweds">Money Tips for Newlyweds</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/health/pregnancy-insurance" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="pregnancy_insurance" data-label="pregnancy_insurance">Pregnancy Insurance</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/life/parenting/not-sure-how-to-teach-your-kids-about-money-heres-where-to-start" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="teaching_kids_about_money" data-label="teaching_kids_about_money">Teaching Kids About Money</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/health/hire-a-home-health-care-aide" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="money" data-label="how_to_hire_a_home_health_care_aide" data-label="how_to_hire_a_home_health_care_aide">How to Hire a Home Health Care Aide</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/mortgages" id="link-1" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Mortgages.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Mortgages icon" height="36" width="36" />
+</span>
+Mortgages
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-1">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/mortgages" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Mortgages.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Mortgages icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Mortgage Rates</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgage-rates" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="current_mortgage_rates" data-label="current_mortgage_rates">Current Mortgage Rates</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgage-rates-news/trends" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="mortgage_rate_trends" data-label="mortgage_rate_trends">Mortgage Rate Trends</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Mortgage Loans</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/va-home-loans" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="va_loans" data-label="va_loans">VA Loans</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/fha-loan-requirements-explained" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="fha_loans" data-label="fha_loans">FHA Loans</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/what-is-a-jumbo-loan" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="jumbo_loans" data-label="jumbo_loans">Jumbo Loans</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/fha-vs-conventional-how-to-choose-a-mortgage" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="fha_vs._conventional_loan" data-label="fha_vs._conventional_loan">FHA vs. Conventional Loan</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/reverse-mortgage-right-for-you" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="reverse_mortgages" data-label="reverse_mortgages">Reverse Mortgages</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/no-closing-cost-mortgage" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="no-closing-cost_mortgage" data-label="no-closing-cost_mortgage">No-Closing-Cost Mortgage</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/how-to-work-with-a-mortgage-or-loan-broker" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="should_i_use_a_mortgage_broker?" data-label="should_i_use_a_mortgage_broker?">Should I Use a Mortgage Broker?</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Buying a Home</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/first-time-homebuyer-tips" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="first-time_homebuyers" data-label="first-time_homebuyers">First-Time Homebuyers</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/first-time-home-buyer-programs" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="first-time_homebuyer_programs" data-label="first-time_homebuyer_programs">First-Time Homebuyer Programs</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/refinancing" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="mortgage_refinancing" data-label="mortgage_refinancing">Mortgage Refinancing</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/home-inspection-cost" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="how_much_is_a_home_inspection?" data-label="how_much_is_a_home_inspection?">How Much Is a Home Inspection?</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Calculators</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/calculators/mortgage-required-income-calculator" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="mortgage_income_calculator" data-label="mortgage_income_calculator">Mortgage Income Calculator</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/calculators/mortgage-payoff-calculator" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="mortgages" data-label="mortgage_payoff_calculator" data-label="mortgage_payoff_calculator">Mortgage Payoff Calculator</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/investing" id="link-2" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Investing.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Investing icon" height="36" width="36" />
+</span>
+Investing
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-2">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/investing" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Investing.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Investing icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Getting Started</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/investing-basics/the-best-investing-apps" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="best_investing_apps" data-label="best_investing_apps">Best Investing Apps</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/robo-advisors" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="robo-advisors" data-label="robo-advisors">Robo-advisors</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/investing-basics/investing-101-a-beginners-guide" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="investing_101" data-label="investing_101">Investing 101</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/investing-basics/types-of-mutual-funds" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="types_of_mutual_funds" data-label="types_of_mutual_funds">Types of Mutual Funds</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Investing in Stocks</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/stocks" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="stocks" data-label="stocks">Stocks</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/stocks/how-to-invest-in-stocks" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="how_to_invest_in_stocks" data-label="how_to_invest_in_stocks">How to Invest in Stocks</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/stocks/how-to-sell-stock" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="how_to_sell_stock" data-label="how_to_sell_stock">How to Sell Stock</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/stocks/what-is-a-stock-split" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="what_is_a_stock_split?" data-label="what_is_a_stock_split?">What is a Stock Split?</a>
+</li>
+ </ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Alternative Investments</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/investing-basics/how-to-buy-bitcoin-in-4-easy-steps" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="how_to_buy_bitcoin" data-label="how_to_buy_bitcoin">How to Buy Bitcoin</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/investing/investing-basics/how-to-buy-gold-if-you-dare" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="investing" data-label="investing_in_gold" data-label="investing_in_gold">Investing in Gold</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/loans" id="link-3" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Loans.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Loans icon" height="36" width="36" />
+</span>
+Loans
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-3">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/loans" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Loans.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Loans icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Loan Rates</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/borrowing/personal-loans/personal-loan-rates-explained" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="personal_loan_rates" data-label="personal_loan_rates">Personal Loan Rates</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/borrowing/student-loans/refinance-rates" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="student_loan_refinance_rate" data-label="student_loan_refinance_rate">Student Loan Refinance Rates</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Getting a Loan</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/loans/auto-loans" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="auto_loans" data-label="auto_loans">Auto Loans</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/loans/personal-loans" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="personal_loans" data-label="personal_loans">Personal Loans</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/loans/student-loans" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="student_loans" data-label="student_loans">Student Loans</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/loans/personal-loans/how-online-loans-with-monthly-payments-work-and-where-to-get-one" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="online_loans" data-label="online_loans">Online Loans</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/home-equity/heloc-or-home-equity-loan" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="heloc_vs._home_equity_loan" data-label="heloc_vs._home_equity_loan">HELOC vs. Home Equity Loan</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/loans/personal-loans/personal-loans-vs-credit-cards-whats-the-difference" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="personal_loan_vs._credit_cards" data-label="personal_loan_vs._credit_cards">Personal Loan vs. Credit Cards</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Calculators</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/calculators/car-loan-calculator" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="loans" data-label="car_loan_calculator" data-label="car_loan_calculator">Car Loan Calculator</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/insurance" id="link-4" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Insurance.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Insurance icon" height="36" width="36" />
+</span>
+Insurance
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-4">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/insurance" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Insurance.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Insurance icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Insuring Your Car</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/auto" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="auto_insurance" data-label="auto_insurance">Auto Insurance</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/auto/top-car-insurance-discounts" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="auto_insurance_discounts" data-label="auto_insurance_discounts">Auto Insurance Discounts</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/auto/find-the-cheapest-car-insurance-for-your-teen" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="auto_insurance_for_teenagers" data-label="auto_insurance_for_teenagers">Auto Insurance for Teenagers</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/auto/non-owner-car-insurance" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="non-owner_auto_insurance" data-label="non-owner_auto_insurance">Non-owner Auto Insurance</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Insuring Your Home</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/home" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="homeowners_insurance" data-label="homeowners_insurance">Homeowners Insurance</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/home/5-home-insurance-discounts-youve-probably-never-heard-of" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="home_insurance_discounts" data-label="home_insurance_discounts">Home Insurance Discounts</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/mortgages/mortgages/what-is-mortgage-life-insurance-do-you-need-it" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="mortgage_protection_insurance" data-label="mortgage_protection_insurance">Mortgage Protection Insurance</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/home/surprising-stuff-home-insurance-wont-cover" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="things_home_insurance_doesn&#039;t_cover" data-label="things_home_insurance_doesn&#039;t_cover">Things Home Insurance Doesn&#039;t Cover</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Other Insurance</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/home/do-i-need-renters-insurance" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="renters_insurance" data-label="renters_insurance">Renters Insurance</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/life" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="life_insurance" data-label="life_insurance">Life Insurance</a>
+</li>
+ <li class="header__nav-item header__nav-item--level-3">
+<a href="/insurance/health" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="insurance" data-label="health_insurance" data-label="health_insurance">Health Insurance</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/banking" id="link-5" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Banking.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Banking icon" height="36" width="36" />
+</span>
+Banking
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-5">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/banking" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Banking.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Banking icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Banking Rates</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/loans/personal-loans/what-is-the-prime-rate" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="prime_rate" data-label="prime_rate">Prime Rate</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/savings-accounts" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="best_savings_accounts" data-label="best_savings_accounts">Best Savings Accounts</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Bank Accounts</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/checking-accounts" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="checking_accounts" data-label="checking_accounts">Checking Accounts</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/savings-accounts" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="savings_accounts" data-label="savings_accounts">Savings Accounts</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/savings-accounts/what-is-a-money-market-account" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="money_market_accounts" data-label="money_market_accounts">Money Market Accounts</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/banking-basics/what-is-a-cash-management-account-cma" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="cash_management_accounts" data-label="cash_management_accounts">Cash Management Accounts</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/banking-reviews" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="bank_reviews" data-label="bank_reviews">Bank Reviews</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/banking-basics/how-to-open-a-bank-account" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="how_to_open_a_bank_account" data-label="how_to_open_a_bank_account">How to Open a Bank Account</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/banking/banking-basics/transfer-money-from-one-bank-to-another" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="how_to_transfer_between_banks" data-label="how_to_transfer_between_banks">How to Transfer Between Banks</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Calculators</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/calculators/savings-goal-calculator" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="banking" data-label="savings_goal_calculator" data-label="savings_goal_calculator">Savings Goal Calculator</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/retirement" id="link-6" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Retirement.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Retirement icon" height="36" width="36" />
+</span>
+Retirement
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-6">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/retirement" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Retirement.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Retirement icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Retirement Accounts</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/roth-ira-vs-401k" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="roth_ira_vs._401(k)" data-label="roth_ira_vs._401(k)">Roth IRA vs. 401(k)</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/what-is-a-traditional-ira-definition" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="traditional_ira" data-label="traditional_ira">Traditional IRA</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/pension-vs-401k" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="pension_vs._401(k)" data-label="pension_vs._401(k)">Pension vs. 401(k)</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/common-and-costly-mistakes-with-your-ira" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="ira_tips" data-label="ira_tips">IRA Tips</a>
+ </li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/401k-loan-pros-cons" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="borrowing_from_an_ira" data-label="borrowing_from_an_ira">Borrowing From a 401(k)</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Retirement Planning</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/how-to-retire-at-50" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="how_to_retire_at_50" data-label="how_to_retire_at_50">How to Retire at 50</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/how-much-do-you-need-for-retirement" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="how_much_money_do_you_need_to_retire?" data-label="how_much_money_do_you_need_to_retire?">How Much Money Do You Need to Retire?</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/retirement-adviser" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="talk_to_a_retirement_adviser" data-label="talk_to_a_retirement_adviser">Talk to a Retirement Adviser</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Where to Retire</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/retirement/best-states-to-retire-in" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="best_states_to_retire" data-label="best_states_to_retire">Best States to Retire</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/managing-money/retirement-planning/the-top-countries-retire-on-150000" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="best_countries_to_retire" data-label="best_countries_to_retire">Best Countries to Retire</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/life/travel/trips-you-need-to-take-after-you-retire" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="retirement" data-label="15_trips_to_take_in_retirement" data-label="15_trips_to_take_in_retirement">15 Trips to Take In Retirement</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1 " href="/taxes" id="link-7" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Taxes.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Taxes icon" height="36" width="36" />
+</span>
+Taxes
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-7">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/taxes" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Taxes.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Taxes icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Filing Taxes</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/taxes/how-to-file-taxes-for-the-first-time" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="taxes" data-label="first-time_filers" data-label="first-time_filers">First-Time Filers</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/taxes/whats-happened-to-my-amended-tax-return" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="taxes" data-label="amended_tax_return" data-label="amended_tax_return">Amended Tax Return</a>
+</li>
+</ul>
+<ul class="header__nav-items header__nav-items--level-2">
+<li class="header__nav-item header__nav-item--level-2">
+<span class="header__nav-link header__nav-link--level-2">Tax Resources</span>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/taxes/what-are-tax-brackets" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="taxes" data-label="tax_brackets" data-label="tax_brackets">Tax Brackets</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/taxes/best-tax-software" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="taxes" data-label="best_tax_software" data-label="best_tax_software">Best Tax Software</a>
+</li>
+<li class="header__nav-item header__nav-item--level-3">
+<a href="/taxes/what-is-adjusted-gross-income" class="header__nav-link header__nav-link--level-3 tracking" data-category="top_navigation" data-action="taxes" data-label="what_is_agi?" data-label="what_is_agi?">What is AGI?</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<li class="header__nav-item header__nav-item--level-1">
+<a class="header__nav-link header__nav-link--level-1  header__nav-link--no-dropdown " href="/news" id="link-8" role="" aria-expanded="false">
+<span class="header__icon header__icon--right">
+<img data-src="https://media1.moneywise.com/icons/home/Latest_news.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Latest News icon" height="36" width="36" />
+</span>
+Latest News
+<img class="header__view-all header__view-all--mobile" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+<div class="header__nav-megamenu" id="megamenu-8">
+<div class="header__nav-megamenu-wrapper">
+<a href="#" class="header__nav-link header__nav-link--back"><
+Back</a>
+<div class="header__nav-item header__nav-item--current">
+<a href="/news" class="header__nav-link header__nav-link--current">
+<span class="header__icon header__icon--right header__icon--desktop">
+<img data-src="https://media1.moneywise.com/icons/home/Latest_news.svg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Latest News icon" height="36" width="36" />
+</span>
+View all
+<img class="header__view-all" src="/img/icons/view-all.svg" height="19" width="19" />
+</a>
+</div>
+<div class="header__nav-megamenu-container">
+</div>
+</div>
+<div class="header__blur  header__blur--desktop"></div>
+</div>
+</li>
+<div class="header__controls-mobile">
+<div class="header__controls-container">
+<ul class="header__controls-items">
+<li class="header__controls-item header__controls-item--subscribe header__controls-item--logged-out">
+<a href="#" data-join-moneywise="join" class="header__controls-link tracking" title="Become a subscriber" data-category="top_navigation" data-action="subscribe" data-label="">
+<img src="https://media1.moneywise.com/icons/plus.svg" alt="" height="" width="25" /><br>
+<small>Subscribe</small>
+</a>
+</li>
+<li class="header__controls-item header__controls-item--logged-out">
+<a href="#" data-join-moneywise="signin" class="header__controls-link tracking" title="Sign in" data-category="top_navigation" data-action="sign_in" data-label="">
+<img src="https://media1.moneywise.com/icons/sign-in.svg" alt="" height="" width="26" /><br>
+<small>Sign In</small>
+</a>
+</li>
+<li class="header__controls-item header__controls-item--logged-in header__controls-item--hidden">
+<a href="/my-account" class="header__controls-link" title="Account">
+<img src="https://media1.moneywise.com/icons/account.svg" alt="" height="" width="26" /><br>
+<small>Account</small>
+</a>
+</li>
+<li class="header__controls-item header__controls-item--logged-in header__controls-item--hidden">
+<a href="/logout" data-user-logout class="header__controls-link" title="Logout">
+<img src="https://media1.moneywise.com/icons/logout.svg" alt="" height="" width="26" /><br>
+<small>Logout</small>
+</a>
+</li>
+<li class="header__controls-item">
+<a href="/search" class="header__controls-link tracking" data-category="top_navigation" data-action="search" data-label="">
+<img src="https://media1.moneywise.com/icons/search-2.svg" alt="" height="25" width="26" /><br>
+<small>Search</small>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<button class="header__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navigation">
+<span class="header__hamburger-line"></span>
+</button>
+</div>
+</div>
+</div>
+</header>
+</div>
+<div class="section-body grid-container ">
+<div class="panels panels--article-rr">
+<div class="row expanded" data-equalizer>
+<div class="column panels__left">
+
+<input type="hidden" value="/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us" id="article_slug">
+<article class="article article--full article--organic">
+<div class="article-byline article-byline__container article-byline--no-padding">
+<div class="article-byline__row article-byline__row--padding">
+<div class="article-byline__column article-byline__column--small article-byline__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+<span property="itemListElement" typeof="ListItem">
+<a property="item" typeof="WebPage" title="Go to home" href="https://moneywise.com" class="article-byline__crumb article-byline__crumb--first"><span property="name">Home</span></a>
+<meta property="position" content="1">
+</span>
+<span property="itemListElement" typeof="ListItem">
+<a property="item" typeof="WebPage" title="Go to the Life category archives." href="/life" class="article-byline__crumb article-byline__crumb--second"><span property="name">Life</span></a>
+<meta property="position" content="2">
+</span>
+<span property="itemListElement" typeof="ListItem">
+<a property="item" typeof="WebPage" title="Go to the Lifestyle category archives." href="/life/lifestyle" class="article-byline__crumb article-byline__crumb--third"> <span property="name">Lifestyle</span></a>
+<meta property="position" content="3">
+</span>
+</div>
+</div>
+</div>
+<div class="banner banner--article" style="height: auto;">
+<div class="banner__content">
+<div class="banner__content__title">
+<h1>Here are the world's top 5 most liveable cities in 2022 — none of them are in the US and one is located in 'the land that inflation left behind'</h1>
+<p class="summary"><span>The US is the land of the free. But your money could go further elsewhere.</span></p>
+<picture>
+
+<img src="https://media1.moneywise.com/cdn-cgi/image/fit=cover,g=left,width=756,height=336,f=auto,quality=80/a/22283/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us_hero_1800x800_v20220630150158.jpg" alt="View of buildings in Zurich on the waterfront." pinger-seen="true">
+</picture>
+<cite>kzaravisual / Twenty20</cite>
+</div>
+</div>
+</div>
+<div class="article-byline article-byline__container">
+<div class="article-byline__row article-byline__row--padding">
+<div class="article-byline__column article-byline__column--small">
+<a href="/author/sigrid-forberg" title="More articles by Sigrid Forberg" class="article-byline__author">
+<img src="https://media1.moneywise.com/avatars/sigrid-forberg-1643386302.png" alt="Sigrid Forberg" class="avatar" width="48" height="48"> By Sigrid Forberg
+</a>
+</div>
+<div class="article-byline__column article-byline__column--small article-byline__social">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://moneywise.com/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us" target="_blank">
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>facebook-f-brands</title>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.4">
+<g id="Article" transform="translate(-758.000000, -800.000000)" fill="#1E1E1E" fill-rule="nonzero">
+<g transform="translate(180.000000, 165.000000)" id="facebook-f-brands">
+<g transform="translate(578.000000, 635.000000)">
+<path d="M8.035625,9 L8.48,6.104375 L5.7015625,6.104375 L5.7015625,4.2253125 C5.7015625,3.433125 6.0896875,2.6609375 7.3340625,2.6609375 L8.5971875,2.6609375 L8.5971875,0.195625 C8.5971875,0.195625 7.4509375,0 6.355,0 C4.066875,0 2.57125,1.386875 2.57125,3.8975 L2.57125,6.104375 L0.0278125,6.104375 L0.0278125,9 L2.57125,9 L2.57125,16 L5.7015625,16 L5.7015625,9 L8.035625,9 Z" id="Path"></path>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</a>
+<a href="https://twitter.com/intent/tweet/?url=https://moneywise.com/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us" target="_blank">
+<svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>twitter-brands</title>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.4">
+<g id="Article" transform="translate(-782.000000, -800.000000)" fill="#1E1E1E" fill-rule="nonzero">
+<g transform="translate(180.000000, 165.000000)" id="twitter-brands">
+<g transform="translate(602.000000, 635.000000)">
+<path d="M17.6680769,3.98907692 C17.6805769,4.164 17.6805769,4.33896154 17.6805769,4.51388462 C17.6805769,9.84926923 13.6196923,15.9968846 6.19757692,15.9968846 C3.91096154,15.9968846 1.78680769,15.3346154 0,14.1851154 C0.324884615,14.2225769 0.637230769,14.2350769 0.974615385,14.2350769 C2.86134615,14.2350769 4.59819231,13.5978462 5.98515385,12.5107692 C4.21084615,12.4732692 2.72392308,11.3112308 2.21161538,9.71184615 C2.46153846,9.74930769 2.71142308,9.77430769 2.97384615,9.77430769 C3.33619231,9.77430769 3.69857692,9.72430769 4.03592308,9.63688462 C2.18665385,9.262 0.799653846,7.63765385 0.799653846,5.67592308 L0.799653846,5.62596154 C1.33692308,5.92584615 1.96173077,6.11326923 2.62392308,6.13823077 C1.53684615,5.4135 0.824653846,4.1765 0.824653846,2.77703846 C0.824653846,2.02734615 1.02453846,1.34011538 1.37442308,0.740346154 C3.36115385,3.18938462 6.3475,4.78873077 9.69615385,4.96369231 C9.63369231,4.66380769 9.59619231,4.35146154 9.59619231,4.03907692 C9.59619231,1.81492308 11.3955,0.00315384615 13.6321154,0.00315384615 C14.7941538,0.00315384615 15.8437308,0.490461538 16.5809615,1.27765385 C17.4930769,1.10273077 18.3677308,0.765346154 19.1424615,0.303038462 C18.8425385,1.24019231 18.2053077,2.02738462 17.3681538,2.52715385 C18.1803462,2.43973077 18.9675385,2.21476923 19.6922308,1.90242308 C19.1425385,2.70207692 18.4552692,3.41426923 17.6680769,3.98907692 Z" id="Path"></path>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</a>
+<a href="mailto:?body=https%3A%2F%2Fmoneywise.com%2Flife%2Flifestyle%2Fwant-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us">
+<svg width="22px" height="16px" viewBox="0 0 22 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>envelope-light</title>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.4">
+<g id="Article" transform="translate(-817.000000, -800.000000)" fill="#1E1E1E" fill-rule="nonzero">
+<g transform="translate(180.000000, 165.000000)" id="envelope-light">
+<g transform="translate(637.000000, 635.000000)">
+<path d="M19.3333333,0 L2,0 C0.895833333,0 0,0.895833333 0,2 L0,14 C0,15.1041667 0.895833333,16 2,16 L19.3333333,16 C20.4375,16 21.3333333,15.1041667 21.3333333,14 L21.3333333,2 C21.3333333,0.895833333 20.4375,0 19.3333333,0 Z M2,1.33333333 L19.3333333,1.33333333 C19.7,1.33333333 20,1.63333333 20,2 L20,3.725 C19.0875,4.49583333 17.7833333,5.55833333 13.725,8.77916667 C13.0208333,9.3375 11.6333333,10.6833333 10.6666667,10.6666667 C9.7,10.6833333 8.30833333,9.3375 7.60833333,8.77916667 C3.55,5.55833333 2.24583333,4.49583333 1.33333333,3.725 L1.33333333,2 C1.33333333,1.63333333 1.63333333,1.33333333 2,1.33333333 Z M19.3333333,14.6666667 L2,14.6666667 C1.63333333,14.6666667 1.33333333,14.3666667 1.33333333,14 L1.33333333,5.45833333 C2.28333333,6.2375 3.78333333,7.44166667 6.77916667,9.82083333 C7.63333333,10.5041667 9.14166667,12.0083333 10.6666667,12 C12.1833333,12.0125 13.6791667,10.5208333 14.5541667,9.82083333 C17.55,7.44166667 19.05,6.2375 20,5.45833333 L20,14 C20,14.3666667 19.7,14.6666667 19.3333333,14.6666667 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</a>
+<a href="#" onclick="javascript: window.print(); return false;">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>print-light</title>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.4">
+<g id="Article" transform="translate(-854.000000, -800.000000)" fill="#1E1E1E" fill-rule="nonzero">
+<g transform="translate(180.000000, 165.000000)" id="print-light">
+<g transform="translate(674.000000, 635.000000)">
+<path d="M13.5,6 L13,6 L13,3.4140625 C13,3.14875 12.8946875,2.8946875 12.7071875,2.706875 L10.2928125,0.2928125 C10.1053125,0.1053125 9.8509375,0 9.585625,0 L3.9525,0 C3.42625,0 3,0.4478125 3,1 L3,6 L2.5,6 C1.119375,6 0,7.119375 0,8.5 L0,11.5 C0,11.77625 0.22375,12 0.5,12 L3,12 L3,15.5 C3,15.77625 3.22375,16 3.5,16 L12.5,16 C12.77625,16 13,15.77625 13,15.5 L13,12 L15.5,12 C15.77625,12 16,11.77625 16,11.5 L16,8.5 C16,7.119375 14.880625,6 13.5,6 Z M10,1.4140625 L11.5859375,3 L10,3 L10,1.4140625 Z M4.00375,1 L9,1 L9,3 C9,3.5521875 9.4478125,4 10,4 L12,4 L12,6 L4.000625,6 L4.00375,1 Z M12,15 L4,15 L4,12 L12,12 L12,15 Z M15,11 L1,11 L1,8.5 C1,7.6728125 1.6728125,7 2.5,7 L13.5,7 C14.3271875,7 15,7.6728125 15,8.5 L15,11 Z M12.5,8.25 C12.0859375,8.25 11.75,8.585625 11.75,9 C11.75,9.4140625 12.0859375,9.75 12.5,9.75 C12.9140625,9.75 13.25,9.4140625 13.25,9 C13.25,8.585625 12.9140625,8.25 12.5,8.25 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</a>
+</div>
+<div class="article-byline__column article-byline__column--small article-byline__date">
+<time class="time" datetime="2022-07-01T11:20:53-04:00">Jul. 01, 2022</time>
+</div>
+</div>
+<aside class="top-disclaimer">
+<div class="top-disclaimer__inner">We adhere to strict standards of editorial integrity to help you make decisions with confidence. Please be aware that some (or all) products and services linked in this article are from our sponsors.</div>
+</aside>
+
+<div class="d7s-cisa"></div>
+<script>(d7scisa = window.d7scisa || []).push({});</script>
+<div class="article-byline__row">
+<div class="article-byline__column article-byline__column--large"><p>Looking for a better life? It may be time to point your compass westward — to Western Europe and Western Canada, specifically.</p>
+<p>Cities in both those regions make up this year’s top five most liveable cities in the Economic Intelligence Unit’s annual <a href="https://www.eiu.com/n/campaigns/global-liveability-index-2022/">Global Liveability Index</a>. The survey considers five categories in its ranking system: stability, culture and environment, healthcare, infrastructure, and education.</p>
+
+<div id="milkshake" style="margin-bottom:20px">
+	
+	<script src="https://static.vidazoo.com/basev/vwpt.js" data-widget-id="62c3875c5876ed1677f01f93" defer></script>
+</div>
+<p>And with inflation at a scorching-hot rate of 8.6% in May, a few of these charming cities may be just the spot to flee for a more affordable life too.</p>
+</div>
+</div>
+</div>
+<section class="inline-signup">
+<div class="inline-signup__copy">
+<h3>Get the latest personal finance news sent straight to your inbox.</h3>
+<p>We’ll send you top stories and timely tips every Tuesday and Thursday.</p>
+</div>
+<form>
+<div class="inline-signup__form">
+<input class="mon" id="inline-signup-input" type="email" placeholder="Enter email address" required>
+<button id="inline-signup-btn" type="submit" class="tracking" data-category="CTA" data-action="Subscribe button" tabindex="0">Subscribe</button>
+</div>
+</form>
+</section>
+
+<div id="main-article" class="row wider panels panels--article">
+<div class="article-page">
+<div class="column panels__wide">
+<div class="inner">
+<h2>Don’t miss</h2> <ul> <li>Too many Americans are still missing out on <a href="https://moneywise.com/insurance/auto/dont-overpay-for-car-insurance-500?placement=DM1">cheaper car insurance</a> </li> <li>Your cash is trash: Here are <a href="https://moneywise.com/investing/alternative-investments/ways-to-hedge-against-high-inflation?placement=DM2">4 simple ways to protect your money</a> against white-hot inflation (without being a stock market genius)</li> <li>How to turn your <a href="https://moneywise.com/investing/robo-advisors/how-your-small-change-can-help-build-your-investing-portfolio?placement=DM3">spare change</a> into a diversified portfolio</li> </ul> <h2>5. Vancouver, Canada</h2> <p>Our northern neighbor dominates this list with two out of five cities. Vancouver, one of the country’s largest and most diverse cities, has it all: mountains, the Pacific Ocean, a varied food scene. And did we mention the mountains?</p> <p>Vancouver is one of those rare cities that please both nature lovers and urbanites.</p> <p>The Vancouver Economic Commission describes the city as one of North America’s fastest-growing low-carbon economies. It did face some setbacks through the pandemic, but local economic growth has started to bounce back, led by construction, technology, digital entertainment, and the green economy.</p> <p>Inflation is a concern, though. Vancouver’s rate of inflation in May rose a full half percent more than the country as a whole — 8.2% compared to 7.7%.</p> <p>Still, the commission remains upbeat and optimistic, noting Vancouver’s unemployment rate was the lowest of the country’s four main cities for most of 2021 and 2022 so far.</p> <h2>3. Calgary, Canada</h2> <p>It’s time to get familiar with Cow Town. This mid-sized Canadian city at the base of the Rocky Mountains isn’t just for cowboys anymore.</p> <p>It’s not as internationally well-known as Canada’s larger metropolises like Vancouver, Toronto, and Montreal, Calgary will surprise you with its culture, history, and nearby natural wonders like Banff.</p> <p>It’s also Canada’s sunniest city, receiving about 333 days of sun, according to WorldAtlas.</p> <p>Calgary’s GDP is projected to grow at a rate faster than the rest of the country the rest of this year — with expectations of reaching 5.5%, blowing the country’s overall anticipated growth of 3.8% out of the water.</p> <p>And employment is predicted to grow at a rate above the pre-pandemic five-year historical average growth rate in both the province of Alberta and Calgary.</p> <p>However, the city has been hit hard by inflation over the last year. In May, Calgary’s inflation review showed the city’s rate hit 8.0% — slightly higher than Canada’s average of 7.1% for that month. Almost all categories marked price increases — save for children’s clothing and recreational cannabis (which is legal in Canada).</p> <h2>3. Zurich, Switzerland</h2> <p>Residents of Switzerland aren’t neutral — at least about how great it is to live in Zurich. And if you’re hoping to flee to Switzerland to escape oppressive inflation, you should look no further.</p> <p>As Reuters put it in an earlier article, Switzerland is the “land that inflation left behind.” While the rest of the world (and especially Europe) has been grappling with scorching inflation, Switzerland hit a modest rate of 2.9% in May.</p> <p>However, keep in mind, that prices were already fairly expensive in Zurich — think New York City but with slightly less expensive rent. And like NYC, this city is known for its shopping, museums and galleries, nightlife and gorgeous vistas.</p> <p>While the financial industry dominates Zurich’s business sector — accounting for about one third of its wealth and a quarter of its local jobs — life sciences, information and communications technology, cleantech and creative industries also contribute to putting Zurich on the map as the economic hub of Switzerland.</p> <p>On top of that, the city boasts it offers residents progressive working conditions like fair salaries and advantageous social benefits, flexible working models, and equal opportunities for men and women.</p> <p>And if that doesn’t impress you, there’s always some very fine chocolate and cheese to be found here.</p> <h2>More from MoneyWise</h2> <ul> <li>Get the latest personal finance news sent straight to your inbox with the <a href="https://moneywise.com/subscription">MoneyWise newsletter</a>.</li> <li>A TikToker paid off $17,000 in credit card debt by <a href="https://moneywise.com/managing-money/budgeting/what-is-cash-stuffing?placement=WTRN2">'cash stuffing'</a> — can it work for you?</li> <li>Biden's gas tax holiday might save you $6 a month, fueling calls for <a href="https://moneywise.com/news/top-stories/bidens-gas-tax-holiday-might-only-save-you-6-a-month-and-leave-a-real-mess?placement=DM3">inflation stimulus checks</a> instead</li> </ul> <h2>2. Copenhagen, Denmark</h2> <p>There’s nothing rotten in the state of Denmark. If you like ice cream, rye bread, and hot dogs — yes, hot dogs — Copenhagen is the place for you. Even Queen Margrethe II is known to partake in a <em>​​Pølser</em> (hot dog) from time to time.</p> <p>Sure, winter in Denmark can be tough, but remember that the Danes invented the concept of <em>Hygge</em>, the cozy comfort lifestyle characterized by candles, warm sweaters, and good company. Plus: pastries.</p> <p>Denmark’s rate of inflation hit 7.4% in May. And yet, in spite of that, war on the continent and the lingering effects of COVID-19, GDP is expected to rise faster than the government’s previous projections to 3.4% for 2022.</p> <p>The country’s unemployment rate is currently the lowest it’s been in 13 years. But a tight labor market means there’s plenty of room for new residents with a wide array of skills.</p> <p>On top of that, Denmark’s population is on the older side — meaning it will soon need an influx of newcomers to keep the country going.</p> <h2>1. Vienna, Austria</h2> <p>As Billy Joel likes to say, Vienna waits for you. The city that inspired Joel is also known colloquially as the city of music: Vienna was home to both Beethoven and Mozart and now houses the Vienna Philharmonic and the Vienna Boys Choir.</p> <p>It also boasts affordable housing, low crime rates, and generally clean and green spaces for residents.</p> <p>Like most of the other cities on this list, Austria has faced its own inflation challenges this year, with its annual rate rising to 7.7% in May. And like many other countries in Europe, it’s been affected by the Ukraine war, which analysts predict will slow some of the country’s economic recovery.</p> <p>Still, Austrians are pretty content with their lot. According to statistics from the Organisation for Economic Co-operation and Development (OECD), 72% of Austrians between the ages of 15 to 64 have a job — compared to 67% in the U.S.</p> <p>And When asked to rate their general satisfaction with life on a scale from 0 to 10, Austrians gave it a 7.2 grade on average — giving it a slight edge over the U.S., which rated an average of 6.7.</p> <h2>What to read next</h2> <ul> <li> <a href="https://moneywise.com/subscription/investing">Sign up</a> for our MoneyWise investing newsletter to receive a steady flow of <a href="https://moneywise.com/subscription/investing">actionable ideas</a> from Wall Street's top firms.</li> <li>US is only a few days away from an ‘absolute explosion’ on inflation — here are <a href="https://moneywise.com/investing/stocks/us-is-only-a-few-days-away-from-an-absolute-explosion-on-inflation?placement=WTRN2">3 shockproof sectors</a> to help protect your portfolio</li> <li>‘There’s always a bull market somewhere’: Jim Cramer’s famous words suggest you can make money no matter what. Here are <a href="https://moneywise.com/investing/stocks/theres-always-a-bull-market-somewhere-jim-cramer?placement=WTRN3">2 powerful tailwinds</a> to take advantage of today</li> </ul>
+</div>
+</div>
+</div>
+</div>
+<address class="author-block author-block__container">
+<div class="author-block__row">
+<div class="author-block__column author-block__column--large">
+<h2 class="author-block__heading">About <span>the Author</span></h2>
+</div>
+<div class="author-block__column author-block__column--small">
+<a href="/author/sigrid-forberg" title="More from Sigrid Forberg"><img src="https://media1.moneywise.com/avatars/sigrid-forberg-1643386302.png" alt="Sigrid Forberg" width="96" height="96"></a>
+</div>
+<div class="author-block__column author-block__column--medium">
+<h3>Sigrid Forberg</h3>
+<h4>Reporter</h4>
+</div>
+<div class="author-block__column author-block__column--large">
+<p>Sigrid is a reporter with MoneyWise. Before joining the team, she worked for a B2B publication in the hardware and home improvement industry and ran an internal employee magazine for the federal government. As a graduate of the Carleton University Journalism program, she takes pride in telling informative, engaging and compelling stories.</p>
+</div>
+</div>
+</address>
+</article>
+<div class="newspaper newspaper__container">
+<div class="newspaper__row">
+<div class="newspaper__column newspaper__column--large">
+<h2 class="newspaper__heading">What <span>to Read Next</span></h2>
+</div>
+</div>
+<div class="newspaper__row">
+<div class="newspaper__column">
+<div class="newspaper__article newspaper__article--medium">
+<a href="/life/shopping/how-does-buy-now-pay-later-work">
+<picture>
+<img src="https://media1.moneywise.com/a/13421/how-does-buy-now-pay-later-work_hero_1800x800_v20220613133638.jpg" alt="">
+</picture>
+</a>
+<h2><a href="/life/shopping/how-does-buy-now-pay-later-work">As Apple wades into a busy marketplace, is it the time to buy now, pay later?</a></h2>
+<p class="newspaper__paragraph--small">Tech behemoth Apple is entering the BNPL arena, while the U.K.’s Klarna struggles. What does this mean for shoppers?</p>
+<div class="newspaper__byline">By <a href="/author/samantha-emann">Samantha Emann</a></div>
+</div>
+</div>
+<div class="newspaper__column">
+<div class="newspaper__article newspaper__article--medium">
+<a href="/life/lifestyle/fort-knox-secrets">
+<picture>
+<img src="https://media1.moneywise.com/a/1529/fort-knox-secrets_hero_1800x800_v20220610112739.jpg" alt="">
+</picture>
+</a>
+<h2><a href="/life/lifestyle/fort-knox-secrets">The golden secrets of Fort Knox revealed</a></h2>
+<p class="newspaper__paragraph--small">America&#039;s gold stockpile has fueled curiosity and conspiracy theories. How much do we know?</p>
+<div class="newspaper__byline">By <a href="/author/doug-whiteman">Doug Whiteman</a></div>
+</div>
+</div>
+</div>
+<div class="newspaper__row">
+<div class="newspaper__column">
+<div class="newspaper__article newspaper__article--medium">
+<a href="/life/travel/how-to-keep-your-travel-plans-on-budget">
+<picture>
+<img src="https://media1.moneywise.com/a/21952/how-to-keep-your-travel-plans-on-budget_hero_1800x800_v20220606162536.jpg" alt="">
+</picture>
+</a>
+<h2><a href="/life/travel/how-to-keep-your-travel-plans-on-budget">Americans refuse to let higher prices derail their travel plans — 10 tactics to keep your summer vacation on budget</a></h2>
+<p class="newspaper__paragraph--small">With pent-up demand, labor shortages and surging prices, summer travel won’t be a bargain this year.</p>
+<div class="newspaper__byline">By <a href="/author/brian-j-oconnor">Brian J. O’Connor</a></div>
+</div>
+</div>
+<div class="newspaper__column">
+<div class="newspaper__article newspaper__article--medium">
+<a href="/life/shopping/psychological-Costco-tricks">
+<picture>
+<img src="https://media1.moneywise.com/a/21545/psychological-Costco-tricks_hero_1800x800_v20220429112211.jpg" alt="">
+</picture>
+</a>
+<h2><a href="/life/shopping/psychological-Costco-tricks">15 tricks Costco uses to make you buy more</a></h2>
+<p class="newspaper__paragraph--small">There’s a reason you always walk out with a receipt the length of your arm.</p>
+<div class="newspaper__byline">By <a href="/author/bronwyn-petry">Bronwyn Petry</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row wide">
+<hr class="pattern">
+</div>
+<div class="row disclaimer">
+<div class="column small-12 footer-about" id="bottom_disclaimer">
+<h4>Disclaimer</h4>
+<p>The content provided on MoneyWise is information to help users become financially literate. It is neither tax nor legal advice, is not intended to be relied upon as a forecast, research or investment advice, and is not a recommendation, offer or solicitation to buy or sell any securities or to adopt any investment strategy. Tax, investment and all other decisions should be made, as appropriate, only with guidance from a qualified professional. We make no representation or warranty of any kind, either express or implied, with respect to the data provided, the timeliness thereof, the results to be obtained by the use thereof or any other matter.</p>
+</div>
+</div>
+
+<div class="row wide row--articleBottom">
+<div class="column small-12">
+<div class="back-to-top back-to-top--noLine">
+<a href="#top"><img src="/img/to-top_2x.png" alt=""></a>
+</div>
+</div>
+</div>
+</div>
+<div class="column panels__right text-center">
+<div id="bid-n-sticky-wrapper">
+<div id="big-n-sticky">
+<div class="sidebar-module" id="article-related">
+<h2 class="sidebar-module__title">Latest <b>Articles</b></h2>
+<div class="sidebar-module__content">
+<article class="article-mini article-mini--multiple">
+<div class="article-copy">
+<div class="article-copy__image-wrapper">
+<a href="/life/lifestyle/fort-knox-secrets">
+<picture>
+<img src="https://media1.moneywise.com/cdn-cgi/image/fit=cover,g=left,width=180,height=80,f=auto,quality=80/a/1529/fort-knox-secrets_hero_1800x800_v20220610112739.jpg" srcset="https://media1.moneywise.com/cdn-cgi/image/fit=cover,g=left,width=360,height=160,f=auto,quality=80/a/1529/fort-knox-secrets_hero_1800x800_v20220610112739.jpg 2x" alt="United States Gold Bullion Depository Fort Knox Kentucky" width="180" height="80">
+</picture>
+</a>
+</div>
+<div class="article-copy__body">
+<h3><a href="/life/lifestyle/fort-knox-secrets" class="article-title">The golden secrets of Fort Knox revealed</a></h3>
+<p>America&#039;s gold stockpile has fueled curiosity and conspiracy theories. How much do we know?</p>
+<div class="article-copy-bottom article-byline">
+<a href="/author/doug-whiteman" class="author">By Doug Whiteman</a>
+</div>
+</div>
+</div>
+</article><article class="article-mini article-mini--multiple">
+<div class="article-copy">
+<div class="article-copy__image-wrapper">
+<a href="/life/travel/how-to-keep-your-travel-plans-on-budget">
+<picture>
+<img src="https://media1.moneywise.com/cdn-cgi/image/fit=cover,g=left,width=180,height=80,f=auto,quality=80/a/21952/how-to-keep-your-travel-plans-on-budget_hero_1800x800_v20220606162536.jpg" srcset="https://media1.moneywise.com/cdn-cgi/image/fit=cover,g=left,width=360,height=160,f=auto,quality=80/a/21952/how-to-keep-your-travel-plans-on-budget_hero_1800x800_v20220606162536.jpg 2x" alt="Woman waits for plane" width="180" height="80">
+</picture>
+</a>
+</div>
+<div class="article-copy__body">
+<h3><a href="/life/travel/how-to-keep-your-travel-plans-on-budget" class="article-title">10 tactics to keep your summer vacation on budget</a></h3>
+<p>With pent-up demand, labor shortages and surging prices, summer travel won’t be a bargain this year.</p>
+<div class="article-copy-bottom article-byline">
+<a href="/author/brian-j-oconnor" class="author">By Brian J. O’Connor</a>
+</div>
+</div>
+</div>
+</article><article class="article-mini article-mini--multiple">
+<div class="article-copy">
+<div class="article-copy__image-wrapper">
+<a href="/life/shopping/psychological-Costco-tricks">
+<picture>
+<img src="https://media1.moneywise.com/cdn-cgi/image/fit=cover,g=left,width=180,height=80,f=auto,quality=80/a/21545/psychological-Costco-tricks_hero_1800x800_v20220429112211.jpg" srcset="https://media1.moneywise.com/cdn-cgi/image/fit=cover,g=left,width=360,height=160,f=auto,quality=80/a/21545/psychological-Costco-tricks_hero_1800x800_v20220429112211.jpg 2x" alt="shopping at costco" width="180" height="80">
+</picture>
+</a>
+</div>
+<div class="article-copy__body">
+<h3><a href="/life/shopping/psychological-Costco-tricks" class="article-title">15 tricks Costco uses to make you buy more</a></h3>
+<p>There’s a reason you always walk out with a receipt the length of your arm.</p>
+<div class="article-copy-bottom article-byline">
+<a href="/author/bronwyn-petry" class="author">By Bronwyn Petry</a>
+</div>
+</div>
+</div>
+</article> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer
+            ">
+<div class="footer__container">
+<div class="footer__logo">
+<a href="/">
+<img src="https://moneywise.com/img/logo.svg" alt="MoneyWise logo" height="40" width="198" />
+</a>
+<div></div>
+</div>
+<div class="footer__top">
+<div class="footer__flex">
+<div class="footer__about">
+<div class="footer__flex">
+<div class="footer__intro">
+<h2>About MoneyWise</h2>
+<p>Information and timely news from our team of trusted money experts.</p>
+</div>
+<ul class="footer__links">
+<li class="footer__items footer__item--top footer__item--level-1">
+<a href=" #" class="footer__link footer__link--top footer__link--level-1 footer__link--links-level-1" target="_blank" rel="noopener"> More MoneyWise</a>
+ <ul class="footer__items footer__item--top footer__items--level-2">
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="https://moneywise.ca/" class="footer__link footer__link--level-2 footer__link--links-level-2 tracking" target="_blank" rel="noopener" data-category="bottom_navigation" data-action="moneywise_properties" data-label="moneywise_canada">MoneyWise Canada</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="https://moneywise.co.uk/" class="footer__link footer__link--level-2 footer__link--links-level-2 tracking" target="_blank" rel="noopener" data-category="bottom_navigation" data-action="moneywise_properties" data-label="moneywise_uk">MoneyWise UK</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="https://halfbanked.com/" class="footer__link footer__link--level-2 footer__link--links-level-2 tracking" target="_blank" rel="noopener" data-category="bottom_navigation" data-action="moneywise_properties" data-label="half_banked">Half Banked</a>
+</li>
+</ul>
+<li>
+</ul>
+<ul class="footer__social">
+<li>
+<a href="https://twitter.com/moneywisecom" class="footer__circle footer__circle--twitter tracking" target="_blank" rel="noopener" data-category="bottom_navigation" data-action="social" data-label="twitter">
+<img src="https://media1.moneywise.com/about/twitter.svg" alt="Twitter icon" height="20" width="20" />
+</a>
+<li>
+<li>
+<a href="https://www.facebook.com/moneywisecom" class="footer__circle footer__circle--facebook tracking" target="_blank" rel="noopener" data-category="bottom_navigation" data-action="social" data-label="facebook">
+<img src="https://media1.moneywise.com/about/facebook.svg" alt="Facebook icon" height="20" width="20" />
+</a>
+<li>
+<li>
+<a href="https://www.instagram.com/moneywisecom" class="footer__circle footer__circle--instagram tracking" target="_blank" rel="noopener" data-category="bottom_navigation" data-action="social" data-label="instagram">
+<img src="https://media1.moneywise.com/about/instagram.svg" alt="Instagram icon" height="20" width="20" />
+</a>
+<li>
+<li>
+<a href="https://www.youtube.com/channel/UCncBICp23JrrN3Wfmkf74Tw" class="footer__circle footer__circle--youtube tracking" target="_blank" rel="noopener" data-category="bottom_navigation" data-action="social" data-label="youtube">
+<img src="https://media1.moneywise.com/about/yt.svg" alt="Instagram icon" height="20" width="20" />
+</a>
+<li>
+</ul>
+</div>
+</div>
+<nav class="footer__nav footer__nav--top" aria-label="Top Footer Navigation">
+<ul class="footer__items footer__items--top">
+<li class="footer__items footer__item--top footer__item--level-1">
+<a href="/employment" class="footer__link footer__link--top footer__link--level-1">Employment</a>
+<ul class="footer__items footer__item--top footer__items--level-2">
+<li class="footer__item footer__item--top footer__item--level-2 footer__item--first">
+<a href="/employment" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="moneywise_properties" data-label="half_banked">Employment</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/employment/the-highest-paying-jobs-in-the-united-states" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="employment" data-label="best_paying_jobs">Highest-Paying Jobs</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/employment/the-highest-paying-federal-government-jobs" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="employment" data-label="best_government_jobs">Best Government Jobs</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/employment/the-most-in-demand-remote-jobs" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="employment" data-label="best_remote_jobs">Best Remote Jobs</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/employment/how-to-ask-for-a-raise" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="employment" data-label="best_remote_jobs">How to Negotiate a Raise</a>
+</li>
+</ul>
+</li>
+<li class="footer__items footer__item--top footer__item--level-1">
+<a href="/managing-money" class="footer__link footer__link--top footer__link--level-1">Managing Money</a>
+<ul class="footer__items footer__item--top footer__items--level-2">
+<li class="footer__item footer__item--top footer__item--level-2 footer__item--first">
+<a href="/managing-money" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="employment" data-label="best_remote_jobs">Managing Money</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/managing-money/debt" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="managing_money" data-label="debt">Debt</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/managing-money/budgeting" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="managing_money" data-label="budgeting">Budgeting</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/managing-money/credit-score" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="managing_money" data-label="credit">Credit</a>
+</li>
+</ul>
+</li>
+<li class="footer__items footer__item--top footer__item--level-1">
+<a href="/auto" class="footer__link footer__link--top footer__link--level-1">Auto</a>
+<ul class="footer__items footer__item--top footer__items--level-2">
+<li class="footer__item footer__item--top footer__item--level-2 footer__item--first">
+<a href="/auto" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="managing_money" data-label="credit">Auto</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/insurance/auto/leasing-vs-buying-a-car" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="auto" data-label="leasing_vs_buying">Leasing vs. Buying</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/loans/auto-loans/tips-for-buying-a-car-on-a-budget" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="auto" data-label="car_buying_tips">Car Buying Tips</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/insurance/auto/best-time-to-buy-a-car" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="auto" data-label="best_time_to_buy_a_car">Best Time to Buy a Car</a>
+</li>
+</ul>
+</li>
+<li class="footer__items footer__item--top footer__item--level-1">
+<a href="/credit-cards" class="footer__link footer__link--top footer__link--level-1">Credit Cards</a>
+<ul class="footer__items footer__item--top footer__items--level-2">
+<li class="footer__item footer__item--top footer__item--level-2 footer__item--first">
+<a href="/credit-cards" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="auto" data-label="best_time_to_buy_a_car">Credit Cards</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/borrowing/credit-card-basics/how-to-compare-credit-card-offers" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="credit_cards" data-label="how_to_compare_offers">How to Compare Offers</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/borrowing/credit-card-basics/apr-vs-interest-rate-whats-difference" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="credit_cards" data-label="apr_vs_interest_rate">APR vs. Interest Rate</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/credit-cards/reviews" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="credit_cards" data-label="credit_card_reviews">Credit Card Reviews</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/life/travel/how-do-airline-miles-work" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="credit_cards" data-label="how_airline_rewards_work">How Airline Rewards Work</a>
+</li>
+</ul>
+</li>
+<li class="footer__items footer__item--top footer__item--level-1">
+<a href="/life" class="footer__link footer__link--top footer__link--level-1">Life</a>
+<ul class="footer__items footer__item--top footer__items--level-2">
+<li class="footer__item footer__item--top footer__item--level-2 footer__item--first">
+<a href="/life" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="credit_cards" data-label="how_airline_rewards_work">Life</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/life/lifestyle" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="life" data-label="lifestyle">Lifestyle</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/life/shopping" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="life" data-label="shopping">Shopping</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/life/travel" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="life" data-label="travel">Travel</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/life/parenting" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="life" data-label="parenting">Parenting</a>
+</li>
+</ul>
+</li>
+<li class="footer__items footer__item--top footer__item--level-1">
+<a href="/education" class="footer__link footer__link--top footer__link--level-1">Education</a>
+<ul class="footer__items footer__item--top footer__items--level-2">
+<li class="footer__item footer__item--top footer__item--level-2 footer__item--first">
+<a href="/education" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="life" data-label="parenting">Education</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/loans/student-loans/why-trade-school-might-be-a-better-choice-than-college" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="education" data-label="trade_school_vs._college">Trade School vs. College</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/loans/student-loans/how-some-students-are-saving-25000-on-their-college-tuition" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="education" data-label="how_to_be_successful_in_college">How to Be Successful in College</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/loans/student-loans/the-15-most-valuable-college-majors" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="education" data-label="the_most_useful_college_degrees">The Most Useful College Degrees</a>
+</li>
+<li class="footer__item footer__item--top footer__item--level-2">
+<a href="/employment/heres-how-much-more-you-could-earn-with-a-better-education" class="footer__link footer__link--top footer__link--level-2 tracking" data-category="bottom_navigation" data-action="education" data-label="earn_more_with_better_education">Earn More With Better Education</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="footer__bottom">
+<h2>Company</h2>
+<div class="footer__flex footer__flex--bottom">
+<div class="footer__copyright">&copy; 2022 Wise Publishing, Inc.</div>
+<nav class="footer__nav footer__nav--bottom" aria-label="Bottom Footer Navigation">
+<ul class="footer__flex">
+<li class="footer__items footer__item--bottom">
+<a href="/about" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="about_us">About Us</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/privacy" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="privacy_policy">Privacy Policy</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/cookies" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="cookies">Cookies</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/terms" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="terms_of_use">Terms of Use</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/advertise" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="advertise">Advertise</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/subscription-agreement" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="subscription_agreement">Subscription Agreement</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/advertising" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="advertising_disclosure">Advertising Disclosure</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/contact" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="contact_us">Contact Us</a>
+</li>
+<li class="footer__items footer__item--bottom">
+<a href="/site-map" class="footer__link footer__link--bottom tracking" data-category="bottom_navigation" data-action="company_links_bottom_of_page" data-label="site_map">Site Map</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</footer>
+</main>
+
+<script src="/js/manifest.js?cb=2460"></script>
+<script src="/js/vendor.js?cb=2460"></script>
+<script src="/js/app.js?cb=2460"></script>
+<script src="/js/vanilla.js?cb=2460"></script>
+<script src="/js/contact-us.js?cb=2460"></script>
+
+<script>
+        var article_id = 22283;
+
+        Ribn.cmd.push(function () {
+            Ribn.setAttribute({ article_id: 22283 });
+        })
+    </script>
+<script>
+        let type_id = parseInt('5');
+        window.type_id = type_id;
+        console.log("Template: Organic");
+    </script>
+<script>
+
+
+        var rel_url = '/life/lifestyle/want-to-escape-white-hot-inflation-here-are-the-top-5-liveable-cities-in-the-world-in-2022-and-none-of-them-are-in-the-us';
+        var inline_ad = 1;
+
+        function numberInlineAds() {
+            $('.inline-ad-container').each(function (index) {
+                var id = 'ad_' + inline_ad;
+                $(this).attr('id', id);
+                inline_ad++;
+
+            });
+
+            console.log('Positions found ' + inline_ad);
+        }
+
+        // First parse, number the ads. Have to run again on any ajax load
+        numberInlineAds();
+
+        $(window).on('resize scroll', function () {
+
+            /* Handle Lazy Load */
+            $('img.lazy').each(function () {
+
+                elem = $(this);
+
+                if (elem.isInViewportOffset(1000)) {
+                    elem.attr('src', elem.attr('data-src'));
+                    elem.removeClass('lazy');
+                }
+
+            });
+        });
+    </script>
+<script>
+        console.log('RR: right-rail-articles');
+        $('#big-n-sticky').stick_in_parent({
+            offset_top: 55,
+            bottoming: true,
+            spacer: '#big-n-sticky-wrapper',
+            parent: '.panels__right'
+        });
+    </script>
+
+<script>
+        var _comscore = _comscore || [];
+        _comscore.push({
+            c1: "2",
+            c2: "28615885"
+        });
+        (function () {
+            var s = document.createElement("script"),
+                el = document.getElementsByTagName("script")[0];
+            s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+        })();
+    </script>
+<noscript>
+        <img src="https://sb.scorecardresearch.com/p?c1=2&c2=28615885&cv=2.0&cj=1"/>
+    </noscript>
+
+<script src="/js/component-scripts/inline-signup.js?cb=2460"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f6eecb2ebf","applicationID":"313086149","transactionName":"NgcHYhdXCkZSUEcMDA9NJFURXwtbHHJDFT8pFhFGOXULW0dBXAkPBBAWaiREEFxQX1YmDA8WF1kJWgFHc0BfEAQiAxE=","queueTime":0,"applicationTime":77,"atts":"GkAQFF9NRlxDEQlHVFNMVAJVGFUHAB0EXEFNQBVTBF07WFZeXBcaQ1hXBlEOSgUDAwNVT0MGAEAMVQFqV1ZHAAAVCwpYRwxGcVZAWBEMEUBJFBBFAUdsUlQADRU9FkIXXwpSEQkRKAwbCwlaBGpLAB0DE00uAAEMWBFZF10IE3oLFwQORXsEVUR6YBNrRVJRPVQDOgFNFXJDQwkGNgcHfQxCOBoGAARLUFdCTX0tYil5HxNfDAgEQiJTBl0LHBNwWxcMDAc5GVQGVhsDHQNLU0ExBFAERA1pHAYAUk1SVEcaR1cWQVpQXwA8Eg4QUUcMRkJSXUdIFw5PAEUGVxRQHkRbDBcETw1ZERsNW1VfUhEKDgxIXgBEARhSQVZIFwkHSEIKRkkAHl9aEwYAAAlTSFUNQVpWQEgKD08RXgAbE1pBX1dICg9PVwZXBElUXVceCwwPB0hZAxsQXVZeHgQRBE8MWEhCDFAeRkBHT0MDF0IMVQhQbFpXR1lTUFcOVktIF1IRCR4eHA==","errorBeacon":"bam.nr-data.net","agent":""}</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'72420a827886cab8',m:'apVqOftxpCIjODuxUT_cjuCL3RgAMybDgeXUZDyNVYw-1656708910-0-AQs1nCUSpZ6+3TRVyrJOeT+6w66sobi7U9EOD/sArOro3WBDYO2DUTq0GyaKebS6swb9HR0bTLdWjsFkOaOda3MR9zLmXLA7yZLr/6FIJJ4Bjf/+hjCGPffCHBiVrTsScCqzV6qKLBTCIFY5mWdi0TbcxkEHiZ9W5NEja5cOZHpKNfozZCfM5xi7ljS4jboQec1kwmZG25aiwKrwrlI6Z7CQMuSPe8lNXlQDiehZQQFjsMDuLCqINMnaMtp1KegAZ/zO5FO/AGekolF1Tu00d9VeoVq0YWA1COkoiKx6I9ys',s:[0x63bb7d69a6,0xe5d0f86ad2],}})();</script></body>
+</html>
